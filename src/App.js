@@ -1,25 +1,48 @@
-import logo from './logo.svg';
+import React from 'react';
+import {  Route, Routes, RouterProvider,createBrowserRouter,createRoutesFromElements } from "react-router-dom";
 import './App.css';
+import index from './index'
+import ScrollToTop from './ScrollToTop';
+import HomePage from './HomePage';
+import Signup from './Signup';
+import Login from './Login';
+import Error from './Error';
+import Info from './Info';
+import CreateInfo from './CreateInfo';
+import Products from './Products';
+import MiddlePage from './MiddlePage';
+import Cart from './Cart';
 
+const router = createBrowserRouter(createRoutesFromElements(
+  <>
+  <Route  element={<ScrollToTop/>} >
+    <Route path='/' element={<HomePage/>} />
+  <Route path='Products' element={<Products/>} />
+  <Route path='MiddlePage' element={<MiddlePage/>} />
+   
+  <Route path='Cart' element={<Cart/>} />
+
+  </Route>
+
+  
+
+  <Route path='CreateInfo' element={<CreateInfo/>} />
+  <Route path='Login' element={<Login/>} />
+  <Route path='*' element={<Error/>} /> 
+  <Route path='Info' element={<Info/>} />
+<Route path='Signup' element={<Signup/>} />
+</>
+  
+))
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+ 
+    <RouterProvider router={router} /> 
   );
 }
 
 export default App;
+
+
+
+

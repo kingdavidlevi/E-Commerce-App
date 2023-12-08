@@ -1,0 +1,17 @@
+.scrollable-component{
+    position: relative;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    height: 60px;
+    background-color: white;
+   margin-top: 20px;
+   justify-content: center;
+}
+
+
+@media only  screen and (min-width:890px) {
+
+    
+    
+}

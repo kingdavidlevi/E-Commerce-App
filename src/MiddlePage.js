@@ -1,0 +1,226 @@
+import React, { useEffect, useState } from "react";
+import { NavLink, useOutletContext } from "react-router-dom";
+import { FaPhone,FaGamepad,FaLaptop, FaCheck, } from "react-icons/fa";
+import Advert from './images/BINATONE_BLACK_FRIDAY_BRAND_DAY_slider_FS (1).jpg'
+import ImageSlider from "./ImagesSlider";
+import vectorSide from './images/Vector (5).png'
+import sideImages from './images/Side Image.png'
+import page1 from './images/Frame 870.png'
+import page2 from './images/Frame 871.png'
+import page3 from './images/Frame 872.png'
+import page4 from './images/Frame 873.png'
+import vector from './images/Vector.png'
+
+
+
+
+/*useEffect(() => {
+    const inter = setInterval(() => {
+        const currentTime = new Date();
+        const targetTime = new Date ('2023-01-01T00:00:00')
+        const differnce = targetTime - currentTime;
+        setTimeDiffernce(differnce)
+
+    },1000)
+
+    return () => clearInterval(inter)
+},[])
+
+const formatTime = (time) => (time < 10 ? `${time}` : `${time}`)
+
+const absoluteDays = Math.abs(Math.floor(timeDifference / (1000 * 60 * 60 * 24)))
+
+ 
+const days = Math.floor(timeDifference / (1000 * 60 * 60 *24 ));
+const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24 )) / (1000 * 60 * 60))
+const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60))
+const seconds = Math.floor((timeDifference % (1000 *60)) /1000)
+*/
+
+
+
+
+
+ function MiddlePage () {
+const [timeDifference,setTimeDiffernce] = useState(0)
+const [currentDate, setCurrentDate] = useState(new Date())
+const [hours,setHours] = useState('')
+const [minutes,setMinutes] = useState('')
+const [seconds,setSeconds] = useState('')
+const [Hover1, setHover1] = useState(false)
+const [Hover2, setHover2] = useState(false)
+const {isFixed,mobileFixed} = useOutletContext()
+
+useEffect(() => {
+
+    const intervalid = setInterval(() => {
+        setCurrentDate(new Date())
+    
+    },1000)
+    
+    return () => clearInterval(intervalid);
+    
+    
+    },[])
+
+
+
+useEffect(() => {
+    function  startTime () {
+    const today = new Date()
+    let h = today.getHours()
+setHours(h)
+    let m = today.getMinutes()
+    setMinutes(m)
+    let s = today.getSeconds()
+    setSeconds(s)
+    m = CheckTime(m)
+    s = CheckTime(s)
+}
+
+setTimeout(startTime, 1000)
+
+},[])
+
+
+const CheckTime = (i) => {
+if (i < 10 ){ i = "0" + i }
+
+return i
+
+
+}
+
+
+
+const firstHover = () => {
+   setHover1(prevstate => !prevstate)
+}
+
+
+
+
+    return(
+
+        <div className={`${ isFixed ? "lg:pt-28    lg:pb-10 " : "lg:pt-8  lg:pb-10 " }`}>
+
+
+        <div className="flex justify-center  ">
+
+     <div className="border-r-r  rounded-md h-75 shadow-lg bg-white pl-4 pr-6 lg:w-56 md:w-48 mr-2 border-gray-300 lg:block hidden ">
+ <div className="flex justify-between mt-4 " onMouseEnter={firstHover} >  <NavLink to='/Appliances' className='text-sm font-medium '>Appliances </NavLink>  { !Hover1 ? <img src={vectorSide} className="h-3 w-2 mt-1  " /> : <img src={vector} className="h-3 w-2 mt-1 bg-black "/> } </div>
+ <div className="flex justify-between mt-5 cursor-pointer">  <NavLink to='/Phones' className='text-sm font-medium'>Phones & Tablets</NavLink>  <img src={vectorSide} className="h-3 w-2 mt-1" /> </div>
+ <div className="flex justify-between mt-5"> <NavLink to='/Fashion' className='text-sm font-medium '>Fashion</NavLink>   </div>
+ <div className="flex justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium'>Gaming</NavLink> </div>
+ <div className="flex justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium'>Generator</NavLink> </div>
+ <div className="flex justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium'>Shoes</NavLink> </div>
+ <div className="flex justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium'>Glassess</NavLink> </div>
+ <div className="flex justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium'>Laptops</NavLink>  </div>
+ <div className="flex justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium'>Clothes</NavLink> </div>
+ 
+
+     </div>
+
+
+<div className= {`${  mobileFixed?   "sm:pt-32  pt-32   lg:pt-0" :  " sm:pt-6 lg:pt-0 pt-6"}`}>
+    <ImageSlider />
+</div>
+
+
+
+
+</div>
+
+
+<div className=" mt-10 grid place-items-center ">
+
+
+<div className=" h-24 border-top-rounded items-center flex justify-between lg:w-340 md:w-270  bg-black xl:w-400 ">
+
+
+
+ <div>
+<h3 className="text-white text-2xl font-medium ">Flash Sales</h3>
+</div>
+
+
+<div className="flex">
+    
+    <div>
+        <p className="text-white">Hours</p>
+        <h4 className="text-white"> {hours}:</h4> 
+    </div> 
+    <div>
+        <p className="text-white">Minutes</p>
+        <h4 className="text-white">{minutes}:</h4>
+    </div>
+    <div>
+        <p className="text-white">Seconds</p>
+        <h4 className="text-white">{seconds}</h4>
+    </div>
+</div>
+
+
+
+ <div >
+<h3 className="text-white text-2xl font-medium ">{currentDate.toLocaleDateString()}</h3>
+</div>
+
+
+
+</div>
+
+
+
+ <div className="lg:w-340 md:w-270 h-82 bg-white shadow-lg xl:w-400 border-black ">
+
+ </div>
+
+
+
+
+<section className="mt-24 ">
+    <h2 className="lg:text-4xl lg:font-bold md:text-3xl md:font-bold"> About Us</h2>
+
+<div className="lg:flex lg:mt-32 md:mt-24 justify-center">
+    <p className="text-lg lg:mr-12 xl:mr-16 lg:mt-24 lg"><span className="lg:text-3xl md:text-2xl   font-medium">Our Story</span> <br/><br/>Launched in 2015,Exclusive is south Asia's premier online shopping<br/> marketplace with an active presence in Bangladesh. Supported <br/>by wide range of tailored marketing, data and service solutions.<br/>Exclusive has 10,500 sellers and 300 brands and serves 3 <br/> millons customers across the region.<br/><br/>Exclusive has more than 1 Million products to offer,growind at a <br/>very fast pace.Exclusive offers a diverse assotment in categories<br/> ranging from consumer.</p>
+    <img src={sideImages} className="md:w-100 md:h-100 lg:mt-0 lg:w-97 lg:h-97 md:mt-10 xl:h-100 xl:w-100"/>
+</div>
+
+</section>
+
+
+
+<section className=" mt-20 lg:gap-8 md:gap-6 md:flex  block">
+    <div>
+    <img src={page1} className="md:w-36 md:h-32 bg-white " />
+    </div>
+
+    <div className="  ">
+    <img src={page2} className="md:w-38 md:h-33 " />
+    </div>
+
+    <div>
+    <img src={page3} className="md:w-36 md:h-32 bg-white " />
+    </div>
+
+    <div>
+    <img src={page4} className="md:w-36 md:h-32 bg-white"  />
+    </div>
+
+</section>
+
+
+
+</div>
+
+
+
+
+        </div>
+        
+    )
+}
+
+
+export default MiddlePage;
