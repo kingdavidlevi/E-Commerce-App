@@ -92,23 +92,19 @@ return i
 }
 
 
-
-const firstHover = () => {
-   setHover1(prevstate => !prevstate)
-}
-
+ 
 
 
 
     return(
 
-        <div className={`${ isFixed ? "lg:pt-28    lg:pb-10 " : "lg:pt-8  lg:pb-10 " }`}>
+        <div className={`${ isFixed ? "lg:pt-28 md:pb-10   lg:pb-10 " : "lg:pt-8 md:pb-10  lg:pb-10 " }`}>
 
 
         <div className="flex justify-center  ">
 
      <div className="border-r-r  rounded-md h-75 shadow-lg bg-white pl-4 pr-6 lg:w-56 md:w-48 mr-2 border-gray-300 lg:block hidden ">
- <div className="flex justify-between mt-4 " onMouseEnter={firstHover} >  <NavLink to='/Appliances' className='text-sm font-medium '>Appliances </NavLink>  { !Hover1 ? <img src={vectorSide} className="h-3 w-2 mt-1  " /> : <img src={vector} className="h-3 w-2 mt-1 bg-black "/> } </div>
+ <div className="flex justify-between mt-4 "   >  <NavLink to='/Appliances' className='text-sm font-medium '>Appliances </NavLink>   <img src={vectorSide} className="h-3 w-2 mt-1  " /> </div>
  <div className="flex justify-between mt-5 cursor-pointer">  <NavLink to='/Phones' className='text-sm font-medium'>Phones & Tablets</NavLink>  <img src={vectorSide} className="h-3 w-2 mt-1" /> </div>
  <div className="flex justify-between mt-5"> <NavLink to='/Fashion' className='text-sm font-medium '>Fashion</NavLink>   </div>
  <div className="flex justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium'>Gaming</NavLink> </div>
@@ -122,7 +118,7 @@ const firstHover = () => {
      </div>
 
 
-<div className= {`${  mobileFixed?   "sm:pt-32  pt-32   lg:pt-0" :  " sm:pt-6 lg:pt-0 pt-6"}`}>
+<div className= {`${  mobileFixed ?   "sm:pt-32   pt-32   lg:pt-0" :  " sm:pt-6 lg:pt-0 pt-6"}`}>
     <ImageSlider />
 </div>
 
@@ -179,33 +175,33 @@ const firstHover = () => {
 
 
 
-<section className="mt-24 ">
-    <h2 className="lg:text-4xl lg:font-bold md:text-3xl md:font-bold"> About Us</h2>
+<section className="mt-24  ">
+    <h2 className="lg:text-4xl lg:font-bold md:text-3xl text-2xl font-medium  md:font-bold"> About Us</h2>
 
-<div className="lg:flex lg:mt-32 md:mt-24 justify-center">
-    <p className="text-lg lg:mr-12 xl:mr-16 lg:mt-24 lg"><span className="lg:text-3xl md:text-2xl   font-medium">Our Story</span> <br/><br/>Launched in 2015,Exclusive is south Asia's premier online shopping<br/> marketplace with an active presence in Bangladesh. Supported <br/>by wide range of tailored marketing, data and service solutions.<br/>Exclusive has 10,500 sellers and 300 brands and serves 3 <br/> millons customers across the region.<br/><br/>Exclusive has more than 1 Million products to offer,growind at a <br/>very fast pace.Exclusive offers a diverse assotment in categories<br/> ranging from consumer.</p>
-    <img src={sideImages} className="md:w-100 md:h-100 lg:mt-0 lg:w-97 lg:h-97 md:mt-10 xl:h-100 xl:w-100"/>
+<div className="lg:flex lg:mt-32 md:mt-24 grid place-items-center md:justify-center  mt-12">
+    <p className="text-lg ml-2 md:ml-0 lg:mr-12 xl:mr-16 lg:mt-24 md:mb-0 mb-10 "><span className="lg:text-3xl md:text-2xl   font-medium">Our Story</span> <br/><br/>Launched in 2015,Exclusive is south Asia's premier online shopping<br/> marketplace with an active presence in Bangladesh. Supported <br/>by wide range of tailored marketing, data and service solutions.<br/>Exclusive has 10,500 sellers and 300 brands and serves 3 <br/> millons customers across the region.<br/><br/>Exclusive has more than 1 Million products to offer,growind at a <br/>very fast pace.Exclusive offers a diverse assotment in categories<br/> ranging from consumer.</p>
+    <img src={sideImages} className="md:w-100  md:h-100 w-90 h-80 lg:mt-0 lg:w-97 lg:h-97  md:mt-10 xl:h-100 xl:w-100"/>
 </div>
 
 </section>
 
 
 
-<section className=" mt-20 lg:gap-8 md:gap-6 md:flex  block">
+<section className=" mt-20 lg:gap-8 md:gap-6 md:flex pb-20 md:pb-0 grid place-items-center">
     <div>
-    <img src={page1} className="md:w-36 md:h-32 bg-white " />
+    <img src={page1} className="md:w-36 md:h-32 h-36 w-40  mb-5 md:mb-0   bg-white " />
     </div>
 
     <div className="  ">
-    <img src={page2} className="md:w-38 md:h-33 " />
+    <img src={page2} className="md:w-38 md:h-33 h-36 w-44 mb-5 md:mb-0 " />
     </div>
 
     <div>
-    <img src={page3} className="md:w-36 md:h-32 bg-white " />
+    <img src={page3} className="md:w-36 md:h-32 bg-white  mb-5 md:mb-0   h-36 w-40  " />
     </div>
 
     <div>
-    <img src={page4} className="md:w-36 md:h-32 bg-white"  />
+    <img src={page4} className="md:w-36 md:h-32 bg-white  h-36 w-40 "  />
     </div>
 
 </section>
@@ -217,7 +213,7 @@ const firstHover = () => {
 
 
 
-        </div>
+</div>
         
     )
 }

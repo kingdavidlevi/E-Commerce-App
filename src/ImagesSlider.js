@@ -118,8 +118,17 @@ useEffect(() => {
 },[currentIndex])
 
 
+
+
 return(
-    <div className="">
+<div>
+
+
+
+
+    <div className="hidden md:block">
+
+
    { allImages.map((image, index) => {
 
     return(
@@ -148,7 +157,27 @@ return(
   </div>
 
 
+<div className="hidden flex gap-4 overflow-x-auto whitespace-nowrap pl-20 w-full bg-white sm:h-80   h-44 pt-4 ">
 
+   { allImages.map((image, index) => {
+
+    return(
+        
+        <div key={index} className="w-80 h-33 sm:w-200 sm:h-64 " >
+            {image}
+        </div>   
+
+    )
+   })
+
+   }
+</div>
+
+
+
+
+
+  </div>
 )
 
 }

@@ -61,7 +61,7 @@ const navigate = useNavigate()
 
        <div className="relative flex xl:gap-4 lg:gap-3 md:gap-2" >
         <form>
-        <input type="text" placeholder="Search Products, brands and categories"  className={`${isFixed ? " text-lg rounded-md placeholder:text-lg placeholder:text-gray-400 text-black bg-white border-r  border-black pl-12 lg:pt-2 lg:pb-2 lg:w-150 xl:w-260 md:w-98 md:pt-1 md:pb-1 outline-none pr-8   placeholder-gray-900  mt-1" : " xl:w-260 text-lg rounded-md placeholder:text-lg placeholder:text-gray-400 bg-white border-r  border-black pl-12 lg:pt-2 lg:pb-2 lg:w-150 md:w-98 md:pt-1 md:pb-1 outline-none pr-8   placeholder-gray-900  mt-1" }`} />
+        <div className={`${isFixed ? " text-lg rounded-md  text-gray-400  bg-white border-r  border-black pl-12 lg:pt-2 lg:pb-2 lg:w-150 xl:w-260 md:w-98 md:pt-1 md:pb-1 outline-none pr-8    mt-1" : " xl:w-260 text-lg rounded-md  text-gray-400 bg-white border-r  border-black pl-12 lg:pt-2 lg:pb-2 lg:w-150 md:w-98 md:pt-1 md:pb-1 outline-none pr-8     mt-1" }`} ><p>Search Products, brands and categories</p></div>
         </form>
         <button className="bg-orange-400 lg:px-3 xl:px-4 md:px-1 h-10 xl:ml-1 mt-1 text-white  font-medium shadow-lg rounded-md">SEARCH</button>
         <img src={search} className={`${isFixed ? "absolute text-xl bottom-3 text-gray-900 ml-4   " : "absolute text-xl bottom-3 text-gray-900 ml-4   "}`} />
@@ -103,7 +103,7 @@ const navigate = useNavigate()
 
      <div className="grid place-items-center relative ">
       <img src={search} className="absolute mr-72 sm:mr-100 mt-5 z-10"/>
-      <input className="w-90 sm:w-100 sm:mt-4 mt-5 sm:text-lg text-sm rounded-full py-1 sm:placeholder:text-lg  placeholder:text-sm   bg-white placeholder:text-gray-400 text-black  border-r  border-black pl-11  sm:pl-12  outline-none   placeholder-gray-900  " type="text" placeholder="Search Products, brands and categories"/>
+      <div className="w-90 sm:w-100 sm:mt-4 mt-5 sm:text-lg text-sm rounded-full py-1   bg-white text-gray-400   border-r  border-black pl-11  sm:pl-12  outline-none   placeholder-gray-900  "><p>Search Products, brands and categories</p></div>
      </div>
 
         </div>
