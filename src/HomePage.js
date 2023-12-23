@@ -39,6 +39,10 @@ const navigate = useNavigate()
       const NavigateCart = () =>{
          navigate('/Cart')
       }
+
+      const navigateAccount = () =>{
+         navigate('/Account')
+      }
     
 
 
@@ -75,7 +79,7 @@ const navigate = useNavigate()
         </div>
 
 
-        <div className="lg:flex cursor-pointer lg:ml-3 xl:ml-8 md:hidden  ">
+        <div className="lg:flex cursor-pointer lg:ml-3 xl:ml-8 md:hidden   " onClick={navigateAccount}>
             
         <img src={user}  className={`${isFixed ? " h-9 mt-2  " : "  h-9 mt-2 " }`} />
 
@@ -96,7 +100,7 @@ const navigate = useNavigate()
          <div className="flex justify-between">
          <div className="flex"><span className="text-lg mt-2 mr-4"><FaBars/></span> <p className="text-2xl  text-black  font-bold font-mono"> Exclusive</p></div>
 
-         <div className="flex" ><div><img src={user} alt="user"  /></div> <div className="ml-4" onClick={NavigateCart}><img src={cart} /></div> </div>
+         <div className="flex" ><div onClick={navigateAccount} className="cursor-pointer"><img src={user} alt="user"  /></div> <div className="ml-4 cursor-pointer" onClick={NavigateCart}><img src={cart} /></div> </div>
 
          </div>
 

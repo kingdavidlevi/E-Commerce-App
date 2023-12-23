@@ -52,7 +52,7 @@ return(
       <p className=" ml-4 mt-4 md:mt-14 lg:ml-24 xl:ml-36 md:ml-14 md:mb-14 mb-8 font-normal text-gray-400 text-lg  " ><NavLink to='/'>Home</NavLink>   / <span className="font-medium text-black">Cart</span></p>  
     </div>
 
-    <div className="flex px-4 md:pl-8 md:pr-10 lg:ml-24  mb-6 justify-between items-center md:ml-14 lg:w-310 h-18 shadow-xl xl:w-370 bg-white md:w-265 xl:ml-36">
+    <div className="flex px-4 md:pl-8 md:pr-10 lg:ml-24  mb-6 justify-between items-center md:ml-14 lg:w-310 h-18 shadow-xl  xl:w-370 bg-white md:w-265 xl:ml-36">
 
       <div><p className="text-lg font-medium " >Products</p></div> 
       <div><p className="text-lg font-medium">Price</p></div> 
@@ -118,7 +118,11 @@ return(
 </div>
 
 
-<div className=" pl-4 pt-4 mt-4 md:mt-0 pt pr-3 border-2  rounded-md border-gray-400 xl:h-77 lg:h-72 lg:w-90 w-90 h-72 md:w-80 md:h-80  xl:w-99">
+
+
+<div  className="md:block grid place-content-center ">
+
+<div className=" pl-4  pt-4 mt-4 md:mt-0 pt pr-3 border-2  rounded-md border-gray-400 xl:h-77 lg:h-72 lg:w-90 w-90 h-80 md:w-80 md:h-80  xl:w-99">
 <div className="mb-4"><p className="text-lg font-medium">Cart Total</p></div>
 
 
@@ -144,8 +148,10 @@ return(
 </div>
 
 
-<button className="text-white bg-red-600 xl:ml-22 md:ml-6 lg:ml-10 rounded-md xl:w-70 h-14 lg:mt-4 md:mt-10 md:w-48 lg:w-60 xl:mt-10 grid place-content-center">Process to checkout</button>
+<div className="grid place-items-center">
 
+<button className="text-white bg-red-600  rounded-md xl:w-70 h-14 lg:mt-4 md:mt-10 md:w-48 lg:w-60 xl:mt-10 w-44 mt-8   ">Process to checkout</button>
+</div>
 
 
 
@@ -157,9 +163,7 @@ return(
 </div>
 
 
-
-
-
+</div>
 
 
 

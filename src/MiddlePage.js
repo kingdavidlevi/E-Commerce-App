@@ -98,27 +98,27 @@ return i
 
     return(
 
-        <div className={`${ isFixed ? "lg:pt-28 md:pb-10   lg:pb-10 " : "lg:pt-8 md:pb-10  lg:pb-10 " }`}>
+        <div className={`${ isFixed ? "lg:pt-30 md:pb-10   lg:pb-10 " : "lg:pt-8 md:pb-10  lg:pb-10 " }`}>
 
 
         <div className="flex justify-center  ">
 
      <div className="border-r-r  rounded-md h-75 shadow-lg bg-white pl-4 pr-6 lg:w-56 md:w-48 mr-2 border-gray-300 lg:block hidden ">
- <div className="flex justify-between mt-4 "   >  <NavLink to='/Appliances' className='text-sm font-medium '>Appliances </NavLink>   <img src={vectorSide} className="h-3 w-2 mt-1  " /> </div>
- <div className="flex justify-between mt-5 cursor-pointer">  <NavLink to='/Phones' className='text-sm font-medium'>Phones & Tablets</NavLink>  <img src={vectorSide} className="h-3 w-2 mt-1" /> </div>
- <div className="flex justify-between mt-5"> <NavLink to='/Fashion' className='text-sm font-medium '>Fashion</NavLink>   </div>
- <div className="flex justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium'>Gaming</NavLink> </div>
- <div className="flex justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium'>Generator</NavLink> </div>
- <div className="flex justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium'>Shoes</NavLink> </div>
- <div className="flex justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium'>Glassess</NavLink> </div>
- <div className="flex justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium'>Laptops</NavLink>  </div>
- <div className="flex justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium'>Clothes</NavLink> </div>
+ <div className="flex justify-between mt-4  "   >  <NavLink to='/Appliances' className='text-sm font-medium block w-full'>Appliances </NavLink>   <img src={vectorSide} className="h-3 w-2 mt-1  " /> </div>
+ <div className="flex justify-between mt-5 cursor-pointer">  <NavLink to='/Phones' className='text-sm font-medium  block w-full'>Phones & Tablets</NavLink>  <img src={vectorSide} className="h-3 w-2 mt-1" /> </div>
+ <div className="flex justify-between mt-5"> <NavLink to='/Fashion' className='text-sm font-medium block w-full'>Fashion</NavLink>   </div>
+ <div className="flex justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Gaming</NavLink> </div>
+ <div className="flex justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Generator</NavLink> </div>
+ <div className="flex justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Shoes</NavLink> </div>
+ <div className="flex justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Glassess</NavLink> </div>
+ <div className="flex justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Laptops</NavLink>  </div>
+ <div className="flex justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Clothes</NavLink> </div>
  
 
      </div>
 
 
-<div className= {`${  mobileFixed ?   "sm:pt-32   pt-32   lg:pt-0" :  " sm:pt-6 lg:pt-0 pt-6"}`}>
+<div className= {`${  mobileFixed ?   "sm:pt-34   pt-34   lg:pt-0" :  " sm:pt-6 lg:pt-0 pt-6"}`}>
     <ImageSlider />
 </div>
 

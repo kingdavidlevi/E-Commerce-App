@@ -143,7 +143,9 @@ return(
    }
 
 
-<div className="absolute z-10  gap-2  md:justify-center xl:w-400 lg:w-250 md:w-270 hidden  ">
+
+<div className="grid place-items-center relative">
+<div className="absolute   gap-2  md:justify-center xl:w-400 lg:w-250 md:w-270 flex bottom-5 ">
         <div className={`${ div1 ? 'w-2 h-2 bg-orange-400 rounded-full'  : 'w-2 h-2 bg-gray-400 rounded-full' }`}></div>
         <div className={`${ div2 ? 'w-2 h-2 bg-orange-400 rounded-full'  : 'w-2 h-2 bg-gray-400 rounded-full' }`} ></div>
         <div  className={`${ div3 ? 'w-2 h-2 bg-orange-400 rounded-full'  : 'w-2 h-2 bg-gray-400 rounded-full' }`} ></div>
@@ -156,14 +158,17 @@ return(
 
   </div>
 
+  </div>
 
-<div className="hidden flex gap-4 overflow-x-auto whitespace-nowrap pl-20 w-full bg-white sm:h-80   h-44 pt-4 ">
+
+
+<div className=" md:hidden flex gap-4 overflow-hidden  whitespace-nowrap  pl-20 w-full  bg-white sm:h-80   h-44 pt-4 ">
 
    { allImages.map((image, index) => {
 
     return(
         
-        <div key={index} className="w-80 h-33 sm:w-200 sm:h-64 " >
+        <div key={index} className="w-80 h-33    sm:w-200 sm:h-64 " >
             {image}
         </div>   
 

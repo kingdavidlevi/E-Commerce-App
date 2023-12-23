@@ -12,6 +12,7 @@ import CreateInfo from './CreateInfo';
 import Products from './Products';
 import MiddlePage from './MiddlePage';
 import Cart from './Cart';
+import Account from './Account';
 
 const router = createBrowserRouter(createRoutesFromElements(
   <>
@@ -21,11 +22,11 @@ const router = createBrowserRouter(createRoutesFromElements(
   <Route path='MiddlePage' element={<MiddlePage/>} />
    
   <Route path='Cart' element={<Cart/>} />
-
+  <Route path='Account' element={<Account/>} />
   </Route>
 
   
-
+   
   <Route path='CreateInfo' element={<CreateInfo/>} />
   <Route path='Login' element={<Login/>} />
   <Route path='*' element={<Error/>} /> 
