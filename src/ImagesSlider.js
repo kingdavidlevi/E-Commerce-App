@@ -8,7 +8,7 @@ import image6 from './images/Adis_BLF231168X384copy.jpg'
 import image7 from './images/Desktop_MLP_Slider__1168x384.jpg'
 import image8 from './images/Frame 600.png'
 import { FaDot } from "react-icons/fa";
-import './Style.css'
+//import './style.css'
 
 
 function ImageSlider () {
