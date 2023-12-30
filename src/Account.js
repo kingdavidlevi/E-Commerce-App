@@ -173,7 +173,7 @@ return(
 
 
 
-<div className={`${mobileFixed ? "shadow-2xl lg:hidden block mt-30 bg-white xl:w-310 lg:w-280 md:w-260 md:h-260  md:pt-10" : "shadow-2xl lg:hidden block mt-16 bg-white xl:w-310 lg:w-280 md:w-260 md:h-260  md:pt-10" }`}>
+<div className={`${mobileFixed ? "shadow-2xl lg:hidden block mt-30 bg-white xl:w-310 lg:w-280 md:w-260 md:h-260 w-90 pt-4  md:pt-10" : "shadow-2xl pt-4 w-90 lg:hidden block mt-16 bg-white xl:w-310 lg:w-280 md:w-260 md:h-260  md:pt-10" }`}>
 
 
     <div className="grid place-items-center ">
@@ -188,34 +188,34 @@ return(
 <div className="w-full grid place-items-center">
 
 
-<div className="flex justify-around md:w-250 xl:w-130 lg:w-255  md:h-22">
+<div className="md:flex block md:justify-around md:w-250 xl:w-130 lg:w-255  md:h-22">
 
 <div className="xl:w-82 md:w-70 lg:w-75 md:h-20 mt-6">
  <label  className="font-medium">First Name</label> <br/>
- <input type="text" className=" text-gray-400  bg-gray-100 md:h-10 rounded-md pl-4 outline-none mt-1 md:w-70 lg:w-75 xl:w-82" />
+ <input type="text" className=" text-gray-400  bg-gray-100 md:h-10 rounded-md w-70 pl-4 outline-none mt-1 md:w-70 lg:w-75 xl:w-82" />
 </div>
 
 
 <div className="xl:w-82 lg:w-75 md:h-20 mt-6">
  <label  className= "font-medium">Last Name</label> <br/>
- <input type="text" className=" md:w-70 text-gray-400  bg-gray-100 rounded-md md:h-10 outline-none pl-4 lg:w-75 mt-1 xl:w-82" />
+ <input type="text" className=" md:w-70 text-gray-400 w-70  bg-gray-100 rounded-md md:h-10 outline-none pl-4 lg:w-75 mt-1 xl:w-82" />
 </div>
 
 
 </div>
 
 
-<div className="flex justify-around md:w-250 lg:w-255 xl:w-130 xl:h-22">
+<div className="md:flex block md:justify-around md:w-250 lg:w-255 xl:w-130 xl:h-22">
 
 <div className="xl:w-82 lg:w-75 md:h-20 mt-8">
  <label  className="font-medium">Email</label> <br/>
- <input type="email" className=" md:w-70 lg:w-75 text-gray-400  bg-gray-100 md:h-10 rounded-md pl-4 outline-none mt-1 xl:w-82" />
+ <input type="email" className=" md:w-70 lg:w-75 w-70 text-gray-400  bg-gray-100 md:h-10 rounded-md pl-4 outline-none mt-1 xl:w-82" />
 </div>
 
 
 <div className="xl:w-82 lg:w-75 md:h-20 mt-8">
  <label   className="font-medium">Address</label> <br/>
- <input type="text" className="text-gray-400 lg:w-75 md:w-70 bg-gray-100 rounded-md md:h-10 outline-none pl-4 mt-1 xl:w-82" />
+ <input type="text" className="text-gray-400 w-70 lg:w-75 md:w-70 bg-gray-100 rounded-md md:h-10 outline-none pl-4 mt-1 xl:w-82" />
 </div>
 
 
@@ -227,14 +227,14 @@ return(
 
 
 
-<div className="xl:w-255 md:w-200 lg:w-256 md:mt-8 xl:mt-12 xl:h-56">
+<div className="xl:w-255 md:w-200 lg:w-256 mt-8 md:mt-8 xl:mt-12 xl:h-56">
 
 <label   className="font-medium">Password Changes</label> <br/>
 
-<div className="w-full grid place-items-center mt-1">
-<input className="xl:w-255 md:w-200 lg:w-256 rounded-md h-10  text-gray-400 outline-none  bg-gray-100 pl-4" type="password" placeholder="Current Password"/> <br/>
-<input className="xl:w-255 md:w-200 lg:w-256 rounded-md h-10 text-gray-400 outline-none bg-gray-100 pl-4" type="password" placeholder="New Pasword"/> <br/>
-<input className="xl:w-255 md:w-200 lg:w-256 rounded-md h-10 text-gray-400 outline-none bg-gray-100 pl-4" type="password" placeholder="Confirm New Password"/> <br/>
+<div className="w-full grid place-items-center mt-1.5 md:mt-1">
+<input className="xl:w-255 md:w-200 lg:w-256 w-70 rounded-md h-10  text-gray-400 outline-none  bg-gray-100 pl-4" type="password" placeholder="Current Password"/> <br/>
+<input className="xl:w-255 md:w-200 lg:w-256 w-70 rounded-md h-10 text-gray-400 outline-none bg-gray-100 pl-4" type="password" placeholder="New Pasword"/> <br/>
+<input className="xl:w-255 md:w-200 lg:w-256 w-70 rounded-md h-10 text-gray-400 outline-none bg-gray-100 pl-4" type="password" placeholder="Confirm New Password"/> <br/>
 
 </div>
 

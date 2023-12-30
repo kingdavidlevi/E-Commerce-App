@@ -72,14 +72,14 @@ const navigate = useNavigate()
        
        </div>
        
-     <div className="flex cursor-pointer lg:ml-2 xl:ml-8 md:ml-1  " onClick={NavigateCart}>
-     <img src={cart}  className={`${isFixed ? "mt-4 text-white  h-7 w-7" : "mt-4 text-white  h-7 w-7" }`}/>
+     <div className="flex cursor-pointer hover:text-orange-400 lg:ml-2 xl:ml-8 md:ml-1  " onClick={NavigateCart}>
+     <img src={cart}  className="mt-4  h-7 w-7 " />
         <p className= "font-medium mt-4 lg:ml-2 md:ml-1 text-lg" >Cart</p>
            
         </div>
 
 
-        <div className="lg:flex cursor-pointer lg:ml-3 xl:ml-8 md:hidden   " onClick={navigateAccount}>
+        <div className="lg:flex cursor-pointer hover:text-orange-400 lg:ml-3 xl:ml-8 md:hidden   " onClick={navigateAccount}>
             
         <img src={user}  className={`${isFixed ? " h-9 mt-2  " : "  h-9 mt-2 " }`} />
 

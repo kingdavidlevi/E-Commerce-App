@@ -104,15 +104,15 @@ return i
         <div className="flex justify-center  ">
 
      <div className="border-r-r  rounded-md h-75 shadow-lg bg-white pl-4 pr-6 lg:w-56 md:w-48 mr-2 border-gray-300 lg:block hidden ">
- <div className="flex justify-between mt-4  "   >  <NavLink to='/Appliances' className='text-sm font-medium block w-full'>Appliances </NavLink>   <img src={vectorSide} className="h-3 w-2 mt-1  " /> </div>
- <div className="flex justify-between mt-5 cursor-pointer">  <NavLink to='/Phones' className='text-sm font-medium  block w-full'>Phones & Tablets</NavLink>  <img src={vectorSide} className="h-3 w-2 mt-1" /> </div>
- <div className="flex justify-between mt-5"> <NavLink to='/Fashion' className='text-sm font-medium block w-full'>Fashion</NavLink>   </div>
- <div className="flex justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Gaming</NavLink> </div>
- <div className="flex justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Generator</NavLink> </div>
- <div className="flex justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Shoes</NavLink> </div>
- <div className="flex justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Glassess</NavLink> </div>
- <div className="flex justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Laptops</NavLink>  </div>
- <div className="flex justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Clothes</NavLink> </div>
+ <div className="flex hover:text-orange-400 justify-between mt-4  "   >  <NavLink to='/Appliances' className='text-sm font-medium block w-full'>Appliances </NavLink>   <img src={vectorSide} className="h-3 w-2 mt-1  " /> </div>
+ <div className="flex hover:text-orange-400 justify-between mt-5 cursor-pointer">  <NavLink to='/Phones' className='text-sm font-medium  block w-full'>Phones & Tablets</NavLink>  <img src={vectorSide} className="h-3 w-2 mt-1" /> </div>
+ <div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Fashion' className='text-sm font-medium block w-full'>Fashion</NavLink>   </div>
+ <div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Gaming</NavLink> </div>
+ <div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Generator</NavLink> </div>
+ <div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Shoes</NavLink> </div>
+ <div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Glassess</NavLink> </div>
+ <div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Laptops</NavLink>  </div>
+ <div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Clothes</NavLink> </div>
  
 
      </div>

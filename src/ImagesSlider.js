@@ -9,6 +9,8 @@ import image7 from './images/Desktop_MLP_Slider__1168x384.jpg'
 import image8 from './images/Frame 600.png'
 import { FaDot } from "react-icons/fa";
 
+
+
 function ImageSlider () {
     const [currentIndex,setCurrentIndex] = useState(0)
     const [div1 , setdiv1] = useState(false)
@@ -23,8 +25,8 @@ function ImageSlider () {
 
 
 const allImages  = [
-    <img key={0} src={image1}  className="md:h-75 md:w-270 xl:w-350  lg:w-280 sm:w-200 sm:h-64 w-80 h-33 "  />  ,
-    <img key={1} src={image2}  className="md:h-75 md:w-270 xl:w-350 lg:w-280 sm:w-200 sm:h-64 w-80 h-33"  />,
+    <img key={0} src={image1}  className="md:h-75 md:w-270 xl:w-350  lg:w-280 sm:w-200 sm:h-64 w-80 h-33  "  />  ,
+    <img key={1} src={image2}  className="md:h-75 md:w-270 xl:w-350 lg:w-280 sm:w-200 sm:h-64 w-80 h-33   "  />,
     <img key={2} src={image3}   className="md:h-75 md:w-270 xl:w-350 lg:w-280 sm:w-200 sm:h-64 w-80 h-33 " />,
     <img key={3} src={image4}  className="md:h-75 md:w-270 xl:w-350 lg:w-280 sm:w-200 sm:h-64 w-80 h-33"  />,
     <img key={4} src={image5}  className="md:h-75 md:w-270 xl:w-350 lg:w-280 sm:w-200 sm:h-64 w-80 h-33 "  />,
@@ -126,7 +128,7 @@ return(
 
 
 
-    <div className="hidden md:block">
+    <div className="hidden md:block ">
 
 
    { allImages.map((image, index) => {
@@ -154,35 +156,79 @@ return(
         <div  className={`${ div6 ? 'w-2 h-2 bg-orange-400 rounded-full'  : 'w-2 h-2 bg-gray-400 rounded-full' }`}></div>
         <div   className={`${ div7 ? 'w-2 h-2 bg-orange-400 rounded-full'  : 'w-2 h-2 bg-gray-400 rounded-full' }`}></div>
         <div   className={`${ div8 ? 'w-2 h-2 bg-orange-400 rounded-full'  : 'w-2 h-2 bg-gray-400 rounded-full' }`}></div>
-       </div>
+
+
+
+
+
+
+        </div>
+
+        </div>
+
+
 
   </div>
 
-  </div>
+
+  
 
 
 
-<div className=" md:hidden flex gap-4 overflow-hidden  whitespace-nowrap  pl-20 w-full  bg-white sm:h-80   h-44 pt-4 ">
+
+<div className=" md:hidden   overflow-x-auto pl-6 pr-6  gap-2  flex   w-screen  bg-white sm:h-80   h-44 pt-4 custom-scrollbar ">
 
    { allImages.map((image, index) => {
 
     return(
         
-        <div key={index} className="w-80 h-33    sm:w-200 sm:h-64 " >
+      
+
+        <div key={index} className="w-80 flex-grow-0  flex-shrink-0  relative overflow-hidden    sm:w-200 sm:h-64 " >
             {image}
         </div>   
-
+     
+        
     )
    })
 
    }
+
+
 </div>
 
 
 
 
 
+
+
+<div className="grid place-items-center relative md:hidden">
+<div className="absolute   gap-1  flex sm:bottom-4 bottom-0 ">
+        <div className={`${ div1 ? 'w-1.5 h-1.5 bg-orange-400 rounded-full'  : ' w-1.5 h-1.5 bg-gray-400 rounded-full' }`}></div>
+        <div className={`${ div2 ? ' w-1.5 h-1.5 bg-orange-400 rounded-full'  : ' w-1.5 h-1.5 bg-gray-400 rounded-full' }`} ></div>
+        <div  className={`${ div3 ? ' w-1.5 h-1.5  bg-orange-400 rounded-full'  : ' w-1.5 h-1.5 bg-gray-400 rounded-full' }`} ></div>
+        <div className={`${ div4 ? '  w-1.5 h-1.5 bg-orange-400 rounded-full'  : ' w-1.5 h-1.5 bg-gray-400 rounded-full' }`} ></div>
+        <div  className={`${ div5 ? ' w-1.5 h-1.5 bg-orange-400 rounded-full'  : ' w-1.5 h-1.5 bg-gray-400 rounded-full' }`} ></div>
+        <div  className={`${ div6 ? '  w-1.5 h-1.5 bg-orange-400 rounded-full'  : ' w-1.5 h-1.5 bg-gray-400 rounded-full' }`}></div>
+        <div   className={`${ div7 ? '  w-1.5 h-1.5 bg-orange-400 rounded-full'  : ' w-1.5 h-1.5 bg-gray-400 rounded-full' }`}></div>
+        <div   className={`${ div8 ? '  w-1.5 h-1.5 bg-orange-400 rounded-full'  : ' w-1.5 h-1.5 bg-gray-400 rounded-full' }`}></div>
+       
+
   </div>
+
+  </div>
+
+
+
+
+
+
+
+  </div>
+
+
+
 )
 
 }
