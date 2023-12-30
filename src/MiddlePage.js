@@ -118,7 +118,7 @@ return i
      </div>
 
 
-<div className= {`${  mobileFixed ?   "sm:pt-34   pt-34   lg:pt-0" :  " sm:pt-6 lg:pt-0 pt-6"}`}>
+<div className=    "sm:pt-34   pt-34   lg:pt-0" >
     <ImageSlider />
 </div>
 

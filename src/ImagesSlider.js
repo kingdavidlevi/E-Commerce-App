@@ -8,7 +8,7 @@ import image6 from './images/Adis_BLF231168X384copy.jpg'
 import image7 from './images/Desktop_MLP_Slider__1168x384.jpg'
 import image8 from './images/Frame 600.png'
 import { FaDot } from "react-icons/fa";
-
+import './Style.css'
 
 
 function ImageSlider () {
@@ -176,7 +176,7 @@ return(
 
 
 
-<div className=" md:hidden   overflow-x-auto pl-6 pr-6  gap-2  flex   w-screen  bg-white sm:h-80   h-44 pt-4 custom-scrollbar ">
+<div className=" md:hidden   overflow-x-auto pl-4 pr-4  gap-4  flex   w-screen  bg-white sm:h-80   h-48 pt-4 custom-scrollbar ">
 
    { allImages.map((image, index) => {
 
@@ -204,7 +204,7 @@ return(
 
 
 <div className="grid place-items-center relative md:hidden">
-<div className="absolute   gap-1  flex sm:bottom-4 bottom-0 ">
+<div className="absolute   gap-1  flex sm:bottom-4 bottom-2 ">
         <div className={`${ div1 ? 'w-1.5 h-1.5 bg-orange-400 rounded-full'  : ' w-1.5 h-1.5 bg-gray-400 rounded-full' }`}></div>
         <div className={`${ div2 ? ' w-1.5 h-1.5 bg-orange-400 rounded-full'  : ' w-1.5 h-1.5 bg-gray-400 rounded-full' }`} ></div>
         <div  className={`${ div3 ? ' w-1.5 h-1.5  bg-orange-400 rounded-full'  : ' w-1.5 h-1.5 bg-gray-400 rounded-full' }`} ></div>

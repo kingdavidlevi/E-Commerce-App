@@ -7,7 +7,7 @@ function Header (){
     return(
         <div>
 
-            <div className=" md:block  ">
+            <div className=" md:block hidden ">
             <header className="  bg-black lg:h-14 sm:h-12 h-12   lg:flex md:flex   md:items-center md:justify-center text-center  w-full ">
                 <p className="text-white text-sm  ">Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</p>
                 <p className="text-white text-sm md:ml-60 lg:ml-80 mr-2 md:block hidden">English  </p>

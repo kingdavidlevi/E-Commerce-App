@@ -96,7 +96,7 @@ const navigate = useNavigate()
         </div>
 
         
-        <div className={`${ mobileFixed ?   "lg:hidden fixed bg-white h-28 w-full top-0  z-10 pt-4 px-4" : "lg:hidden  bg-white h-28 w-full  pt-4 px-4"}`}>
+        <div className= "lg:hidden fixed bg-white h-28 w-full top-0  z-10 pt-4 px-4" >
          <div className="flex justify-between">
          <div className="flex"><span className="text-lg mt-2 mr-4"><FaBars/></span> <p className="text-2xl  text-black  font-bold font-mono"> Exclusive</p></div>
 
@@ -106,8 +106,8 @@ const navigate = useNavigate()
 
 
      <div className="grid place-items-center relative ">
-      <img src={search} className="absolute mr-72 sm:mr-100 mt-5 z-10"/>
-      <div className="w-90 sm:w-100 sm:mt-4 mt-5 sm:text-lg text-sm rounded-full py-1   bg-white text-gray-400   border-r  border-black pl-11  sm:pl-12  outline-none   placeholder-gray-900  "><p>Search Products, brands and categories</p></div>
+      <img src={search} className="absolute mr-64 sm:mr-100 mt-5 z-10"/>
+      <div className="w-86 sm:w-100 sm:mt-4 mt-5 sm:text-lg text-sm rounded-full py-1   bg-white text-gray-400   border-r  border-black pl-11  sm:pl-12  outline-none   placeholder-gray-900  "><p>Search Products, brands and categories</p></div>
      </div>
 
         </div>
