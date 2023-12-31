@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState,useEffect, useRef } from "react";
 import image1 from './images/BINATONE_BLACK_FRIDAY_BRAND_DAY_slider_FS (1).jpg'
 import image2 from './images/slider.jpg'
 import image3 from './images/BINATONE_BLACK_FRIDAY_BRAND_DAY_Slider_copy.jpg'
@@ -7,12 +7,21 @@ import image5 from './images/1168x384red-copy-11-11.jpg'
 import image6 from './images/Adis_BLF231168X384copy.jpg'
 import image7 from './images/Desktop_MLP_Slider__1168x384.jpg'
 import image8 from './images/Frame 600.png'
-import { FaDot } from "react-icons/fa";
+import { FaDot,FaChevronRight,FaChevronLeft } from "react-icons/fa";
 //import './style.css'
+import { Carousel } from "react-bootstrap";
+ 
+
+
+
 
 
 function ImageSlider () {
+
+
+   const [index,setIndex] = useState(0)
     const [currentIndex,setCurrentIndex] = useState(0)
+    const [mobilecurrentIndex,mobilesetCurrentIndex] = useState(0)
     const [div1 , setdiv1] = useState(false)
     const [div2 , setdiv2] = useState(false)
     const [div3 , setdiv3] = useState(false)
@@ -21,6 +30,9 @@ function ImageSlider () {
     const [div6 , setdiv6] = useState(false)
     const [div7 , setdiv7] = useState(false)
     const [div8 , setdiv8] = useState(false)
+   const containerRef = useRef(null)
+
+
 
 
 
@@ -43,12 +55,15 @@ useEffect(() => {
     const interval = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % allImages.length );
       
-      if(currentIndex === 0){
+      if(currentIndex ===  0){
         setdiv1(true)
+        
+        
       }
 
       else{
         setdiv1(false)
+         
       }
 
       if(currentIndex === 1){
@@ -122,6 +137,80 @@ useEffect(() => {
 
 
 
+ 
+
+
+useEffect(() => {
+const intervalid = setInterval(() => {
+  mobilesetCurrentIndex((prevIndex) => (prevIndex + 1) % allImages.length)
+
+
+if (containerRef.current){
+  const imageHeight = containerRef.current.clientHeight;
+  containerRef.current.scrollTop = mobilecurrentIndex * imageHeight
+}
+
+
+
+},3000)
+
+ 
+return () => clearInterval(intervalid)
+
+},[allImages.length])
+
+const handlePrev = () => {
+  mobilesetCurrentIndex((prevIndex) => (prevIndex - 1 + allImages.length) % allImages.length);
+
+  if(containerRef.current){
+    const imageHeight = containerRef.current.clientHeight;
+    containerRef.current.scrollTop = mobilecurrentIndex * imageHeight;
+  }
+}
+
+
+const handleNext = () => {
+  mobilecurrentIndex((prevIndex) => (prevIndex + 1 ) % allImages.length)
+
+
+  if (containerRef.current) {
+    const imageHeight = containerRef.current.clientHeight;
+    containerRef.current.scrollTop = mobilecurrentIndex * imageHeight;
+  }
+}
+
+
+
+/*<div className="md:hidden overflow-x-auto pl-2 pr-2 gap-4 flex w-screen bg-white sm:h-80 h-48 pt-4 custom-scrollbar">
+      <Carousel activeIndex={index} onSelect={handleSelect} className="w-full">
+        {allImages.map((image, idx) => (
+          
+          <Carousel.Item key={idx}>
+            <div className="w-80 flex-grow-0 flex-shrink-0 relative overflow-hidden sm:w-200 sm:h-64">
+              {image}
+            </div>
+          </Carousel.Item>
+          
+        ))}
+      </Carousel>
+    </div>*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 return(
 <div>
 
@@ -144,6 +233,11 @@ return(
 
    }
 
+
+<div>
+  <div><FaChevronLeft/></div>
+  <div><FaChevronRight/></div>
+</div>
 
 
 <div className="grid place-items-center relative">
@@ -176,26 +270,37 @@ return(
 
 
 
-<div className=" md:hidden   overflow-x-auto pl-4 pr-4  gap-4  flex   w-screen  bg-white sm:h-80   h-48 pt-4 custom-scrollbar ">
 
-   { allImages.map((image, index) => {
 
-    return(
-        
-      
+  <div className=" md:hidden   overflow-x-auto pl-2 pr-2  gap-2  flex   w-screen  bg-white sm:h-80   h-48 pt-4 custom-scrollbar ">
 
-        <div key={index} className="w-80 flex-grow-0  flex-shrink-0  relative overflow-hidden    sm:w-200 sm:h-64 " >
-            {image}
-        </div>   
+{ allImages.map((image, index) => {
+
+ return(
      
-        
-    )
-   })
+   
 
-   }
+     <div key={index} className="w-80 flex-grow-0  flex-shrink-0 transition-transform duration-500 ease-in-out  relative overflow-hidden    sm:w-200 sm:h-64 " ref={containerRef}  style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+         {image}
+     </div>   
+  
+     
+ )
+})
+
+}
 
 
 </div>
+
+
+
+
+<div>
+  <div><FaChevronLeft/></div>
+  <div><FaChevronRight/></div>
+</div>
+
 
 
 
