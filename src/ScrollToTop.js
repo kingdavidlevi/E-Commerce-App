@@ -10,7 +10,9 @@ function    ScrollToTop (){
     const [isFixed,setIsFixed] = useState(false)
     const location = useLocation();
     const [mobileFixed,mobileSetIsFixed] = useState(false)
-    
+    const [hamburger,setHamburger] = useState(false)
+
+
  useEffect(() =>{
   window.scrollTo(0,0);
 
@@ -47,7 +49,7 @@ function    ScrollToTop (){
 return (
     <div>
     <Header />
-    <Outlet context={{isFixed,setIsFixed,mobileFixed}}  />
+    <Outlet context={{isFixed,setIsFixed,mobileFixed,hamburger,setHamburger}}  />
     <Footer />
 
     </div>

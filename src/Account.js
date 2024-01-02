@@ -248,8 +248,8 @@ return(
 <div className=" mt-4 grid place-items-center ">
 
     <div className="flex justify-around sm:justify-end gap-4 sm:w-96 lg:w-256 xl:w-255">
-    <button className="md:w-53 h-12 text-lg w-40 bg-gray-300 font-medium hover:bg-slate-200 rounded-md" type="button" >Cancel</button>
-    <button className="text-white text-lg  w-40  font-normal md:w-53 h-12 rounded-md bg-red-600" type="button" >Save Changes</button>
+    <button className="md:w-53 h-12 text-lg w-32 sm:w-40 bg-gray-300 font-medium hover:bg-slate-200 rounded-md" type="button" >Cancel</button>
+    <button className="text-white text-lg w-32 sm:w-40  font-normal md:w-53 h-12 rounded-md bg-red-600" type="button" >Save Changes</button>
     </div>
 </div>
 

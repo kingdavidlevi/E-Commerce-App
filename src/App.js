@@ -14,6 +14,9 @@ import MiddlePage from './MiddlePage';
 import Cart from './Cart';
 import Account from './Account';
 
+
+
+
 const router = createBrowserRouter(createRoutesFromElements(
   <>
   <Route  element={<ScrollToTop/>} >

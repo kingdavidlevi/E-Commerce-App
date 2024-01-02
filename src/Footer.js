@@ -1,13 +1,15 @@
 import React from "react";
-
+import gitHub from './images/logo-github.png'
+import linkedin from './images/logo-linkedin.svg'
+import twitter from './images/logo-twitter.svg'
 
 
 function Footer (){
     return(
 
-       <div className=" inset-x-0 bottom-0 bg-black text-white pt-8 pb-10 hidden  md:block">
+       <div className=" inset-x-0 bottom-0 bg-black text-white pt-8 pb-10 block">
 
-        <div className="flex justify-around  ">
+        <div className="md:flex  md:justify-around  ">
 
       <div>
         <h3 className="text-lg font-sm">Exclusive</h3>
@@ -48,10 +50,10 @@ function Footer (){
 <div>
     <h3 className="text-lg font-sm">Contact Me</h3>
    <div>
-    <a href="https://"></a>
-    <a href="https://"></a>
-    <a href="https://"></a>
-    <a href="https://"></a>
+   <a href="https://github.com/kingdavidlevi" target="_blank"><div><img src={gitHub} alt="img" /></div> Github</a>
+   <a href="#" target="_blank"><div><img src={linkedin} alt="img" /></div>LinkedIn</a>
+                <a href=" https://twitter.com/Code_King_" target="_blank"><div><img src={twitter} alt="img"/></div>Twitter</a>
+              
    </div>
     
 </div>

@@ -49,7 +49,7 @@ const [minutes,setMinutes] = useState('')
 const [seconds,setSeconds] = useState('')
 const [Hover1, setHover1] = useState(false)
 const [Hover2, setHover2] = useState(false)
-const {isFixed,mobileFixed} = useOutletContext()
+const {isFixed,mobileFixed,hamburger} = useOutletContext()
 
 useEffect(() => {
 
@@ -101,9 +101,9 @@ return i
         <div className={`${ isFixed ? "lg:pt-30 md:pb-10   lg:pb-10 " : "lg:pt-8 md:pb-10  lg:pb-10 " }`}>
 
 
-        <div className="flex justify-center  ">
+        <div className="lg:flex block  lg:justify-center  ">
 
-     <div className="border-r-r  rounded-md h-75 shadow-lg bg-white pl-4 pr-6 lg:w-56 md:w-48 mr-2 border-gray-300 lg:block hidden ">
+     <div className="border-r-r  rounded-md h-98 shadow-lg bg-white pl-4 pr-6 lg:w-56 md:w-48 mr-2 border-gray-300 lg:block hidden ">
  <div className="flex hover:text-orange-400 justify-between mt-4  "   >  <NavLink to='/Appliances' className='text-sm font-medium block w-full'>Appliances </NavLink>   <img src={vectorSide} className="h-3 w-2 mt-1  " /> </div>
  <div className="flex hover:text-orange-400 justify-between mt-5 cursor-pointer">  <NavLink to='/Phones' className='text-sm font-medium  block w-full'>Phones & Tablets</NavLink>  <img src={vectorSide} className="h-3 w-2 mt-1" /> </div>
  <div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Fashion' className='text-sm font-medium block w-full'>Fashion</NavLink>   </div>
@@ -112,10 +112,42 @@ return i
  <div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Shoes</NavLink> </div>
  <div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Glassess</NavLink> </div>
  <div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Laptops</NavLink>  </div>
- <div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Clothes</NavLink> </div>
+ <div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Electronics</NavLink> </div>
+ <div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Health & Beauty</NavLink> </div>
+ 
+ <div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>other categories</NavLink> </div>
  
 
      </div>
+  
+
+
+
+     <div className=" lg:hidden block  overflow-x-hidden w-screen ">
+
+<div className={`${ hamburger ? "border-r-r top-32 sm:top-28 mt-2 rounded-md h-98  ml-0 shadow-lg fixed z-20 bg-white w-48 block pl-6 sm:w-60   border-gray-300  pr-2 " : "sm:w-60   pr-2   transition-transform duration-500 sm:top-28  sm:mt-2 ease-in-out   border-r-r top-32 rounded-md h-98 right-96 mr-20 shadow-lg fixed z-20 bg-white w-48 block pl-6    border-gray-300 lg:hidden  " }`}>
+<div className="flex  hover:text-orange-400  justify-between  mt-4  "   >  <NavLink to='/Appliances' className='text-sm font-medium block w-full'>Appliances </NavLink> <img src={vectorSide} className="h-3 w-2 mt-1  " />   </div>
+<div className="flex hover:text-orange-400 justify-between mt-5 cursor-pointer">  <NavLink to='/Phones' className='text-sm font-medium  block w-full'>Phones & Tablets</NavLink>  <img src={vectorSide} className="h-3 w-2 mt-1" />   </div>
+<div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Fashion' className='text-sm font-medium block w-full'>Fashion</NavLink>   </div>
+<div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Gaming</NavLink> </div>
+<div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Generator</NavLink> </div>
+<div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Shoes</NavLink> </div>
+<div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Glassess</NavLink> </div>
+<div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Laptops</NavLink>  </div>
+ 
+<div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Electronics</NavLink> </div>
+ <div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Health & Beauty</NavLink> </div>
+ 
+ <div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>other categories</NavLink> </div>
+</div>
+
+</div>
+
+
+
+
+
+
 
 
 <div className=    "sm:pt-34   pt-34   lg:pt-0" >
@@ -131,44 +163,15 @@ return i
 <div className=" mt-10 grid place-items-center ">
 
 
-<div className=" h-24 border-top-rounded items-center flex justify-between lg:w-340 md:w-270  bg-black xl:w-400 ">
+<div className=" h-14 border-top-rounded items-center grid place-items-center lg:w-340 md:w-270 w-screen bg-orange-400 xl:w-400 ">
 
-
-
- <div>
-<h3 className="text-white text-2xl font-medium ">Flash Sales</h3>
-</div>
-
-
-<div className="flex">
-    
-    <div>
-        <p className="text-white">Hours</p>
-        <h4 className="text-white"> {hours}:</h4> 
-    </div> 
-    <div>
-        <p className="text-white">Minutes</p>
-        <h4 className="text-white">{minutes}:</h4>
-    </div>
-    <div>
-        <p className="text-white">Seconds</p>
-        <h4 className="text-white">{seconds}</h4>
-    </div>
-</div>
-
-
-
- <div >
-<h3 className="text-white text-2xl font-medium ">{currentDate.toLocaleDateString()}</h3>
-</div>
-
-
+<p className="text-white font-medium text-xl">Appliances Deals</p>
 
 </div>
 
 
 
- <div className="lg:w-340 md:w-270 h-82 bg-white shadow-lg xl:w-400 border-black ">
+ <div className="lg:w-340 md:w-270 h-60 md:h-82 w-screen bg-white shadow-lg xl:w-400 border-black ">
 
  </div>
 
@@ -176,7 +179,7 @@ return i
 
 
 <section className="mt-24  ">
-    <h2 className="lg:text-4xl lg:font-bold md:text-3xl text-2xl font-medium  md:font-bold"> About Us</h2>
+    <h2 className="lg:text-4xl ml-2 md:ml-0 lg:font-bold md:text-3xl text-2xl font-medium  md:font-bold"> About Us</h2>
 
 <div className="lg:flex lg:mt-32 md:mt-24 grid place-items-center md:justify-center  mt-12">
     <p className="text-lg ml-2 md:ml-0 lg:mr-12 xl:mr-16 lg:mt-24 md:mb-0 mb-10 "><span className="lg:text-3xl md:text-2xl   font-medium">Our Story</span> <br/><br/>Launched in 2015,Exclusive is south Asia's premier online shopping<br/> marketplace with an active presence in Bangladesh. Supported <br/>by wide range of tailored marketing, data and service solutions.<br/>Exclusive has 10,500 sellers and 300 brands and serves 3 <br/> millons customers across the region.<br/><br/>Exclusive has more than 1 Million products to offer,growind at a <br/>very fast pace.Exclusive offers a diverse assotment in categories<br/> ranging from consumer.</p>

@@ -12,8 +12,15 @@ import { useNavigate } from "react-router-dom";
 function HomePage() {
  const Ref = useRef()
 const location = useLocation()
-const {isFixed,mobileFixed} = useOutletContext()
+const {isFixed,mobileFixed,hamburger,setHamburger} = useOutletContext()
 const navigate = useNavigate()
+
+
+const clickHumburger = () => {
+  setHamburger(prevstate => !prevstate)
+  console.log('confirm')
+}
+
 
 /*window.addEventListener('popstate', function(event){
     if(document.location.pathname === '/Login'){
@@ -98,7 +105,7 @@ const navigate = useNavigate()
         
         <div className= "lg:hidden fixed bg-white h-28 w-full top-0  z-10 pt-4 px-4" >
          <div className="flex justify-between">
-         <div className="flex"><span className="text-lg mt-2 mr-4"><FaBars/></span> <p className="text-2xl  text-black  font-bold font-mono"> Exclusive</p></div>
+         <div className="flex"><span className="text-lg mt-2 mr-4" onClick={clickHumburger}><FaBars/></span> <p className="text-2xl  text-black  font-bold font-mono"> Exclusive</p></div>
 
          <div className="flex" ><div onClick={navigateAccount} className="cursor-pointer"><img src={user} alt="user"  /></div> <div className="ml-4 cursor-pointer" onClick={NavigateCart}><img src={cart} /></div> </div>
 
