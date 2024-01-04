@@ -43,17 +43,24 @@ function Footer (){
 <p className="mt-4 text-sm">Privacy Policy</p>
 <p className="mt-4 text-sm">Terms Of Use</p>
 <p className="mt-4 text-sm">FAQ</p>
-<p className="mt-4 text-sm">Contact</p>
+ 
 </div>
 
 
 <div>
     <h3 className="text-lg font-sm">Contact Me</h3>
    <div>
-   <a href="https://github.com/kingdavidlevi" target="_blank"><div><img src={gitHub} alt="img" /></div> Github</a>
-   <a href="#" target="_blank"><div><img src={linkedin} alt="img" /></div>LinkedIn</a>
-                <a href=" https://twitter.com/Code_King_" target="_blank"><div><img src={twitter} alt="img"/></div>Twitter</a>
-              
+    <p className="mt-4 text-sm">
+   <a href="https://github.com/kingdavidlevi" target="_blank"> Github</a>
+   </p>
+
+   <p className="mt-4 text-sm">
+   <a href="#" target="_blank">LinkedIn</a>
+   </p>
+
+   <p className="mt-4 text-sm">
+     <a href=" https://twitter.com/Code_King_" target="_blank">Twitter</a>
+     </p>        
    </div>
     
 </div>

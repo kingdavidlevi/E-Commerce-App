@@ -1,5 +1,5 @@
 import React,{useEffect, useRef, useState} from "react";
-import {FaBars,FaCog, FaHeartbeat} from 'react-icons/fa'
+import {FaBars,FaCog, FaHeartbeat,FaTimes} from 'react-icons/fa'
 import { NavLink,useLocation, useOutletContext } from "react-router-dom";
 import MiddlePage from "./MiddlePage";
 import './ScrollableComponent.css';
@@ -18,7 +18,7 @@ const navigate = useNavigate()
 
 const clickHumburger = () => {
   setHamburger(prevstate => !prevstate)
-  console.log('confirm')
+ 
 }
 
 
@@ -105,7 +105,8 @@ const clickHumburger = () => {
         
         <div className= "lg:hidden fixed bg-white h-28 w-full top-0  z-10 pt-4 px-4" >
          <div className="flex justify-between">
-         <div className="flex"><span className="text-lg mt-2 mr-4" onClick={clickHumburger}><FaBars/></span> <p className="text-2xl  text-black  font-bold font-mono"> Exclusive</p></div>
+      { hamburger ?   <div className="flex"><span className="text-xl mt-2 mr-3.5" onClick={clickHumburger}><FaTimes/></span> <p className="text-2xl  text-black  font-bold font-mono"> Exclusive</p></div> :
+        <div className="flex"><span className="text-lg mt-2 mr-4" onClick={clickHumburger}><FaBars/></span> <p className="text-2xl  text-black  font-bold font-mono"> Exclusive</p></div> }
 
          <div className="flex" ><div onClick={navigateAccount} className="cursor-pointer"><img src={user} alt="user"  /></div> <div className="ml-4 cursor-pointer" onClick={NavigateCart}><img src={cart} /></div> </div>
 

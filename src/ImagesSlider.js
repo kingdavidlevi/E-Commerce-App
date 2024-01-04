@@ -8,15 +8,14 @@ import image6 from './images/Adis_BLF231168X384copy.jpg'
 import image7 from './images/Desktop_MLP_Slider__1168x384.jpg'
 import image8 from './images/Frame 600.png'
 import { FaDot,FaChevronRight,FaChevronLeft } from "react-icons/fa";
-//import './style.css'
-import { Carousel } from "react-bootstrap";
- import db from './firebase'
-
-
+ import getImageUrls from "./getImageUrls";
+ 
+ 
 
 
 
 function ImageSlider () {
+ const [imageurls,setImageUrls] = useState([])
 
 
    const [index,setIndex] = useState(0)
@@ -39,6 +38,8 @@ function ImageSlider () {
    const [mobilediv6 , mobilesetdiv6] = useState(false)
    const [mobilediv7 , mobilesetdiv7] = useState(false)
    const [mobilediv8 , mobilesetdiv8] = useState(false)
+   const [isloading, setloading] = useState(false)
+   const [showArrow,setShowArrow] = useState(false)
 
 
 const allImages  = [
@@ -53,6 +54,25 @@ const allImages  = [
 ];
 
 
+
+
+useEffect(() => {
+  const fetchImages = async () => {
+    
+    try {
+      const urls = await getImageUrls("images/"); // Adjust the path as needed
+      console.log(urls)
+      setImageUrls(urls);
+       
+    } catch (error) {
+      console.error("Error fetching image URLs:", error);
+    }
+  };
+  
+  
+
+  fetchImages();
+}, []);
  
 
 
@@ -220,7 +240,11 @@ const handleNext = () => {
 
 
 const handlePrev = () => {
+   
+    
+
   setCurrentIndex((prevIndex) => (prevIndex - 1 + allImages.length) % allImages.length);
+ 
 
   if(currentIndex ===  0){
     setdiv1(true)
@@ -291,7 +315,7 @@ const handlePrev = () => {
 
 
 }
- 
+
 
 
 useEffect(() => {
@@ -299,10 +323,7 @@ const intervalid = setInterval(() => {
   mobilesetCurrentIndex((prevIndex) => (prevIndex + 1) % allImages.length)
 
 
-/*if (containerRef.current){
-  const imageHeight = containerRef.current.clientHeight;
-  containerRef.current.scrollTop = mobilecurrentIndex * imageHeight
-}*/
+ 
 
 if (mobilecurrentIndex === 0){
   mobilesetdiv1(true)
@@ -389,43 +410,20 @@ return () => clearInterval(intervalid)
 
 
 
- /* if(containerRef.current){
-    const imageHeight = containerRef.current.clientHeight;
-    containerRef.current.scrollTop = mobilecurrentIndex * imageHeight;
-  }*/
+ 
+
+/*
+*/
 
 
+/*
+ */
 
-
- /* if (containerRef.current) {
-    const imageHeight = containerRef.current.clientHeight;
-    containerRef.current.scrollTop = mobilecurrentIndex * imageHeight;
-  }*/
-
-
-
-
-/*<div className="md:hidden overflow-x-auto pl-2 pr-2 gap-4 flex w-screen bg-white sm:h-80 h-48 pt-4 custom-scrollbar">
-      <Carousel activeIndex={index} onSelect={handleSelect} className="w-full">
-        {allImages.map((image, idx) => (
-          
-          <Carousel.Item key={idx}>
-            <div className="w-80 flex-grow-0 flex-shrink-0 relative overflow-hidden sm:w-200 sm:h-64">
-              {image}
-            </div>
-          </Carousel.Item>
-          
-        ))}
-      </Carousel>
-    </div>*/
-
-
-
-
-
-
-
-
+const handleArrow = () => {
+  setShowArrow(true)
+}
+ 
+     
 
 
 
@@ -444,12 +442,12 @@ return(
     <div className="hidden md:grid place-items-center ">
 
 
-   { allImages.map((image, index) => {
+   { allImages.map((images, index) => {
 
     return(
         
-        <div key={index} className="relative " style={{display:index === currentIndex ? 'block' : 'none'}}>
-            {image}
+        <div key={index}  className="relative " style={{display:index === currentIndex ? 'block' : 'none'}} onMouseOver={handleArrow}   >
+              {images}
         </div>   
 
     )
@@ -457,11 +455,18 @@ return(
 
    }
 
+ 
 
-<div className=" hidden md:flex absolute md:w-270 xl:w-350 pl-4 pr-4 top-96 mt-6 lg:w-280 sm:w-200 justify-between ">
+
+
+
+
+
+
+{ showArrow && <div className=" hidden md:flex absolute md:w-270 xl:w-350 pl-4 pr-4 top-96 mt-6 lg:w-280 sm:w-200 justify-between ">
   <div className="w-10 h-10 bg-gray-300 grid place-content-center rounded-full " onClick={handlePrev} ><FaChevronLeft className="text-lg"  /></div>
   <div  className="w-10 h-10 bg-gray-300 grid place-content-center rounded-full " onClick={handleNext}><FaChevronRight className="text-lg" /> </div>
-</div>
+</div>}
 
 
 <div className="grid place-items-center relative">
@@ -475,11 +480,6 @@ return(
         <div   className={`${ div7 ? 'w-2 h-2 bg-orange-400 rounded-full'  : 'w-2 h-2 bg-gray-400 rounded-full' }`}></div>
         <div   className={`${ div8 ? 'w-2 h-2 bg-orange-400 rounded-full'  : 'w-2 h-2 bg-gray-400 rounded-full' }`}></div>
 
-
-
-
-
-
         </div>
 
         </div>
@@ -489,30 +489,34 @@ return(
   </div>
 
 
-  
 
 
 
 
 
+  <div className=" md:hidden   overflow-x-hidden pl-2 pr-2  gap-3  flex   w-full  bg-white sm:h-80   h-48 pt-4 custom-scrollbar ">
 
-  <div className=" md:hidden   overflow-x-hidden pl-2 pr-2  gap-3  flex   w-screen  bg-white sm:h-80   h-48 pt-4 custom-scrollbar ">
+  { imageurls.map((url, index) => {
 
-{ allImages.map((image, index) => {
+return(
+    
 
- return(
-     
    
 
-     <div key={index} className="w-80 flex-grow-0  flex-shrink-0 transition-transform duration-500 ease-in-out  relative    sm:w-200 sm:h-64 " ref={containerRef}  style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-         {image}
-     </div>   
-  
-     
- )
+  <div key={url} className="w-80 flex-grow-0  flex-shrink-0 transition-transform duration-500 ease-in-out  relative    sm:w-200 sm:h-64 " ref={containerRef}  style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+   <img src={imageurls}  className="md:h-98 md:w-270 xl:w-350 lg:w-280 sm:w-200 sm:h-64 w-80 h-40  rounded-lg" alt="image"/> 
+</div> 
+
+ 
+ 
+    
+)
 })
 
 }
+
+
+
 
 
 </div>
@@ -557,3 +561,10 @@ return(
 }
 
 export default ImageSlider;
+
+
+/*<div>
+      {imageurls.map((url) => (
+        <img key={url} src={url} alt="Image" />
+      ))}
+    </div>*/

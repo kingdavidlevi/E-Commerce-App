@@ -51,46 +51,11 @@ const [Hover1, setHover1] = useState(false)
 const [Hover2, setHover2] = useState(false)
 const {isFixed,mobileFixed,hamburger} = useOutletContext()
 
-useEffect(() => {
+ 
 
-    const intervalid = setInterval(() => {
-        setCurrentDate(new Date())
-    
-    },1000)
-    
-    return () => clearInterval(intervalid);
-    
-    
-    },[])
+ 
 
-
-
-useEffect(() => {
-    function  startTime () {
-    const today = new Date()
-    let h = today.getHours()
-setHours(h)
-    let m = today.getMinutes()
-    setMinutes(m)
-    let s = today.getSeconds()
-    setSeconds(s)
-    m = CheckTime(m)
-    s = CheckTime(s)
-}
-
-setTimeout(startTime, 1000)
-
-},[])
-
-
-const CheckTime = (i) => {
-if (i < 10 ){ i = "0" + i }
-
-return i
-
-
-}
-
+ 
 
  
 
@@ -125,7 +90,7 @@ return i
 
      <div className=" lg:hidden block  overflow-x-hidden w-screen ">
 
-<div className={`${ hamburger ? "border-r-r top-32 sm:top-28 mt-2 rounded-md h-98  ml-0 shadow-lg fixed z-20 bg-white w-48 block pl-6 sm:w-60   border-gray-300  pr-2 " : "sm:w-60   pr-2   transition-transform duration-500 sm:top-28  sm:mt-2 ease-in-out   border-r-r top-32 rounded-md h-98 right-96 mr-20 shadow-lg fixed z-20 bg-white w-48 block pl-6    border-gray-300 lg:hidden  " }`}>
+<div className={`${ hamburger ? "border-r-r top-32 sm:top-28 mt-2 rounded-md h-98  ml-0 shadow-lg fixed z-20 bg-white  w-48 block pl-6 sm:w-60   border-gray-300  pr-2 " : "sm:w-60   pr-2   transition-transform delay-500 duration-500 sm:top-28  sm:mt-2 ease-in-out   border-r-r top-32 rounded-md h-98 right-96 mr-20 shadow-lg fixed z-20 bg-white w-48 block pl-6    border-gray-300 lg:hidden  " }`}>
 <div className="flex  hover:text-orange-400  justify-between  mt-4  "   >  <NavLink to='/Appliances' className='text-sm font-medium block w-full'>Appliances </NavLink> <img src={vectorSide} className="h-3 w-2 mt-1  " />   </div>
 <div className="flex hover:text-orange-400 justify-between mt-5 cursor-pointer">  <NavLink to='/Phones' className='text-sm font-medium  block w-full'>Phones & Tablets</NavLink>  <img src={vectorSide} className="h-3 w-2 mt-1" />   </div>
 <div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Fashion' className='text-sm font-medium block w-full'>Fashion</NavLink>   </div>
@@ -163,7 +128,7 @@ return i
 <div className=" mt-10 grid place-items-center ">
 
 
-<div className=" h-14 border-top-rounded items-center grid place-items-center lg:w-340 md:w-270 w-screen bg-orange-400 xl:w-400 ">
+<div className=" h-14 border-top-rounded items-center grid place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
 
 <p className="text-white font-medium text-xl">Appliances Deals</p>
 
@@ -171,7 +136,7 @@ return i
 
 
 
- <div className="lg:w-340 md:w-270 h-60 md:h-82 w-screen bg-white shadow-lg xl:w-400 border-black ">
+ <div className="lg:w-340 md:w-270 h-60 md:h-82 w-full bg-white shadow-lg xl:w-400 border-black ">
 
  </div>
 
