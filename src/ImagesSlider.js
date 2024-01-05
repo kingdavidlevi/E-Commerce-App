@@ -96,7 +96,7 @@ useEffect(() => {
       if (docSnapshot.exists()) {
           const data = docSnapshot.data()
          setImageUrls(data.arrayOfObjects)
-         console.log(data)
+        
        /* setDataList(arrayOfObjects.map((item) => item.mapValue.fields));*/
 
       
@@ -201,7 +201,7 @@ useEffect(() => {
 
     return () => clearInterval(interval)
 
-},[currentIndex])
+},[imageurls.length])
 
 
 
@@ -489,11 +489,11 @@ return(
     <div className="hidden md:grid place-items-center ">
 
      {imageurls.length > 0 ? (
-   imageurls.map((url, index) => {
-
+   imageurls.map((url,id) => {
+ 
     return(
         
-        <div key={url.id}  className="relative " style={{display:index === currentIndex ? 'block' : 'none'}} onMouseOver={handleArrow}   >
+        <div key={url.id}  className="relative " style={{display:id === currentIndex ? 'block' : 'none'}}  onMouseOver={handleArrow}   >
               <img src={url.pictureURL}  className="md:h-98 md:w-270 xl:w-350 lg:w-280 sm:w-200 sm:h-64 w-80 h-40  rounded-lg" alt="image"/> 
   
         </div>   
@@ -554,7 +554,7 @@ return(
 
    
 
-  <div key={url.id} className="w-80 flex-grow-0  flex-shrink-0 transition-transform duration-500 ease-in-out  relative    sm:w-200 sm:h-64 " ref={containerRef}  style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+  <div key={url.id} className="w-80 flex-grow-0  flex-shrink-0 transition-transform duration-500 ease-in-out  relative    sm:w-200 sm:h-64 " ref={containerRef}  style={{ transform: `translateX(-${mobilecurrentIndex * 100}%)` }}>
    <img src={url.pictureURL}  className="md:h-98 md:w-270 xl:w-350 lg:w-280 sm:w-200 sm:h-64 w-80 h-40  rounded-lg" alt="image"/> 
 </div> 
 
