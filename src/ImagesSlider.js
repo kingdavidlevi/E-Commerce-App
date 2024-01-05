@@ -9,7 +9,12 @@ import image7 from './images/Desktop_MLP_Slider__1168x384.jpg'
 import image8 from './images/Frame 600.png'
 import { FaDot,FaChevronRight,FaChevronLeft } from "react-icons/fa";
  import getImageUrls from "./getImageUrls";
- 
+ import { initializeApp } from "firebase/app";
+ import { getFirestore, collection,doc, getDoc } from 'firebase/firestore';
+ import {firebaseConfig} from './firebase'
+
+
+
  
 
 
@@ -40,6 +45,14 @@ function ImageSlider () {
    const [mobilediv8 , mobilesetdiv8] = useState(false)
    const [isloading, setloading] = useState(false)
    const [showArrow,setShowArrow] = useState(false)
+   
+ const [dataList, setDataList] = useState([]);
+ const app = initializeApp(firebaseConfig);
+ const firestore = getFirestore(app)
+
+
+
+
 
 
 const allImages  = [
@@ -56,7 +69,7 @@ const allImages  = [
 
 
 
-useEffect(() => {
+/*useEffect(() => {
   const fetchImages = async () => {
     
     try {
@@ -73,6 +86,47 @@ useEffect(() => {
 
   fetchImages();
 }, []);
+*/
+
+
+
+
+
+
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      // Use Firestore collection
+      const myDocumentRef = doc(firestore, 'mysecondcollection', 'SZgTb8YwJ1PpAvPCXpQI');
+    
+      // Fetch the specific document
+      const docSnapshot = await getDoc(myDocumentRef);
+      console.log(docSnapshot)
+      
+      if (docSnapshot.exists()) {
+          const data = docSnapshot.data()
+         setImageUrls(data.arrayOfObjects)
+         console.log(data)
+       /* setDataList(arrayOfObjects.map((item) => item.mapValue.fields));*/
+
+      
+      } else {
+        console.log('Document does not exist.');
+      }
+    } catch (error) {
+      console.log('Error fetching data:', error);
+    }
+  };
+
+  fetchData(); // Invoke the function to fetch data when the component mounts
+}, []); // Empty dependency array means the effect runs once after the initial render
+
+
+
+
+
+
+
  
 
 
@@ -439,20 +493,27 @@ return(
 
 
 
+
+
+
     <div className="hidden md:grid place-items-center ">
 
-
-   { allImages.map((images, index) => {
+     {imageurls.length > 0 ? (
+   imageurls.map((url, index) => {
 
     return(
         
-        <div key={index}  className="relative " style={{display:index === currentIndex ? 'block' : 'none'}} onMouseOver={handleArrow}   >
-              {images}
+        <div key={url.id}  className="relative " style={{display:index === currentIndex ? 'block' : 'none'}} onMouseOver={handleArrow}   >
+              <img src={url.pictureURL}  className="md:h-98 md:w-270 xl:w-350 lg:w-280 sm:w-200 sm:h-64 w-80 h-40  rounded-lg" alt="image"/> 
+  
         </div>   
 
     )
-   })
+    })
 
+   ) : 
+   
+   <p>Loading...</p>
    }
 
  
@@ -496,21 +557,22 @@ return(
 
   <div className=" md:hidden   overflow-x-hidden pl-2 pr-2  gap-3  flex   w-full  bg-white sm:h-80   h-48 pt-4 custom-scrollbar ">
 
-  { imageurls.map((url, index) => {
+ {imageurls.map((url, index) => {
 
 return(
     
 
    
 
-  <div key={url} className="w-80 flex-grow-0  flex-shrink-0 transition-transform duration-500 ease-in-out  relative    sm:w-200 sm:h-64 " ref={containerRef}  style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-   <img src={imageurls}  className="md:h-98 md:w-270 xl:w-350 lg:w-280 sm:w-200 sm:h-64 w-80 h-40  rounded-lg" alt="image"/> 
+  <div key={url.id} className="w-80 flex-grow-0  flex-shrink-0 transition-transform duration-500 ease-in-out  relative    sm:w-200 sm:h-64 " ref={containerRef}  style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+   <img src={url.pictureURL}  className="md:h-98 md:w-270 xl:w-350 lg:w-280 sm:w-200 sm:h-64 w-80 h-40  rounded-lg" alt="image"/> 
 </div> 
 
  
- 
+
     
 )
+  
 })
 
 }

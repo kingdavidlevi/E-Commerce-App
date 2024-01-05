@@ -10,35 +10,12 @@ import page2 from './images/Frame 871.png'
 import page3 from './images/Frame 872.png'
 import page4 from './images/Frame 873.png'
 import vector from './images/Vector.png'
-
-
-
-
-/*useEffect(() => {
-    const inter = setInterval(() => {
-        const currentTime = new Date();
-        const targetTime = new Date ('2023-01-01T00:00:00')
-        const differnce = targetTime - currentTime;
-        setTimeDiffernce(differnce)
-
-    },1000)
-
-    return () => clearInterval(inter)
-},[])
-
-const formatTime = (time) => (time < 10 ? `${time}` : `${time}`)
-
-const absoluteDays = Math.abs(Math.floor(timeDifference / (1000 * 60 * 60 * 24)))
+import getImageUrls from "./getImageUrls";
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection,doc, getDoc } from 'firebase/firestore';
+import {firebaseConfig} from './firebase'
 
  
-const days = Math.floor(timeDifference / (1000 * 60 * 60 *24 ));
-const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24 )) / (1000 * 60 * 60))
-const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60))
-const seconds = Math.floor((timeDifference % (1000 *60)) /1000)
-*/
-
-
-
 
 
  function MiddlePage () {
@@ -50,14 +27,69 @@ const [seconds,setSeconds] = useState('')
 const [Hover1, setHover1] = useState(false)
 const [Hover2, setHover2] = useState(false)
 const {isFixed,mobileFixed,hamburger} = useOutletContext()
+const {imageUrls,setImageUrls} =useState([])
+const [dataList, setDataList] = useState([]);
+const app = initializeApp(firebaseConfig);
+const firestore = getFirestore(app)
 
+
+
+/*useEffect(() => {
+    const fetchImages = async () => {
+      
+      try {
+        const urls = await getImageUrls("ImagesGif/"); // Adjust the path as needed
+        console.log(urls)
+         
+         
+      } catch (error) {
+        console.error("Error fetching image URLs:", error);
+      }
+    };
+    
+    
+  
+    fetchImages();
+  }, []);
+  
+*/
  
 
- 
+
+
+
+
+
+
 
  
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // Use Firestore collection
+        const myDocumentRef = doc(firestore, 'mycollection', '02QnSR7o1X1OojLvR8iQ');
+      
+        // Fetch the specific document
+        const docSnapshot = await getDoc(myDocumentRef);
+        console.log(docSnapshot)
+        
+        if (docSnapshot.exists()) {
+            const data = docSnapshot.data()
+           setDataList(data.arrayOfObjects)
+         
+         /* setDataList(arrayOfObjects.map((item) => item.mapValue.fields));*/
 
- 
+        
+        } else {
+          console.log('Document does not exist.');
+        }
+      } catch (error) {
+        console.log('Error fetching data:', error);
+      }
+    };
+
+    fetchData(); // Invoke the function to fetch data when the component mounts
+  }, []); // Empty dependency array means the effect runs once after the initial render
 
 
 
@@ -125,10 +157,31 @@ const {isFixed,mobileFixed,hamburger} = useOutletContext()
 </div>
 
 
-<div className=" mt-10 grid place-items-center ">
+<div className=" mt-4 grid place-items-center ">
 
 
-<div className=" h-14 border-top-rounded items-center grid place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
+
+
+<div className="lg:w-340 flex md:pt-10 lg:px-2 px-4 lg:pt-6 xl:pt-1 flex-wrap md:w-270 pt-6 sm:pt-2 h-60 sm:h-82 md:h-100 rounded-md w-full mb-4 bg-white shadow-lg xl:w-400 border-black ">
+{dataList.length > 0 ? (
+    dataList.map((item,index) => (
+      <div key={item.id} className="md:w-1/4 w-1/4 p-2 md:pl-1.5">
+        
+        <img src={item.pictureURL} className="w-full h-auto" alt={`Image ${index}`}/>
+      </div>
+    ))
+  ) : (
+    <p>Loading...</p>
+  )}
+
+</div>
+
+
+
+
+
+
+<div className=" rounded-tr-md rounded-tl-md h-14 border-top-rounded items-center grid place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
 
 <p className="text-white font-medium text-xl">Appliances Deals</p>
 
@@ -136,7 +189,7 @@ const {isFixed,mobileFixed,hamburger} = useOutletContext()
 
 
 
- <div className="lg:w-340 md:w-270 h-60 md:h-82 w-full bg-white shadow-lg xl:w-400 border-black ">
+ <div className="lg:w-340 rounded-br-md rounded-bl-md md:w-270 h-60 md:h-82 w-full  bg-white shadow-lg xl:w-400 border-black ">
 
  </div>
 
