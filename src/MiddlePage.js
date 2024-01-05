@@ -162,12 +162,12 @@ const firestore = getFirestore(app)
 
 
 
-<div className="lg:w-340 md:flex grid grid-cols-3 md:pt-10 lg:px-2 px-4 lg:pt-6 xl:pt-1 flex-wrap  pt-8 sm:pt-1 h-100 sm:h-82 md:h-100 rounded-md md:w-270  mb-4 sm:w-100 w-full bg-white shadow-lg xl:w-400  ">
+<div className="lg:w-340 md:flex grid grid-cols-3 md:pt-10 lg:px-2 px-2 lg:pt-6 xl:pt-1 flex-wrap  pt-2 sm:pt-1 pb-2 sm:h-82 md:h-100 rounded-md md:w-270  mb-4 sm:w-100 w-full bg-white shadow-lg xl:w-400  ">
 {dataList.length > 0 ? (
     dataList.map((item,index) => (
       <div key={item.id} className="md:w-1/4  p-2 md:pl-1.5">
         
-        <img src={item.pictureURL} className="md:w-full md:h-auto h-28 w-28" alt={`Image ${index}`}/>
+        <img src={item.pictureURL} className="md:w-full rounded-lg md:h-auto h-36 w-32 " alt={`Image ${index}`}/>
       </div>
     ))
   ) : (
