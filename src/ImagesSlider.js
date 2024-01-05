@@ -201,7 +201,7 @@ useEffect(() => {
 
     return () => clearInterval(interval)
 
-},[currentIndex])
+},[currentIndex,imageurls.length])
 
 
 
@@ -541,13 +541,16 @@ return(
 
 
 
+  
 
 
 
 
   <div className=" md:hidden   overflow-x-hidden pl-2 pr-2  gap-3  flex   w-full  bg-white sm:h-80   h-48 pt-4 custom-scrollbar ">
 
- {imageurls.map((url, index) => {
+{imageurls.length > 0 ? (
+
+ imageurls.map((url, index) => {
 
 return(
     
@@ -565,8 +568,11 @@ return(
   
 })
 
-}
 
+) : 
+<p>loading</p>
+
+}
 
 
 
