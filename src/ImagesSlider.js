@@ -101,7 +101,7 @@ useEffect(() => {
 
       
       } else {
-        console.log('Document does not exist.');
+        console.log('');
       }
     } catch (error) {
       console.log('Error fetching data:', error);
@@ -124,7 +124,7 @@ useEffect(() => {
     const interval = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % imageurls.length );
       
-      if(currentIndex ===  0){
+      if(currentIndex === 0){
         setdiv1(true)
         
         
@@ -201,7 +201,7 @@ useEffect(() => {
 
     return () => clearInterval(interval)
 
-},[imageurls.length])
+},[currentIndex])
 
 
 
