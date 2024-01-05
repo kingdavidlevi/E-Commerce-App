@@ -162,12 +162,12 @@ const firestore = getFirestore(app)
 
 
 
-<div className="lg:w-340 flex md:pt-10 lg:px-2 px-4 lg:pt-6 xl:pt-1 flex-wrap md:w-270 pt-6 sm:pt-2 h-60 sm:h-82 md:h-100 rounded-md w-full mb-4 bg-white shadow-lg xl:w-400 border-black ">
+<div className="lg:w-340 md:flex grid grid-cols-3 md:pt-10 lg:px-2 px-4 lg:pt-6 xl:pt-1 flex-wrap  pt-8 sm:pt-1 h-100 sm:h-82 md:h-100 rounded-md md:w-270  mb-4 sm:w-100 w-full bg-white shadow-lg xl:w-400  ">
 {dataList.length > 0 ? (
     dataList.map((item,index) => (
-      <div key={item.id} className="md:w-1/4 w-1/4 p-2 md:pl-1.5">
+      <div key={item.id} className="md:w-1/4  p-2 md:pl-1.5">
         
-        <img src={item.pictureURL} className="w-full h-auto" alt={`Image ${index}`}/>
+        <img src={item.pictureURL} className="md:w-full md:h-auto h-28 w-28" alt={`Image ${index}`}/>
       </div>
     ))
   ) : (
@@ -181,7 +181,7 @@ const firestore = getFirestore(app)
 
 
 
-<div className=" rounded-tr-md rounded-tl-md h-14 border-top-rounded items-center grid place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
+<div className=" rounded-tr-md rounded-tl-md h-14 border-top-rounded items-center grid sm:w-100 place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
 
 <p className="text-white font-medium text-xl">Appliances Deals</p>
 
@@ -189,7 +189,7 @@ const firestore = getFirestore(app)
 
 
 
- <div className="lg:w-340 rounded-br-md rounded-bl-md md:w-270 h-60 md:h-82 w-full  bg-white shadow-lg xl:w-400 border-black ">
+ <div className="lg:w-340 rounded-br-md rounded-bl-md sm:w-100 md:w-270 h-60 md:h-82 w-full  bg-white shadow-lg xl:w-400 border-black ">
 
  </div>
 

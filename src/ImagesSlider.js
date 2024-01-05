@@ -55,16 +55,6 @@ function ImageSlider () {
 
 
 
-const allImages  = [
-    <img key={0} src={image1}  className="md:h-98 md:w-270 xl:w-350  lg:w-280 sm:w-200 sm:h-64 w-80 h-40 rounded-lg "  />  ,
-    <img key={1} src={image2}  className="md:h-98 md:w-270 xl:w-350 lg:w-280 sm:w-200 sm:h-64 w-80 h-40  rounded-lg "  />,
-    <img key={2} src={image3}   className="md:h-98 md:w-270 xl:w-350 lg:w-280 sm:w-200 sm:h-64 w-80 h-40   rounded-lg " />,
-    <img key={3} src={image4}  className="md:h-98 md:w-270 xl:w-350 lg:w-280 sm:w-200 sm:h-64 w-80 h-40 rounded-lg"  />,
-    <img key={4} src={image5}  className="md:h-98 md:w-270 xl:w-350 lg:w-280 sm:w-200 sm:h-64 w-80 h-40  rounded-lg"  />,
-    <img key={5} src={image6}  className="md:h-98 md:w-270 xl:w-350 lg:w-280 sm:w-200 sm:h-64 w-80 h-40 rounded-lg"  />,
-    <img key={6} src={image7}  className="md:h-98 md:w-270 xl:w-350 lg:w-280 sm:w-200 sm:h-64 w-80 h-40  rounded-lg"  />,
-    <img key={7} src={image8}  className="md:h-98 md:w-270 xl:w-350 lg:w-280 sm:w-200 sm:h-64 w-80 h-40  rounded-lg"  />,
-];
 
 
 
@@ -132,7 +122,7 @@ useEffect(() => {
 
 useEffect(() => {
     const interval = setInterval(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % allImages.length );
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % imageurls.length );
       
       if(currentIndex ===  0){
         setdiv1(true)
@@ -216,7 +206,7 @@ useEffect(() => {
 
 
 const handleNext = () => {
-  setCurrentIndex((prevIndex) => (prevIndex + 1 ) % allImages.length)
+  setCurrentIndex((prevIndex) => (prevIndex + 1 ) % imageurls.length)
 
   if(currentIndex ===  0){
     setdiv1(true)
@@ -297,7 +287,7 @@ const handlePrev = () => {
    
     
 
-  setCurrentIndex((prevIndex) => (prevIndex - 1 + allImages.length) % allImages.length);
+  setCurrentIndex((prevIndex) => (prevIndex - 1 + imageurls.length) % imageurls.length);
  
 
   if(currentIndex ===  0){
@@ -374,7 +364,7 @@ const handlePrev = () => {
 
 useEffect(() => {
 const intervalid = setInterval(() => {
-  mobilesetCurrentIndex((prevIndex) => (prevIndex + 1) % allImages.length)
+  mobilesetCurrentIndex((prevIndex) => (prevIndex + 1) % imageurls.length)
 
 
  
@@ -458,7 +448,7 @@ else{
  
 return () => clearInterval(intervalid)
 
-},[allImages.length])
+},[imageurls.length])
 
 
 
