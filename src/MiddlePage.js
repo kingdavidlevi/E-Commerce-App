@@ -14,7 +14,7 @@ import getImageUrls from "./getImageUrls";
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection,doc, getDoc } from 'firebase/firestore';
 import {firebaseConfig} from './firebase'
-
+import demo from './images/istockphoto-1291418648-2048x2048 (2).jpg'
  
 
 
@@ -56,6 +56,17 @@ const firestore = getFirestore(app)
  
 
 
+const allDemo = [
+  <img index={0} src={demo} className="lg:w-full rounded-lg lg:h-52 md:w-40 md:h-44 h-36 w-34 " />,
+  <img index={1} src={demo} className="lg:w-full rounded-lg lg:h-52 md:w-40 md:h-44 h-36 w-34 "  />,
+  <img index={2} src={demo} className="lg:w-full rounded-lg lg:h-52 md:w-40 md:h-44 h-36 w-34 "  />,
+  <img index={3} src={demo} className="lg:w-full rounded-lg lg:h-52 md:w-40 md:h-44 h-36 w-34 "  />,
+  <img index={4} src={demo}  className="lg:w-full rounded-lg lg:h-52 md:w-40 md:h-44 h-36 w-34 " />,
+  <img index={5} src={demo} className="lg:w-full rounded-lg lg:h-52 md:w-40 md:h-44 h-36 w-34 "  />,
+  <img index={6} src={demo}  className="lg:w-full rounded-lg lg:h-52 md:w-40 md:h-44 h-36 w-34 " />,
+  <img index={7} src={demo}  className="lg:w-full rounded-lg lg:h-52 md:w-40 md:h-44 h-36 w-34 " />,
+ 
+]
 
 
 
@@ -169,12 +180,21 @@ const firestore = getFirestore(app)
         
         <img src={item.pictureURL} className="lg:w-full rounded-lg lg:h-auto md:w-40 md:h-44 h-36 w-32 " alt={`Image ${index}`}/>
       </div>
+       
     ))
   ) : ( 
-    <p>Loading...</p>
-  )}
+    
+    
+    allDemo.map((item, index) => (
+      <div className="lg:w-1/4  p-2 md:pl-1.5   " key={index}>{item}</div>
+    ))
+  
 
+  
+
+  )}
 </div>
+
 
 
 
