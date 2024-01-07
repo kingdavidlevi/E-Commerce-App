@@ -12,7 +12,7 @@ import { FaDot,FaChevronRight,FaChevronLeft } from "react-icons/fa";
  import { initializeApp } from "firebase/app";
  import { getFirestore, collection,doc, getDoc } from 'firebase/firestore';
  import {firebaseConfig} from './firebase'
-
+import demo from './images/istockphoto-1291418648-2048x2048 (2).jpg'
 
 
  
@@ -77,9 +77,6 @@ function ImageSlider () {
   fetchImages();
 }, []);
 */
-
-
-
 
 
 
@@ -469,7 +466,17 @@ const handleArrow = () => {
  
      
 
-
+ const allDemo = [
+  <img index={0} src={demo} className="md:h-98 md:w-270 xl:w-350 lg:w-280 sm:w-200 sm:h-64 w-80 h-40  rounded-lg" />,
+  <img index={1} src={demo} className="md:h-98 md:w-270 xl:w-350 lg:w-280 sm:w-200 sm:h-64 w-80 h-40  rounded-lg" />,
+  <img index={2} src={demo} className="md:h-98 md:w-270 xl:w-350 lg:w-280 sm:w-200 sm:h-64 w-80 h-40  rounded-lg" />,
+  <img index={3} src={demo} className="md:h-98 md:w-270 xl:w-350 lg:w-280 sm:w-200 sm:h-64 w-80 h-40  rounded-lg" />,
+  <img index={4} src={demo} className="md:h-98 md:w-270 xl:w-350 lg:w-280 sm:w-200 sm:h-64 w-80 h-40  rounded-lg" />,
+  <img index={5} src={demo} className="md:h-98 md:w-270 xl:w-350 lg:w-280 sm:w-200 sm:h-64 w-80 h-40  rounded-lg" />,
+  <img index={6} src={demo} className="md:h-98 md:w-270 xl:w-350 lg:w-280 sm:w-200 sm:h-64 w-80 h-40  rounded-lg" />,
+  <img index={7} src={demo} className="md:h-98 md:w-270 xl:w-350 lg:w-280 sm:w-200 sm:h-64 w-80 h-40  rounded-lg" />,
+ 
+]
 
 
 
@@ -503,7 +510,10 @@ return(
 
    ) : 
    
-   <p>Loading...</p>
+   <div className="relative">
+  <img src={demo} className="md:h-98 md:w-270 xl:w-350 lg:w-280 sm:w-200 sm:h-64 w-80 h-40  rounded-lg" />
+
+   </div>
    }
 
  
@@ -570,11 +580,16 @@ return(
 
 
 ) : 
-<p>loading</p>
+  
+   <div className="md:hidden   overflow-x-hidden pl-2 pr-2  gap-3  flex   w-full  bg-white sm:h-80   h-48 pt-4">
+      {allDemo.map((item, index) => (
+        <div className="w-80 flex-grow-0 relative flex-shrink-0" key={index}>{item}</div>
+      ))}
+    
+   </div>
 
-}
 
-
+  }
 
 
 </div>
