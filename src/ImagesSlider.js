@@ -448,7 +448,7 @@ else{
  
 return () => clearInterval(intervalid)
 
-},[imageurls.length])
+},[mobilecurrentIndex,imageurls.length])
 
 
 
