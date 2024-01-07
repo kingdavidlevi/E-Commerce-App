@@ -369,7 +369,7 @@ const intervalid = setInterval(() => {
 
  
 
-if (mobilecurrentIndex === 0){
+if (mobilecurrentIndex === 7){
   mobilesetdiv1(true)
 }
 
@@ -378,7 +378,7 @@ else{
 }
 
 
-if (mobilecurrentIndex === 1){
+if (mobilecurrentIndex === 0){
   mobilesetdiv2(true)
 }
 
@@ -387,7 +387,7 @@ else{
 }
 
 
-if (mobilecurrentIndex === 2){
+if (mobilecurrentIndex === 1){
   mobilesetdiv3(true)
 }
 
@@ -397,7 +397,7 @@ else{
 
 
 
-if (mobilecurrentIndex === 3){
+if (mobilecurrentIndex === 2){
   mobilesetdiv4(true)
 }
 
@@ -407,7 +407,7 @@ else{
 
 
 
-if (mobilecurrentIndex === 4){
+if (mobilecurrentIndex === 3){
   mobilesetdiv5(true)
 }
 
@@ -416,7 +416,7 @@ else{
 }
 
 
-if (mobilecurrentIndex === 5){
+if (mobilecurrentIndex === 4){
   mobilesetdiv6(true)
 }
 
@@ -425,7 +425,7 @@ else{
 }
 
 
-if (mobilecurrentIndex === 6){
+if (mobilecurrentIndex === 5){
   mobilesetdiv7(true)
 }
 
@@ -434,7 +434,7 @@ else{
 }
 
 
-if (mobilecurrentIndex === 7){
+if (mobilecurrentIndex === 6){
   mobilesetdiv8(true)
 }
 
