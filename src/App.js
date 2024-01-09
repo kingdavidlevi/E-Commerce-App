@@ -13,7 +13,7 @@ import Products from './Products';
 import MiddlePage from './MiddlePage';
 import Cart from './Cart';
 import Account from './Account';
-
+import Search from './Search';
 
 
 
@@ -35,6 +35,7 @@ const router = createBrowserRouter(createRoutesFromElements(
   <Route path='*' element={<Error/>} /> 
   <Route path='Info' element={<Info/>} />
 <Route path='Signup' element={<Signup/>} />
+<Route path='Search' element={<Search/>} />
 </>
   
 ))

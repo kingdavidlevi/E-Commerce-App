@@ -59,13 +59,13 @@ function ImageSlider () {
 
 
 
-/*useEffect(() => {
+useEffect(() => {
   const fetchImages = async () => {
     
     try {
-      const urls = await getImageUrls("images/"); // Adjust the path as needed
+      const urls = await getImageUrls("searchImages/"); // Adjust the path as needed
       console.log(urls)
-      setImageUrls(urls);
+      
        
     } catch (error) {
       console.error("Error fetching image URLs:", error);
@@ -76,7 +76,7 @@ function ImageSlider () {
 
   fetchImages();
 }, []);
-*/
+
 
 
 
@@ -88,7 +88,7 @@ useEffect(() => {
     
       // Fetch the specific document
       const docSnapshot = await getDoc(myDocumentRef);
-      console.log(docSnapshot)
+    
       
       if (docSnapshot.exists()) {
           const data = docSnapshot.data()
