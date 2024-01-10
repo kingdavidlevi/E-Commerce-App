@@ -45,7 +45,7 @@ function ImageSlider () {
    const [mobilediv8 , mobilesetdiv8] = useState(false)
    const [isloading, setloading] = useState(false)
    const [showArrow,setShowArrow] = useState(false)
-   
+   const [Error,setError] = useState('')
  const [dataList, setDataList] = useState([]);
  const app = initializeApp(firebaseConfig);
  const firestore = getFirestore(app)
@@ -59,7 +59,7 @@ function ImageSlider () {
 
 
 
-useEffect(() => {
+/*useEffect(() => {
   const fetchImages = async () => {
     
     try {
@@ -68,7 +68,7 @@ useEffect(() => {
       
        
     } catch (error) {
-      console.error("Error fetching image URLs:", error);
+      setError("Error fetching image URLs:", error);
     }
   };
   
@@ -76,7 +76,7 @@ useEffect(() => {
 
   fetchImages();
 }, []);
-
+*/
 
 
 
@@ -93,7 +93,7 @@ useEffect(() => {
       if (docSnapshot.exists()) {
           const data = docSnapshot.data()
          setImageUrls(data.arrayOfObjects)
-        
+          
        /* setDataList(arrayOfObjects.map((item) => item.mapValue.fields));*/
 
       
@@ -101,7 +101,7 @@ useEffect(() => {
         console.log('');
       }
     } catch (error) {
-      console.log('Error fetching data:', error);
+      setError('Error fetching data:', error);
     }
   };
 

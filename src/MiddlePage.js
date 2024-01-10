@@ -176,9 +176,9 @@ const allDemo = [
 <div className="lg:w-340 lg:flex grid md:grid-cols-4 grid-cols-3 md:pt-10 lg:px-2 px-2 lg:pt-6 xl:pt-1 flex-wrap  pt-2 sm:pt-1 pb-2 sm:h-100 md:h-100 rounded-md md:w-270  mb-4 sm:w-100 w-full  bg-white shadow-lg xl:w-400  ">
 {dataList.length > 0 ? (
     dataList.map((item,index) => (
-      <div key={item.id} className="lg:w-1/4  p-2 md:pl-1.5">
+      <div key={item.id} className="lg:w-1/4 hover:cursor-pointer  p-2 md:pl-1.5">
         
-        <img src={item.pictureURL} className="lg:w-full rounded-lg lg:h-auto md:w-40 md:h-44 h-36 w-32 " alt={`Image ${index}`}/>
+        <img src={item.pictureURL} className="lg:w-full transition-transform ease-in-out transform  hover:scale-105 rounded-lg lg:h-auto md:w-40 md:h-44 h-36 w-32 " alt={`Image ${index}`}/>
       </div>
        
     ))
