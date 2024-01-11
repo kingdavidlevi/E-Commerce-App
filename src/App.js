@@ -14,7 +14,7 @@ import MiddlePage from './MiddlePage';
 import Cart from './Cart';
 import Account from './Account';
 import Search from './Search';
-
+import ResultFromSearch from './ResultFromSearch';
 
 
 const router = createBrowserRouter(createRoutesFromElements(
@@ -23,7 +23,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path='/' element={<HomePage/>} />
   <Route path='Products' element={<Products/>} />
   <Route path='MiddlePage' element={<MiddlePage/>} />
-   
+  <Route path='ResultFromSearch' element={<ResultFromSearch/>} />
   <Route path='Cart' element={<Cart/>} />
   <Route path='Account' element={<Account/>} />
   </Route>
@@ -33,6 +33,7 @@ const router = createBrowserRouter(createRoutesFromElements(
   <Route path='CreateInfo' element={<CreateInfo/>} />
   <Route path='Login' element={<Login/>} />
   <Route path='*' element={<Error/>} /> 
+ 
   <Route path='Info' element={<Info/>} />
 <Route path='Signup' element={<Signup/>} />
 <Route path='Search' element={<Search/>} />

@@ -10,8 +10,7 @@ function Search (){
 const inputRef = useRef(null)
 const navigate = useNavigate()
 const [Input,setInput] = useState('')
-const [files,setFiles] = useState([])
-const [error,setError] = useState('')
+
 const app = initializeApp(firebaseConfig);
  const firestore = getFirestore(app)
 
@@ -21,35 +20,6 @@ useEffect(() => {
 
 
 
-
-useEffect(() => {
-  const fetchData = async () => {
-    try {
-      // Use Firestore collection
-      const myDocumentRef = doc(firestore, 'mysecondcollection', 'CpLX4u9MIavFb5Mq4QsS');
-    
-      // Fetch the specific document
-      const docSnapshot = await getDoc(myDocumentRef);
-    
-      
-      if (docSnapshot.exists()) {
-          const data = docSnapshot.data()
-          setFiles(data.SearchObjects)
- 
-          
-       /* setData.List(arrayOfObjects.map((item) => item.mapValue.fields));*/
-
-      
-      } else {
-        console.log('');
-      }
-    } catch (error) {
-      setError('Error fetching data:', error);
-    }
-  };
-
-  fetchData(); // Invoke the function to fetch data when the component mounts
-}, []); // Empty dependency array means the effect runs once after the initial render
 
 
 
@@ -66,6 +36,8 @@ useEffect(() => {
 
   return(
 
+
+
     <div>
         <div className=" w-full items-center  grid place-items-center md:h-18 h-16 bg-white shadow-md shadow-gray-300 ">
      <header className="top-0 lg:w-340 flex md:w-270 xl:w-400 md:grid items-center justify-around relative w-full place-items-center    ">
@@ -77,6 +49,9 @@ useEffect(() => {
      </header>
 
      </div>
+
+
+
 
 
 

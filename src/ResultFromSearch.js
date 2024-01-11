@@ -1,67 +1,81 @@
-import React,{useEffect, useRef, useState} from "react";
+import React,{useEffect,useRef, useState} from "react";
+import search from './images/Component 2.png'
 import {FaBars,FaCog, FaHeartbeat,FaTimes} from 'react-icons/fa'
 import { NavLink,useLocation,useNavigate, useOutletContext } from "react-router-dom";
-import MiddlePage from "./MiddlePage";
-import './ScrollableComponent.css';
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection,doc, getDoc } from 'firebase/firestore';
+import {firebaseConfig} from './firebase'
 import cart from './images/Cart1.png'
 import user from './images/user.png'
-import search from './images/Component 2.png'
+ 
  
 
-
-function HomePage() {
- const Ref = useRef()
-const location = useLocation()
-const {isFixed,mobileFixed,hamburger,setHamburger} = useOutletContext()
-const navigate = useNavigate()
-
-
-const clickHumburger = () => {
-  setHamburger(prevstate => !prevstate)
- 
-}
-
-
-/*window.addEventListener('popstate', function(event){
-    if(document.location.pathname === '/Login'){
-      Ref.current.NavLink = underline
-      
+function ResultFromSearch (){
+    const app = initializeApp(firebaseConfig);
+    const firestore = getFirestore(app)
+    const [files,setFiles] = useState([])
+    const [error,setError] = useState('')
+    const navigate = useNavigate()
+    const {isFixed} = useOutletContext()
+    const [hamburger,setHamburger] = useState(false)
+    const clickHumburger = () => {
+      setHamburger(prevstate => !prevstate)
+     
     }
-  })*/
-
-
-
- /*  <div className="md:flex md:justify-between  gap-10">
-        <NavLink to='/Home' className='text-lg  underline font-medium' ref={Ref}>Home</NavLink>
-        <NavLink to='/Contact' className='text-lg font-sm hover:underline font-medium'>Contact</NavLink>
- 
-        <NavLink to='/About' className='text-lg font-sm hover:underline font-medium'>About</NavLink>
-        <NavLink to='./Products' className='hover:underline text-lg font-sm font-medium' >Products</NavLink>
-       </div>*/
-      
-
-      /* */
-
-
-      const NavigateCart = () =>{
-         navigate('/Cart')
-      }
-
-      const navigateAccount = () =>{
-         navigate('/Account')
-      }
     
 
-      const navigateSearch = () =>{
-        navigate('/Search')
-      }
+    useEffect(() => {
+        const fetchData = async () => {
+          try {
+            // Use Firestore collection
+            const myDocumentRef = doc(firestore, 'mysecondcollection', 'CpLX4u9MIavFb5Mq4QsS');
+          
+            // Fetch the specific document
+            const docSnapshot = await getDoc(myDocumentRef);
+          
+            
+            if (docSnapshot.exists()) {
+                const data = docSnapshot.data()
+                setFiles(data.SearchObjects)
+       
+                
+             /* setData.List(arrayOfObjects.map((item) => item.mapValue.fields));*/
+      
+            
+            } else {
+              console.log('');
+            }
+          } catch (error) {
+            setError('Error fetching data:', error);
+          }
+        };
+      
+        fetchData(); // Invoke the function to fetch data when the component mounts
+      }, []); // Empty dependency array means the effect runs once after the initial render
+      
+
+      const NavigateCart = () =>{
+        navigate('/Cart')
+     }
+
+     const navigateAccount = () =>{
+        navigate('/Account')
+     }
+   
+
+     const navigateSearch = () =>{
+       navigate('/Search')
+     }
 
 
-    return (
-        <div  >
+
+   return(
+    <div className="bg-gray-300 sm:pt-32    pt-32   lg:pt-0">
 
 
-     <div className=" hidden  lg:block">
+
+
+<div className=" hidden  lg:block">
 
       <div className={`${isFixed ? 'w-full bg-white grid h-18 top-0 z-10   text-black place-items-center fixed' : 'w-full bg-white  text-black grid h-18 top-26 z-10  place-items-center '   }`}>
 
@@ -106,30 +120,69 @@ const clickHumburger = () => {
  
         </div>
 
-        
-        <div className= "lg:hidden fixed bg-white h-28 w-full top-0  z-10 pt-4 px-4" >
+
+
+
+
+
+
+
+
+
+
+
+
+<div className= "lg:hidden fixed bg-white h-28 w-full top-0  z-10 pt-4 px-4" >
          <div className="flex justify-between">
       { hamburger ?   <div className="flex"><span className="text-xl mt-2 mr-3.5" onClick={clickHumburger}><FaTimes/></span> <p className="text-2xl  text-black  font-bold font-mono"> Exclusive</p></div> :
         <div className="flex"><span className="text-lg mt-2 mr-4" onClick={clickHumburger}><FaBars/></span> <p className="text-2xl  text-black  font-bold font-mono"> Exclusive</p></div> }
 
          <div className="flex" ><div onClick={navigateAccount} className="cursor-pointer"><img src={user} alt="user"  /></div> <div className="ml-4 cursor-pointer" onClick={NavigateCart}><img src={cart} /></div> </div>
-
+       
          </div>
-
-
-     <div className="grid place-items-center relative ">
+       
+         <div className="grid place-items-center relative ">
       <img src={search} className="absolute mr-64 sm:mr-100 mt-5 z-10"/>
       <div onClick={navigateSearch} className="w-86 sm:w-100 sm:mt-4 mt-5 sm:text-lg text-sm rounded-full py-1   bg-white text-gray-400   border-r  border-black pl-11  sm:pl-12  outline-none   placeholder-gray-900  "><p>Search Products, brands and categories</p></div>
      </div>
 
         </div>
-   
-   <div className="bg-gray-300">
-   <MiddlePage/>
-   </div>
 
-        </div>
-    )
+
+<div className="mb-4 pl-4"><h3 className="text-sm font-mono text-gray-700">SHOP ONLINE IN NIGERIA</h3></div>
+
+
+<div className={`${ isFixed ? "grid grid-cols-2 lg:mt-24 place-items-center" : "grid grid-cols-2 lg-mt-0  place-items-center" }`}>
+ {files.length > 0 ? (
+    files.map((item,index) => (
+      <div key={item.id} className=" transition-transform ease-in-out transform  hover:scale-105 ">
+        
+       <div > <img src={item.pictureURL} className="  rounded-lg lg:h-auto md:w-40 md:h-44 h-36 w-32 " alt={`Image ${index}`}/> </div>
+
+      </div>
+       
+    ))
+  ) : ( 
+    
+    
+
+      <div className="lg:w-1/4  p-2 md:pl-1.5   "><p>Empty</p></div>
+  
+
+
+  )}
+  </div>
+
+
+
+
+
+    </div>
+    
+
+   )
+
+
 }
 
-export default HomePage;
+export default ResultFromSearch;
