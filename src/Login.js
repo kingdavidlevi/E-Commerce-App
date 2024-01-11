@@ -23,10 +23,10 @@ function Login (){
 
 
 <div className="md:flex md:justify-between mt-3 gap-10 ">
-<NavLink to='/CreateInfo' className='text-md font-semibold hover:underline'>Home</NavLink>
-<NavLink to='/CreateInfo' className='text-md font-semibold hover:underline'>Contact</NavLink>
-<NavLink to='/CreateInfo' className='text-md font-semibold hover:underline'>About</NavLink>
-<NavLink to='/SignUp' className='hover:underline text-md font-semibold' >Sign Up</NavLink>
+<NavLink to='/Second/CreateInfo' className='text-md font-semibold hover:underline'>Home</NavLink>
+<NavLink to='/Second/CreateInfo' className='text-md font-semibold hover:underline'>Contact</NavLink>
+<NavLink to='/Second/CreateInfo' className='text-md font-semibold hover:underline'>About</NavLink>
+<NavLink to='/Second/SignUp' className='hover:underline text-md font-semibold' >Sign Up</NavLink>
 </div>
 
 
@@ -58,7 +58,7 @@ function Login (){
                     <input type="email" className='border-2 border-r-0 border-l-0 pb-1 w-80 border-t-0 border-gray-300 lg:w-96 md:w-90 outline-none mb-6' placeholder="Email Address" required /><br/>
                     <input type="password" className='border-2 border-r-0 border-l-0 pb-1 w-80 border-t-0 border-gray-300 lg:w-96 md:w-90 outline-none mb-6' max={25} placeholder="Password" required/><br/>
                      <button type="submit" className="rounded-lg pt-1 pb-1 md:w-90 bg-red-400 w-80 lg:w-90 text-white mt-4">Login in</button>
-                     <p className="text-center mt-8 text-lg">Don't have an account? <span><NavLink to='/Signup' className='underline'>Sign Up</NavLink></span></p>
+                     <p className="text-center mt-8 text-lg">Don't have an account? <span><NavLink to='/Second/Signup' className='underline'>Sign Up</NavLink></span></p>
                 </form>
             </div>
         </div>

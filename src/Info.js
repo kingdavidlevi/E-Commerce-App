@@ -7,7 +7,7 @@ const navigate = useNavigate()
 
 
 const handlechange = () => {
-    navigate('/Signup')
+    navigate('/Second/Signup')
 }
 
 

@@ -7,8 +7,8 @@ import { getFirestore, collection,doc, getDoc } from 'firebase/firestore';
 import {firebaseConfig} from './firebase'
 import cart from './images/Cart1.png'
 import user from './images/user.png'
- 
- 
+ import './ScrollableComponent.css'
+ import star from './images/Four Star.png'
 
 function ResultFromSearch (){
     const app = initializeApp(firebaseConfig);
@@ -18,6 +18,10 @@ function ResultFromSearch (){
     const navigate = useNavigate()
     const {isFixed} = useOutletContext()
     const [hamburger,setHamburger] = useState(false)
+    const [finalFiles,setFinalFiles] = useState([])
+    const {input} = useOutletContext()
+
+
     const clickHumburger = () => {
       setHamburger(prevstate => !prevstate)
      
@@ -37,8 +41,9 @@ function ResultFromSearch (){
             if (docSnapshot.exists()) {
                 const data = docSnapshot.data()
                 setFiles(data.SearchObjects)
-       
-                
+               console.log(data.SearchObjects)
+               const matchResult = files.filter((users) => users.login.toLowerCase().includes(input.toLocaleLowerCase()))
+               setFinalFiles(matchResult)
              /* setData.List(arrayOfObjects.map((item) => item.mapValue.fields));*/
       
             
@@ -51,8 +56,13 @@ function ResultFromSearch (){
         };
       
         fetchData(); // Invoke the function to fetch data when the component mounts
-      }, []); // Empty dependency array means the effect runs once after the initial render
+      }, [input,setFinalFiles]); // Empty dependency array means the effect runs once after the initial render
       
+
+      
+    
+
+
 
       const NavigateCart = () =>{
         navigate('/Cart')
@@ -152,25 +162,31 @@ function ResultFromSearch (){
 <div className="mb-4 pl-4"><h3 className="text-sm font-mono text-gray-700">SHOP ONLINE IN NIGERIA</h3></div>
 
 
-<div className={`${ isFixed ? "grid grid-cols-2 lg:mt-24 place-items-center" : "grid grid-cols-2 lg-mt-0  place-items-center" }`}>
- {files.length > 0 ? (
-    files.map((item,index) => (
-      <div key={item.id} className=" transition-transform ease-in-out transform  hover:scale-105 ">
-        
-       <div > <img src={item.pictureURL} className="  rounded-lg lg:h-auto md:w-40 md:h-44 h-36 w-32 " alt={`Image ${index}`}/> </div>
-
-      </div>
-       
-    ))
-  ) : ( 
+<div className={`${ isFixed ? "  grid grid-cols-2 sm:grid-cols-3 xl:mx-16 lg:grid-cols-4 lg:mx-10 mx-4 lg:mt-24 place-items-center" : "grid xl:mx-16 lg:mx-10 sm:grid-cols-3 lg:grid-cols-4 grid-cols-2 mx-4 lg-mt-0   place-items-center" }`}>
+ 
+   { files.map((item,index) => (
     
-    
+      <div key={item.id} className="mb-3 pl-1 md:mb-6  h-98 sm:w-48 lg:w-56 w-40 bg-white md:transition-transform ease-in-out md:transform  md:hover:scale-105 ">
+        <button className="bg-red-600 hover:cursor-default rounded-sm text-white text-xs px-1 py-1 mb-1 mt-1 "> Pay on Delivery </button>
+       <div > <img src={item.pictureURL} className=" mb-10   lg:h-auto md:w-40  h-36 w-40 " alt={`Image ${index}`}/> </div>
+     <button className="bg-custom-color mb-2 hover:cursor-default rounded-sm text-white text-xs px-1 py-1">Official Store</button>
+    <div className="w-full"> <p className="text-sm font-mono max-words-20  mb-1">{item.description}</p></div>
+     <p className="text-sm font-bold mb-1">{item.Price}</p>
+     <img src={star} />
+     <p className="font-mono text-sm font-bold mt-1">Exclusive</p>
 
-      <div className="lg:w-1/4  p-2 md:pl-1.5   "><p>Empty</p></div>
-  
+     <button className="bg-orange-600 items-center mt-2 rounded-sm px-4 py-2 text-white text-sm font-bold">ADD TO CART</button>
 
+
+
+
+     </div>
+    )
 
   )}
+
+
+
   </div>
 
 

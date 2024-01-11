@@ -2,7 +2,9 @@ import React,{useState,useEffect} from "react";
 import Header from './Header'
 import { Outlet, useLocation } from "react-router-dom";
 import Footer from "./Footer";
-
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection,doc, getDoc } from 'firebase/firestore';
+import {firebaseConfig} from './firebase'
 
 function    ScrollToTop (){
 
@@ -11,6 +13,13 @@ function    ScrollToTop (){
     const location = useLocation();
     const [mobileFixed,mobileSetIsFixed] = useState(false)
     const [hamburger,setHamburger] = useState(false)
+    const [input,setInput] = useState('')
+
+    const app = initializeApp(firebaseConfig);
+    const firestore = getFirestore(app)
+
+
+
 
 
  useEffect(() =>{
@@ -49,7 +58,7 @@ function    ScrollToTop (){
 return (
     <div>
     <Header />
-    <Outlet context={{isFixed,setIsFixed,mobileFixed,hamburger,setHamburger}}  />
+    <Outlet context={{isFixed,setIsFixed,input,mobileFixed,hamburger,setHamburger}}  />
     <Footer />
 
     </div>

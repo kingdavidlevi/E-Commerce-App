@@ -19,10 +19,10 @@ function Signup (){
 
 
 <div className="md:flex md:justify-between mt-3 gap-10 ">
-<NavLink to='/Info' className='hover:underline text-md font-semibold'>Home</NavLink>
-<NavLink to='/Info' className='hover:underline text-md font-semibold'>Contact</NavLink>
-<NavLink to='/Info' className='hover:underline text-md font-semibold'>About</NavLink>
-<NavLink to='/Login' className='hover:underline text-md font-semibold' >Login</NavLink>
+<NavLink to='/Second/Info' className='hover:underline text-md font-semibold'>Home</NavLink>
+<NavLink to='/Second/Info' className='hover:underline text-md font-semibold'>Contact</NavLink>
+<NavLink to='/Second/Info' className='hover:underline text-md font-semibold'>About</NavLink>
+<NavLink to='/Second/Login' className='hover:underline text-md font-semibold' >Login</NavLink>
 </div>
 
 
@@ -54,7 +54,7 @@ function Signup (){
                     <input type="email" className='border-2 border-r-0 border-l-0 pb-1 border-t-0 border-gray-300 lg:w-96 md:w-90 w-80 outline-none mb-6' placeholder="Email Address" required autoCapitalize="" /><br/>
                     <input type="password" className='border-2 border-r-0 border-l-0 pb-1 border-t-0 border-gray-300 lg:w-96 md:w-90 w-80 outline-none mb-6' max={25} placeholder="Password" required/><br/>
                      <button type="submit" className="rounded-lg pt-1 pb-1 md:w-90 bg-red-400 lg:w-96 text-white w-80 mt-4">Create Account</button>
-                     <p className="text-center mt-8 text-lg">Already have an account? <span><NavLink to='/Login' className='underline'>Log in</NavLink></span></p>
+                     <p className="text-center mt-8 text-lg">Already have an account? <span><NavLink to='/Second/Login' className='underline'>Log in</NavLink></span></p>
                 </form>
             </div>
         </div>
