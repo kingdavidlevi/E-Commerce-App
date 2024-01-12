@@ -24,6 +24,7 @@ const handleInput = (event) =>{
   const userInput = event.target.value;
 
   setInput(userInput)
+  console.log(userInput)
 }
 
 

@@ -53,7 +53,7 @@ const clickHumburger = () => {
     
 
       const navigateSearch = () =>{
-        navigate('/Search')
+        navigate('/Second/Search')
       }
 
 

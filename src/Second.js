@@ -55,7 +55,7 @@ function Second (){
 
         return(
             <div>
-            <Outlet context={{input}} />
+            <Outlet context={{input,setInput}} />
             </div>
         )
 
