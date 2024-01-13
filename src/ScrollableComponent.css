@@ -8,3 +8,24 @@
     -webkit-line-clamp: 20;
     -webkit-box-orient: vertical;
   }
+
+
+  @media only screen and (max-width: 380px){
+    .screen-size{
+     right: 60px;
+    }
+    .input-width{
+      width:255px ;
+     }
+ }
+
+  @media only screen and (max-width: 450px ) and (min-width: 380px){
+     .screen-size{
+      right: 90px;
+     }
+     .input-width{
+      width:270px ;
+     }
+  }
+
+ 
