@@ -440,7 +440,7 @@ else{
 }
 
 
-},3000)
+},4000)
 
  
 return () => clearInterval(intervalid)
@@ -556,7 +556,7 @@ return(
 
 
 
-  <div className=" md:hidden   overflow-x-hidden pl-2 pr-2  gap-3  flex   w-screen    bg-white sm:h-80   h-48 pt-4   ">
+  <div className=" md:hidden   overflow-x-hidden pl-2 pr-2  gap-3  flex   w-full    bg-white sm:h-80   h-48 pt-4   ">
 
 {imageurls.length > 0 ? (
 
@@ -581,7 +581,7 @@ return(
 
 ) : 
   
-   <div className="md:hidden   overflow-x-hidden pl-2 pr-2  gap-3  flex   w-full  bg-white sm:h-80   h-48 pt-4">
+   <div className="md:hidden   overflow-x-hidden pl-2 pr-2  gap-3  flex   w-full  bg-white sm:h-80   h-48 ">
       {allDemo.map((item, index) => (
         <div className="w-80 flex-grow-0 relative flex-shrink-0" key={index}>{item}</div>
       ))}
@@ -600,7 +600,7 @@ return(
 
 
 
-
+{imageurls.length > 0 ? (
 
 
 <div className="grid place-items-center relative md:hidden">
@@ -619,7 +619,7 @@ return(
 
   </div>
 
-
+): null}
 
 
 
