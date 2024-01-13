@@ -34,7 +34,10 @@ const handleInput = (event) =>{
 
  
 const navigatetoResult = () => {
+  if(input.length > 0){
   navigate('/Second/ResultFromSearch')
+  }
+  else return
 }
 
   return(
