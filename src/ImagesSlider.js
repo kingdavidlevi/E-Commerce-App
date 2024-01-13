@@ -556,7 +556,7 @@ return(
 
 
 
-  <div className=" md:hidden   overflow-x-hidden pl-2 pr-2  gap-3  flex   w-full  bg-white sm:h-80   h-48 pt-4 custom-scrollbar ">
+  <div className=" md:hidden   overflow-x-hidden pl-2 pr-2  gap-3  flex   w-full  bg-white sm:h-80   h-48 pt-4   ">
 
 {imageurls.length > 0 ? (
 

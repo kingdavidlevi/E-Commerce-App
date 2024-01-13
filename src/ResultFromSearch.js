@@ -1,10 +1,13 @@
-import React,{useEffect,useRef, useState} from "react";
+import React,{useLayoutEffect, useEffect,useRef, useState} from "react";
 import search from './images/Component 2.png'
 import {FaBars,FaCog, FaHeartbeat,FaTimes} from 'react-icons/fa'
 import { NavLink,useLocation,useNavigate, useOutletContext } from "react-router-dom";
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection,doc, getDoc } from 'firebase/firestore';
 import {firebaseConfig} from './firebase'
+
+ 
+ 
 import cart from './images/Cart1.png'
 import user from './images/user.png'
  import './ScrollableComponent.css'
@@ -20,6 +23,15 @@ function ResultFromSearch (){
     const [hamburger,setHamburger] = useState(false)
     const [finalFiles,setFinalFiles] = useState([])
     const {input} = useOutletContext()
+    const [unsubscribe,setUnsubscribe] = useState('')
+    
+
+    // Get analytics
+   
+ 
+
+ 
+   
 
 
     const clickHumburger = () => {
@@ -28,7 +40,41 @@ function ResultFromSearch (){
     }
     
 
-    useEffect(() => {
+
+
+    /*useEffect(() => {
+ 
+    
+
+
+      const collectionRef = firestore().collection('mysecondcollection');
+  
+      // Create a query to filter by the 'name' proper
+      const query = collectionRef.where('name', '==', input);
+  
+      // Execute the query
+      query.get()
+        .then((querySnapshot) => {
+          // Map the results to an array and update the state
+          const results = querySnapshot.docs.map(doc => doc.data());
+          setFiles(results)
+        })
+        .catch((error) => {
+          console.error('Error getting documents: ', error);
+        });
+    }, [input]); // Run the effect whenever searchInput changes
+  
+*/
+
+
+
+
+
+
+
+
+
+    useLayoutEffect(() => {
         const fetchData = async () => {
           try {
             // Use Firestore collection
@@ -40,25 +86,60 @@ function ResultFromSearch (){
             
             if (docSnapshot.exists()) {
                 const data = docSnapshot.data()
-                
-               const Result = data.SearchObjects
-               const matchResult = Result.filter((users) => users.name.toLowerCase().includes(input.toLocaleLowerCase()))
+                console.log(data)
+               const result = data.SearchObjects || []
+               
+               const matchResult = result.filter((users) => users.description.toLowerCase().includes(input.toLocaleLowerCase()))
                setFiles(matchResult)
-             /* setData.List(arrayOfObjects.map((item) => item.mapValue.fields));*/
-      
+
+               console.log(matchResult)
+               console.log('angels')
+               
             
             } else {
-              console.log('');
+              console.log('Document does not exist')
             }
           } catch (error) {
             setError('Error fetching data:', error);
           }
         };
       
-        fetchData(); // Invoke the function to fetch data when the component mounts
-      }, [input,files]); // Empty dependency array means the effect runs once after the initial render
+        
+
+        fetchData();
+        // Invoke the function to fetch data when the component mounts
+      }, [input]); // Empty dependency array means the effect runs once after the initial render
       
 
+     // .length > 0 ? matchResult : []
+
+      /*useEffect(() => {
+        const fetchData = async () => {
+          try {
+            // Your Firestore logic
+            const myDocumentRef = doc(firestore, 'mysecondcollection', 'CpLX4u9MIavFb5Mq4QsS');
+            const unsubscribe = onSnapshot(myDocumentRef, (doc) => {
+              // Handle snapshot changes
+              const data = doc.data();
+              // Update state or perform other actions based on the data
+            });
+      
+            // Save the unsubscribe function in a state variable or another suitable place
+            setUnsubscribe(unsubscribe);
+          } catch (error) {
+            setError('Error fetching data:', error);
+          }
+        };
+      
+        fetchData();
+      
+        // Cleanup function to unsubscribe when the component is unmounted
+        return () => {
+          if (unsubscribe) {
+            unsubscribe();
+          }
+        };
+      }, [/* dependencies ]);*/
       
     
 
@@ -80,7 +161,7 @@ function ResultFromSearch (){
 
 
    return(
-    <div className="bg-gray-300   ">
+    <div className="bg-gray-300  h-full ">
 
 
 
@@ -192,7 +273,7 @@ function ResultFromSearch (){
 
 
 
-
+<div>{input}</div>
 
     </div>
     
