@@ -556,7 +556,7 @@ return(
 
 
 
-  <div className=" md:hidden   overflow-x-hidden pl-2 pr-2  gap-3  flex   w-full  bg-white sm:h-80   h-48 pt-4   ">
+  <div className=" md:hidden   overflow-x-hidden pl-2 pr-2  gap-3  flex   w-screen    bg-white sm:h-80   h-48 pt-4   ">
 
 {imageurls.length > 0 ? (
 
@@ -567,7 +567,7 @@ return(
 
    
 
-  <div key={url.id} className="w-80 flex-grow-0  flex-shrink-0 transition-transform duration-500 ease-in-out  relative    sm:w-200 sm:h-64 " ref={containerRef}  style={{ transform: `translateX(-${mobilecurrentIndex * 100}%)` }}>
+  <div key={url.id} className="w-80 flex-grow-0  flex-shrink-0 transition-transform  duration-500 ease-in-out  relative    sm:w-200 sm:h-64 " ref={containerRef}   style={{ transform: `translateX(-${mobilecurrentIndex * 100}%)` }} >
    <img src={url.pictureURL}  className="md:h-98 md:w-270 xl:w-350 lg:w-280 sm:w-200 sm:h-64 w-80 h-40  rounded-lg" alt="image"/> 
 </div> 
 
@@ -641,3 +641,10 @@ export default ImageSlider;
         <img key={url} src={url} alt="Image" />
       ))}
     </div>*/
+
+  /*  style={{
+      display: index === mobilecurrentIndex ? 'inline-block' : 'none',
+      maxWidth: '100%', // Ensure the image does not exceed the container width*/
+
+
+   
