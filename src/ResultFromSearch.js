@@ -12,6 +12,7 @@ import cart from './images/Cart1.png'
 import user from './images/user.png'
  import './ScrollableComponent.css'
  import star from './images/Four Star.png'
+import { cleanup } from "@testing-library/react";
 
 function ResultFromSearch (){
     const app = initializeApp(firebaseConfig);
@@ -24,7 +25,7 @@ function ResultFromSearch (){
     const [finalFiles,setFinalFiles] = useState([])
     const {input} = useOutletContext()
     const [unsubscribe,setUnsubscribe] = useState('')
-    
+    const [mounted, setMounted] = useState(true);
 
     // Get analytics
    
@@ -74,7 +75,8 @@ function ResultFromSearch (){
 
 
 
-    useLayoutEffect(() => {
+    useEffect(() => {
+      
         const fetchData = async () => {
           try {
             // Use Firestore collection
@@ -89,12 +91,18 @@ function ResultFromSearch (){
                 console.log(data)
                const result = data.SearchObjects || []
                
-               const matchResult = result.filter((users) =>  users.unique.toLowerCase() || users.name.toLowerCase().includes(input.toLocaleLowerCase()))
+               const matchResult = result.filter((users) => users.unique.toLowerCase().includes(input.toLocaleLowerCase()))
                
-             
+                if(matchResult.length > 0){
                setFiles(matchResult)
                console.log(matchResult)
-              
+              }
+             else{
+              setFiles([])
+             }
+
+            
+               
                 
                
             
@@ -102,13 +110,19 @@ function ResultFromSearch (){
               console.log('Document does not exist')
             }
           } catch (error) {
+            
             setError('Error fetching data:', error);
           }
+        
         };
       
         
 
         fetchData();
+
+        return () => {
+          cleanup(fetchData)
+        }
         // Invoke the function to fetch data when the component mounts
       }, [input]); // Empty dependency array means the effect runs once after the initial render
       
@@ -247,9 +261,13 @@ function ResultFromSearch (){
 
 <div className= "grid xl:mx-20 lg:mx-16 sm:grid-cols-3 lg:grid-cols-4 grid-cols-2 mx-4   place-items-center" >
  
-   { files.map((item,index) => (
+
+ {files.length > 0 ? (
+    files.map((item,index) => (
     
-      <div key={item.id} className="mb-3  pl-1 md:mb-6  h-78 sm:w-48 lg:w-56 w-40 bg-white md:transition-transform ease-in-out md:transform  md:hover:scale-105 ">
+      
+      <div key={item.id} className="mb-3  pl-1 md:mb-6 lg:h-82  h-78 sm:w-48 lg:w-56 w-40 bg-white md:transition-transform ease-in-out md:transform  md:hover:scale-105 ">
+        
          <p className="text-sm font-bold mb-1">{item.name}</p>
         <button className="bg-red-600 hover:cursor-default rounded-sm text-white text-xs px-1 py-1 mb-1 mt-1 "> Pay on Delivery </button>
        <div > <img src={item.pictureURL} className=" mb-2   lg:h-auto md:w-40  h-36 w-40 " alt={`Image ${index}`}/> </div>
@@ -262,11 +280,20 @@ function ResultFromSearch (){
 
 
 
-
+      
      </div>
+     
     )
 
-  )}
+  )
+  ) : 
+  
+  <div>
+
+  </div>
+  
+  
+  }
 
 
 

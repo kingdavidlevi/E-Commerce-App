@@ -44,6 +44,23 @@ const Back = () => {
    navigate('/')
 }
 
+
+
+window.addEventListener('popstate', function (event) {
+  if (document.location.pathname === '/Second/Login') {
+     
+    window.location.replace('/')
+  }
+})
+
+window.addEventListener('popstate', function (event) {
+  if (document.location.pathname === '/Second/SignUp') {
+     
+    window.location.replace('/')
+  }
+})
+
+
 return(
    <div >
 

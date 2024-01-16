@@ -74,7 +74,7 @@ function Signup (){
 
  
             
-<div className=" lg:flex md:flex  md:justify-around border-b-r bor pt-6 h-20 border-gray-300 hidden ">    
+<div className=" lg:flex md:flex    md:justify-around border-b-r bor pt-6 h-20 border-gray-300 hidden ">    
 
  <div><p className='md:text-xl mt-3 md:font-bold'>Exclusive</p></div>
 
@@ -101,22 +101,22 @@ function Signup (){
 
 
 
-        <div className="md:flex lg:justify-center md:mt-20 lg:mt-20   ">
+        <div className="md:flex   grid place-items-center  h-screen md:h-full  lg:justify-center md:mt-20 lg:mt-20   ">
 
             <div className=" lg:mr-20 md:mr-6 hidden md:block ">
             <img src={imgages} className="lg:w-200 lg:h-1200 md:ml-4  md:h-100 md:w-90 sm:h-100" />
             </div>
 
-            <div className="md:mt-16 md:block grid place-content-center items-center h-screen">
-                <h3 className=" lg:text-2xl lg:font-semibold text-center md:text-start text-lg font-semibold md:text-2xl md:font-semibold">Create an account</h3>
+            <div className="md:mt-16 md:block grid place-content-center items-center  shadow-xl md:shadow-none bg-white  w-90  md:h-full">
+                <h3 className=" lg:text-2xl mt-4 md:mt-0 lg:font-semibold text-center md:text-start text-lg font-semibold md:text-2xl md:font-semibold">Create an account</h3>
                 <p className="md:mt-6 mt-14 text-sm">Enter your details below</p>
                 <form>
-                    <input onChange={handleFormChanges} name="nameValue" value={formValues.nameValue}  type="text" className='border-2 border-r-0 border-l-0 pb-1 border-t-0 border-gray-300 lg:w-96 md:w-90 w-80 outline-none mt-10  mb-6' placeholder="Name"required /> <br/>
-                    <input onChange={handleFormChanges} name="email" value={formValues.email} type="email" className='border-2 border-r-0 border-l-0 pb-1 border-t-0 border-gray-300 lg:w-96 md:w-90 w-80 outline-none mb-6' placeholder="Email Address" required autoCapitalize="" /><br/>
-                    <input onChange={handleFormChanges} name="password" value={formValues.password}  type={visibility ? 'password' : 'text'} className='border-2   relative  border-r-0 border-l-0 pb-1 border-t-0 border-gray-300 lg:w-96 md:w-90 w-80 outline-none mb-6' max={25} placeholder="Password" required/><br/>
+ 
+                    <input onChange={handleFormChanges} name="email" value={formValues.email} type="email" className='mt-10 border-2 border-r-0 border-l-0 pb-1  border-t-0 border-gray-300 lg:w-96 md:w-90 w-80 pl-2 md:pl-0 outline-none mb-6' placeholder="Email Address" required autoCapitalize="" /><br/>
+                    <input onChange={handleFormChanges} name="password" value={formValues.password}  type={visibility ? 'password' : 'text'} className='border-2   relative  border-r-0 border-l-0 pb-1 border-t-0 pl-2 md:pl-0 border-gray-300 lg:w-96 md:w-90 w-80 outline-none mb-6' max={25} placeholder="Password" required/><br/>
                     {!visibility ? <div className="fixed right-40 bottom-56 mb-2" onClick={handleEye}> <FaEye/> </div> : <div className="fixed  right-40 bottom-56 mb-2" onClick={handleEye}> <FaEyeSlash/> </div>}
                      <button type="submit" onClick={handleSignUp} className="rounded-lg pt-1 pb-1 md:w-90 bg-red-400 lg:w-96 text-white w-80 mt-4">Create Account</button>
-                     <p className="text-center mt-8 text-lg">Already have an account? <span><NavLink to='/Second/Login' className='underline'>Log in</NavLink></span></p>
+                     <p className="text-center mt-8 mb-4 md:mb-0 text-lg">Already have an account? <span><NavLink to='/Second/Login' className='underline'>Log in</NavLink></span></p>
                 </form>
             </div>
         </div>

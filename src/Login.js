@@ -89,21 +89,21 @@ function Login (){
 
 
 
-        <div className="md:flex lg:justify-center  md:mt-20 lg:mt-20    ">
+        <div className="md:flex lg:justify-center  items-center  grid place-items-center h-screen md:h-full md:mt-20 lg:mt-20    ">
 
             <div className=" lg:mr-24 md:mr-6  hidden md:block">
             <img src={imgages} className=" lg:w-200 lg:h-1200 md:ml-4  md:h-100 md:w-90 sm:h-100" />
             </div>
 
-            <div className="md:mt-16 md:block grid place-content-center items-center h-screen">
-                <h3 className=" lg:text-2xl text-center md:text-start lg:font-semibold  md:text-2xl font-semibold md:font-semibold">Log in to Exclusive </h3>
+            <div className="md:mt-16 md:block items-center grid place-content-center shadow-xl md:shadow-none bg-white  w-90  md:h-full">
+                <h3 className=" lg:text-2xl text-center md:text-start lg:font-semibold mt-4 md:mt-0  md:text-2xl font-semibold md:font-semibold">Log in to Exclusive </h3>
                 <p className="md:mt-6 mt-14  text-sm">Enter your details below</p>
                 <form>
-                    <input onChange={handleFormChanges} name="nameValue" type="text" className='border-2 border-r-0 border-l-0 pb-1 w-80 border-t-0 border-gray-300 lg:w-96 md:w-90  outline-none mt-10 mb-6' placeholder="Name"required /> <br/>
-                    <input onChange={handleFormChanges} name="email" type="email" className='border-2 border-r-0 border-l-0 pb-1 w-80 border-t-0 border-gray-300 lg:w-96 md:w-90 outline-none mb-6' placeholder="Email Address" required /><br/>
-                    <input onChange={handleFormChanges} name="password" type="password" className='border-2 border-r-0 border-l-0 pb-1 w-80 border-t-0 border-gray-300 lg:w-96 md:w-90 outline-none mb-6' max={25} placeholder="Password" required/><br/>
+
+                    <input onChange={handleFormChanges} name="email" type="email" className='border-2 border-r-0 border-l-0 pb-1 w-80 border-t-0 border-gray-300 mt-10 pl-2 md:pl-0 lg:w-96 md:w-90 outline-none mb-6' placeholder="Email Address" required /><br/>
+                    <input onChange={handleFormChanges} name="password" type="password" className='border-2 border-r-0 border-l-0 pb-1 w-80 border-t-0 border-gray-300 pl-2 md:pl-0 lg:w-96 md:w-90 outline-none mb-6' max={25} placeholder="Password" required/><br/>
                      <button onClick={handleSignIn} type="submit" className="rounded-lg pt-1 pb-1 md:w-90 bg-red-400 w-80 lg:w-90 text-white mt-4">Login in</button>
-                     <p className="text-center mt-8 text-lg">Don't have an account? <span><NavLink to='/Second/Signup' className='underline'>Sign Up</NavLink></span></p>
+                     <p className="text-center mt-8 mb-4 md:mb-0 text-lg">Don't have an account? <span><NavLink to='/Second/Signup' className='underline'>Sign Up</NavLink></span></p>
                 </form>
             </div>
         </div>
