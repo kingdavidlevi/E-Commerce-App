@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from "react";
 import Header from './Header'
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation, useOutletContext } from "react-router-dom";
 import Footer from "./Footer";
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection,doc, getDoc } from 'firebase/firestore';
@@ -17,7 +17,7 @@ function    ScrollToTop (){
 
     const app = initializeApp(firebaseConfig);
     const firestore = getFirestore(app)
-
+    const {formValues,setFormValues,cartDiv,setCartDiv,updateCart,setUpdateCart} = useOutletContext()
 
 
 
@@ -58,7 +58,7 @@ function    ScrollToTop (){
 return (
     <div>
     <Header />
-    <Outlet context={{isFixed,setIsFixed,input,mobileFixed,hamburger,setHamburger}}  />
+    <Outlet context={{isFixed,setIsFixed,input,mobileFixed,hamburger,setHamburger,formValues,setFormValues,cartDiv,setCartDiv,updateCart,setUpdateCart}}  />
     <Footer />
 
     </div>

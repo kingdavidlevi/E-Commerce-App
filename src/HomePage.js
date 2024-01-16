@@ -1,4 +1,4 @@
-import React,{useEffect, useRef, useState} from "react";
+import React,{useEffect, useRef,useState} from "react";
 import {FaBars,FaCog, FaHeartbeat,FaTimes} from 'react-icons/fa'
 import { NavLink,useLocation,useNavigate, useOutletContext } from "react-router-dom";
 import MiddlePage from "./MiddlePage";
@@ -12,14 +12,17 @@ import search from './images/Component 2.png'
 function HomePage() {
  const Ref = useRef()
 const location = useLocation()
-const {isFixed,mobileFixed,hamburger,setHamburger} = useOutletContext()
+const {isFixed,mobileFixed,hamburger,setHamburger,formValues,setFormValues,cartDiv,setCartDiv,updateCart,setUpdateCart} = useOutletContext()
 const navigate = useNavigate()
 
 
 const clickHumburger = () => {
   setHamburger(prevstate => !prevstate)
+  setUpdateCart(1)
+  console.log(updateCart)
  
 }
+
 
 
 /*window.addEventListener('popstate', function(event){
@@ -41,11 +44,22 @@ const clickHumburger = () => {
       
 
       /* */
-
+        
 
       const NavigateCart = () =>{
-         navigate('/Cart')
-      }
+
+            navigate('/Second/Login')
+          }
+
+
+
+          
+    
+    
+         
+       
+
+
 
       const navigateAccount = () =>{
          navigate('/Account')
@@ -95,7 +109,7 @@ const clickHumburger = () => {
         <img src={user}  className={`${isFixed ? " h-9 mt-2  " : "  h-9 mt-2 " }`} />
 
         <p className="font-medium mt-4 xl:ml-1 md:ml-0 text-lg">Account</p>
-
+      
    
         </div>
    

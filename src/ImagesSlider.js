@@ -530,6 +530,8 @@ return(
 </div>}
 
 
+{imageurls.length > 0 ?  (
+
 <div className="grid place-items-center relative">
 <div className="absolute   gap-2  md:justify-center xl:w-400 lg:w-250 md:w-270 flex bottom-5 ">
         <div className={`${ div1 ? 'w-2 h-2 bg-orange-400 rounded-full'  : 'w-2 h-2 bg-gray-400 rounded-full' }`}></div>
@@ -544,7 +546,7 @@ return(
         </div>
 
         </div>
-
+): null}
 
 
   </div>
@@ -600,7 +602,7 @@ return(
 
 
 
-{imageurls.length > 0 ? (
+{imageurls.length > 0 ?  (
 
 
 <div className="grid place-items-center relative md:hidden">

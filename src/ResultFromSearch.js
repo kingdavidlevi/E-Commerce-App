@@ -148,7 +148,7 @@ function ResultFromSearch (){
 
 
       const NavigateCart = () =>{
-        navigate('/Cart')
+        navigate('/Second/Login')
      }
 
      const navigateAccount = () =>{
@@ -249,12 +249,11 @@ function ResultFromSearch (){
  
    { files.map((item,index) => (
     
-      <div key={item.id} className="mb-3  pl-1 md:mb-6  h-97 sm:w-48 lg:w-56 w-40 bg-white md:transition-transform ease-in-out md:transform  md:hover:scale-105 ">
+      <div key={item.id} className="mb-3  pl-1 md:mb-6  h-78 sm:w-48 lg:w-56 w-40 bg-white md:transition-transform ease-in-out md:transform  md:hover:scale-105 ">
          <p className="text-sm font-bold mb-1">{item.name}</p>
         <button className="bg-red-600 hover:cursor-default rounded-sm text-white text-xs px-1 py-1 mb-1 mt-1 "> Pay on Delivery </button>
        <div > <img src={item.pictureURL} className=" mb-2   lg:h-auto md:w-40  h-36 w-40 " alt={`Image ${index}`}/> </div>
      <button className="bg-custom-color mb-2 hover:cursor-default rounded-sm text-white text-xs px-1 py-1">Official Store</button>
-    <div className="w-full"> <p className="text-sm font-mono max-words-20  mb-1">{item.description}</p></div>
      <p className="text-sm font-bold mb-1">{item.Price}</p>
      <img src={star} />
      <p className="font-mono text-sm font-bold mt-1">Exclusive</p>

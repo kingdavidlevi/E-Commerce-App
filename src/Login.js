@@ -1,12 +1,57 @@
-import React from "react";
+import React,{useState} from "react";
 import imgages from '../src/images/Side Image (1).png'
-import { NavLink } from "react-router-dom";
+import { NavLink,useNavigate } from "react-router-dom";
+import { initializeApp } from "firebase/app";
+ import { getFirestore, collection,doc, getDoc } from 'firebase/firestore';
+ import {firebaseConfig} from './firebase'
+ import { FaEye,FaEyeSlash } from "react-icons/fa";
 
 
 
-
+import {getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
 function Login (){
+    const [formValues, setFormValues] = useState({ email: '', password: '', nameValue: '' })
+    const [visibility,setVisibility] = useState(false)
+    const navigate = useNavigate()
+    const firebaseApp = initializeApp(firebaseConfig);
+    const auth = getAuth(firebaseApp);
+
+
+
+    
+    const handleSignIn = () => {
+
+   
+        signInWithEmailAndPassword(auth, formValues.email, formValues.password )
+          .then((userCredential) => {
+            // Set display name
+            const user = userCredential.user
+            console.log("User signed up successfully");
+            if(user){
+            navigate('/Cart')
+          }
+          })
+          .catch((error) => {
+            console.error("Sign-up error", error.message);
+          });
+    
+    
+    
+        }
+
+
+        const handleFormChanges = (e) =>{
+            const {name, value} = e.target
+    
+            setFormValues((prevdata) => ({
+              ...prevdata,
+              [name]:value
+    
+              
+            }))
+     
+         }
 
 
     return(
@@ -54,10 +99,10 @@ function Login (){
                 <h3 className=" lg:text-2xl text-center md:text-start lg:font-semibold  md:text-2xl font-semibold md:font-semibold">Log in to Exclusive </h3>
                 <p className="md:mt-6 mt-14  text-sm">Enter your details below</p>
                 <form>
-                    <input type="text" className='border-2 border-r-0 border-l-0 pb-1 w-80 border-t-0 border-gray-300 lg:w-96 md:w-90  outline-none mt-10 mb-6' placeholder="Name"required /> <br/>
-                    <input type="email" className='border-2 border-r-0 border-l-0 pb-1 w-80 border-t-0 border-gray-300 lg:w-96 md:w-90 outline-none mb-6' placeholder="Email Address" required /><br/>
-                    <input type="password" className='border-2 border-r-0 border-l-0 pb-1 w-80 border-t-0 border-gray-300 lg:w-96 md:w-90 outline-none mb-6' max={25} placeholder="Password" required/><br/>
-                     <button type="submit" className="rounded-lg pt-1 pb-1 md:w-90 bg-red-400 w-80 lg:w-90 text-white mt-4">Login in</button>
+                    <input onChange={handleFormChanges} name="nameValue" type="text" className='border-2 border-r-0 border-l-0 pb-1 w-80 border-t-0 border-gray-300 lg:w-96 md:w-90  outline-none mt-10 mb-6' placeholder="Name"required /> <br/>
+                    <input onChange={handleFormChanges} name="email" type="email" className='border-2 border-r-0 border-l-0 pb-1 w-80 border-t-0 border-gray-300 lg:w-96 md:w-90 outline-none mb-6' placeholder="Email Address" required /><br/>
+                    <input onChange={handleFormChanges} name="password" type="password" className='border-2 border-r-0 border-l-0 pb-1 w-80 border-t-0 border-gray-300 lg:w-96 md:w-90 outline-none mb-6' max={25} placeholder="Password" required/><br/>
+                     <button onClick={handleSignIn} type="submit" className="rounded-lg pt-1 pb-1 md:w-90 bg-red-400 w-80 lg:w-90 text-white mt-4">Login in</button>
                      <p className="text-center mt-8 text-lg">Don't have an account? <span><NavLink to='/Second/Signup' className='underline'>Sign Up</NavLink></span></p>
                 </form>
             </div>

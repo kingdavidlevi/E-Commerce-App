@@ -1,5 +1,5 @@
 import React,{useEffect,useRef, useState} from "react";
-import { Outlet, useNavigate} from "react-router-dom";
+import { Outlet, useNavigate, useOutletContext} from "react-router-dom";
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection,doc, getDoc } from 'firebase/firestore';
 import {firebaseConfig} from './firebase'
@@ -14,7 +14,7 @@ function Second (){
     const [files,setFiles] = useState([])
     const [error,setError] = useState('')
     const [input,setInput] = useState('')
-
+    const {formValues,setFormValues,cartDiv,setCartDiv,nameValue,updateCart,setUpdateCart} = useOutletContext()
     
 
     /*useEffect(() => {

@@ -16,10 +16,12 @@ import Account from './Account';
 import Search from './Search';
 import ResultFromSearch from './ResultFromSearch';
 import Second from './Second';
+import OverAll from './OverAll';
 
 
 const router = createBrowserRouter(createRoutesFromElements(
-  <>
+  <Route element={<OverAll />}>
+    
   <Route  element={<ScrollToTop/>} >
     <Route path='/' element={<HomePage/>} />
   <Route path='Products' element={<Products/>} />
@@ -36,11 +38,13 @@ const router = createBrowserRouter(createRoutesFromElements(
   <Route path='*' element={<Error/>} /> 
   <Route path='ResultFromSearch' element={<ResultFromSearch/>} />
   <Route path='Info' element={<Info/>} />
-<Route path='Signup' element={<Signup/>} />
+  <Route path='Signup' element={<Signup/>} />
 <Route path='Search' element={<Search/>} />
 
 </Route>
-</>
+
+
+</Route>
   
 ))
 function App() {
