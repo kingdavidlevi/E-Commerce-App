@@ -5,10 +5,9 @@ import { initializeApp } from "firebase/app";
  import { getFirestore, collection,doc, getDoc } from 'firebase/firestore';
  import {firebaseConfig} from './firebase'
  import { FaEye,FaEyeSlash } from "react-icons/fa";
-
-
-
 import {getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+ 
+
 
 function Login (){
     const [formValues, setFormValues] = useState({ email: '', password: '', nameValue: '' })
@@ -16,24 +15,27 @@ function Login (){
     const navigate = useNavigate()
     const firebaseApp = initializeApp(firebaseConfig);
     const auth = getAuth(firebaseApp);
-
+ 
 
 
     
     const handleSignIn = () => {
 
    
-        signInWithEmailAndPassword(auth, formValues.email, formValues.password )
+         signInWithEmailAndPassword(auth, formValues.email, formValues.password )
           .then((userCredential) => {
             // Set display name
             const user = userCredential.user
+            console.log(user)
+            
             console.log("User signed up successfully");
             if(user){
             navigate('/Cart')
           }
           })
           .catch((error) => {
-            console.error("Sign-up error", error.message);
+            console.error("Sign-up error", error);
+            console.log('after')
           });
     
     
@@ -51,6 +53,13 @@ function Login (){
               
             }))
      
+         }
+
+
+
+
+         const handleEye = () => {
+          setVisibility(prevstate => !prevstate)
          }
 
 
@@ -102,6 +111,7 @@ function Login (){
 
                     <input onChange={handleFormChanges} name="email" type="email" className='border-2 border-r-0 border-l-0 pb-1 w-80 border-t-0 border-gray-300 mt-10 pl-2 md:pl-0 lg:w-96 md:w-90 outline-none mb-6' placeholder="Email Address" required /><br/>
                     <input onChange={handleFormChanges} name="password" type="password" className='border-2 border-r-0 border-l-0 pb-1 w-80 border-t-0 border-gray-300 pl-2 md:pl-0 lg:w-96 md:w-90 outline-none mb-6' max={25} placeholder="Password" required/><br/>
+                    {!visibility ? <div className="fixed  bottom-56 mb-2" onClick={handleEye}> <FaEye/> </div> : <div className="fixed  right-40 bottom-56 mb-2" onClick={handleEye}> <FaEyeSlash/> </div>}
                      <button onClick={handleSignIn} type="submit" className="rounded-lg pt-1 pb-1 md:w-90 bg-red-400 w-80 lg:w-90 text-white mt-4">Login in</button>
                      <p className="text-center mt-8 mb-4 md:mb-0 text-lg">Don't have an account? <span><NavLink to='/Second/Signup' className='underline'>Sign Up</NavLink></span></p>
                 </form>

@@ -3,9 +3,9 @@ import search from './images/Component 2.png'
 import {FaBars,FaCog, FaHeartbeat,FaTimes} from 'react-icons/fa'
 import { NavLink,useLocation,useNavigate, useOutletContext } from "react-router-dom";
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection,doc, getDoc } from 'firebase/firestore';
+import { getFirestore, collection,doc,setDoc, getDoc } from 'firebase/firestore';
 import {firebaseConfig} from './firebase'
-
+import { auth } from "./firebase";
  
  
 import cart from './images/Cart1.png'
@@ -18,7 +18,6 @@ function ResultFromSearch (){
     const app = initializeApp(firebaseConfig);
     const firestore = getFirestore(app)
     const [files,setFiles] = useState([])
-    const [error,setError] = useState('')
     const navigate = useNavigate()
     const [isFixed]  = useState(false)
     const [hamburger,setHamburger] = useState(false)
@@ -26,12 +25,8 @@ function ResultFromSearch (){
     const {input} = useOutletContext()
     const [unsubscribe,setUnsubscribe] = useState('')
     const [mounted, setMounted] = useState(true);
-
-    // Get analytics
-   
- 
-
- 
+    const [userSavedData, setUserSavedData] = useState([]);
+    const [error, setError] = useState(null);
    
 
 
@@ -75,11 +70,19 @@ function ResultFromSearch (){
 
 
 
-    useEffect(() => {
+    /*useEffect(() => {
+
+     
       
         const fetchData = async () => {
+        
           try {
             // Use Firestore collection
+
+
+            const cachedData = localStorage.getItem('cachedData');
+
+
             const myDocumentRef = doc(firestore, 'mysecondcollection', 'CpLX4u9MIavFb5Mq4QsS');
           
             // Fetch the specific document
@@ -97,17 +100,18 @@ function ResultFromSearch (){
                setFiles(matchResult)
                console.log(matchResult)
               }
+
              else{
               setFiles([])
              }
 
             
                
-                
+               
                
             
             } else {
-              console.log('Document does not exist')
+              setFiles([])
             }
           } catch (error) {
             
@@ -120,43 +124,151 @@ function ResultFromSearch (){
 
         fetchData();
 
-        return () => {
-          cleanup(fetchData)
-        }
-        // Invoke the function to fetch data when the component mounts
+     
+ 
+   
       }, [input]); // Empty dependency array means the effect runs once after the initial render
-      
+      */
 
-     // .length > 0 ? matchResult : []
 
-      /*useEffect(() => {
+
+      useEffect(() => {
         const fetchData = async () => {
           try {
-            // Your Firestore logic
-            const myDocumentRef = doc(firestore, 'mysecondcollection', 'CpLX4u9MIavFb5Mq4QsS');
-            const unsubscribe = onSnapshot(myDocumentRef, (doc) => {
-              // Handle snapshot changes
-              const data = doc.data();
-              // Update state or perform other actions based on the data
-            });
-      
-            // Save the unsubscribe function in a state variable or another suitable place
-            setUnsubscribe(unsubscribe);
+            const cachedData = localStorage.getItem('cachedData');
+    
+            if (cachedData) {
+              const cachedResult = JSON.parse(cachedData);
+              const matchResult = cachedResult.filter((item) =>
+                item.unique.toLowerCase().includes(input.toLowerCase())
+              );
+    
+              setFiles(matchResult);
+            } else {
+              const myDocumentRef = doc(firestore, 'mysecondcollection', 'CpLX4u9MIavFb5Mq4QsS');
+              const docSnapshot = await getDoc(myDocumentRef);
+    
+              if (docSnapshot.exists()) {
+                const result = docSnapshot.data().SearchObjects || [];
+    
+                localStorage.setItem('cachedData', JSON.stringify(result));
+    
+                const matchResult = result.filter((item) =>
+                  item.unique.toLowerCase().includes(input.toLowerCase())
+                );
+    
+                setFiles(matchResult);
+              } else {
+                setFiles([]);
+              }
+            }
           } catch (error) {
             setError('Error fetching data:', error);
           }
         };
-      
+    
         fetchData();
-      
-        // Cleanup function to unsubscribe when the component is unmounted
-        return () => {
-          if (unsubscribe) {
-            unsubscribe();
+      }, [input]);
+    
+
+/*
+      useEffect(() => {
+        const fetchUserSavedData = async () => {
+          try {
+            const currentUser = auth.currentUser;
+            
+            if (currentUser) {
+              const uid = currentUser.uid;
+              const userDocRef = doc(firestore, 'usersCollection', uid);
+              const userDocSnapshot = await getDoc(userDocRef);
+    
+              if (userDocSnapshot.exists()) {
+                const userData = userDocSnapshot.data().userData;
+                setUserSavedData(userData || []);
+                console.log(userData)
+              } else {
+                setUserSavedData([]);
+              }
+            }
+          } catch (error) {
+            console.error('Error fetching user data:', error);
           }
         };
-      }, [/* dependencies ]);*/
-      
+    
+        fetchUserSavedData();
+      }, []);
+
+
+      useEffect(() => {
+    
+      const handleSearch = async () => {
+        try {
+          const myDocumentRef = doc(firestore, 'mysecondcollection', 'CpLX4u9MIavFb5Mq4QsS');
+          const docSnapshot = await getDoc(myDocumentRef);
+    
+          if (docSnapshot.exists()) {
+            const data = docSnapshot.data();
+            const result = data.SearchObjects || [];
+             
+            const matchResult = result.filter((item) =>
+              item.unique.toLowerCase().includes(input.toLowerCase())
+            );
+            
+            setFiles(matchResult);
+          } else {
+            setFiles([]);
+          }
+        } catch (error) {
+          setError('Error fetching data:', error);
+        }
+      };
+    
+    handleSearch()
+    },[input])
+
+
+    useEffect(() => {
+
+      const handleSave = async (item) => {
+        try {
+          const currentUser = auth.currentUser;
+          
+          if (currentUser) {
+            const uid = currentUser.uid;
+            const userDocRef = doc(firestore, 'usersCollection', uid);
+            const userDocSnapshot = await getDoc(userDocRef);
+    
+            if (userDocSnapshot.exists()) {
+              const userData = userDocSnapshot.data().userData || [];
+    
+              // Check if the item is not already saved
+              if (!userData.some((savedItem) => savedItem.unique === item.unique)) {
+                const updatedUserData = [...userData, item];
+                if(updatedUserData){
+                await setDoc(userDocRef, { userData: updatedUserData });
+                setUserSavedData(updatedUserData);
+              }
+              else {
+                console.error('Attempted to save undefined data:', updatedUserData);
+              }
+
+              }
+            } else {
+              const initialUserData = [item];
+              if(initialUserData){
+              await setDoc(userDocRef, { userData: initialUserData });
+              setUserSavedData(initialUserData);
+            }
+            }
+          }
+        } catch (error) {
+          console.error('Error saving data:', error);
+        }
+      };
+      handleSave()
+    
+    },[input])
+      */
     
 
 
