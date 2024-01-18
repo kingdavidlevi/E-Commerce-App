@@ -300,7 +300,7 @@ const allsecondDemo = [
 
 
 
-<div className=" md:rounded-tr-md md:rounded-tl-md h-12  items-center grid sm:w-100 place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
+<div className=" mt-4 md:rounded-tr-md md:rounded-tl-md h-12  items-center grid sm:w-100 place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
 
 <p className="text-white font-medium text-xl">Shoe Deals</p>
 
