@@ -4,7 +4,7 @@ import { NavLink, Navigate, useNavigate, useOutletContext } from "react-router-d
 import { initializeApp } from "firebase/app";
  import { getFirestore, collection,doc, getDoc } from 'firebase/firestore';
  import {firebaseConfig} from './firebase'
- import { FaEye,FaEyeSlash } from "react-icons/fa";
+ import { FaEye,FaEyeSlash,FaSpinner } from "react-icons/fa";
   
  
  import {getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
@@ -19,13 +19,17 @@ function Signup (){
    const navigate = useNavigate()
    const firebaseApp = initializeApp(firebaseConfig);
    const auth = getAuth(firebaseApp);
+   const [error,setError] = useState('')
+   const [loading,setLoading] = useState(false)
+   const [user,setUser] = useState([])
+
    
    /*updateProfile(userCredential.user, {
     displayName: formValues.nameValue
   });
 */
 
-    const handleSignUp = () => {
+    /*const handleSignUp = () => {
 
    
     createUserWithEmailAndPassword(auth, formValues.email, formValues.password )
@@ -43,7 +47,45 @@ function Signup (){
 
 
 
-    }
+    }*/
+
+
+
+
+    const handleSignUp = async (e) => {
+      e.preventDefault()
+      setLoading(true)
+      setError("")
+  
+  
+      const option = {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({ email: formValues.email, password: formValues.password })
+      }
+      try {
+  
+        const response = await fetch('https://weblify.onrender.com/v1/auth/login', option);
+        const data = await response.json()
+         console.log(data)
+        setUser(data.data)
+        if (user) {  navigate ('/Cart') }
+     
+  
+      }
+  
+      catch (err) {
+        setError(err)
+        console.log(err)
+  
+      }
+      setLoading(false)
+      setFormValues('')
+  
+    };
+  
 
 
      const handleFormChanges = (e) =>{
@@ -105,6 +147,15 @@ function Signup (){
 
             <div className=" lg:mr-20 md:mr-6 hidden md:block ">
             <img src={imgages} className="lg:w-200 lg:h-1200 md:ml-4  md:h-100 md:w-90 sm:h-100" />
+
+            {!loading ? (
+
+
+
+<div className="  z-10   " ><FaSpinner className="md:h-11 absolute h-11 w-11 md:w-11    top-96 grid place-items-center rotate-180 animate-spin " style={{'right' : '45%'}}/></div>
+
+
+) : null}
             </div>
 
             <div className="md:mt-16 md:block grid place-content-center items-center  shadow-xl md:shadow-none bg-white  w-90  md:h-full">

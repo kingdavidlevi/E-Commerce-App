@@ -62,7 +62,7 @@ window.addEventListener('popstate', function (event) {
 
 
 return(
-   <div >
+   <div  className="pb-14 md:pb-0">
 
 
     <div>
@@ -137,7 +137,7 @@ return(
 
 
 
-<div  className="md:block grid place-content-center ">
+<div  className="md:block  grid place-content-center ">
 
 <div className=" pl-4  pt-4 mt-4 md:mt-0 pt pr-3 border-2 mb-6 rounded-md border-gray-400 xl:h-77 lg:h-72 lg:w-90 w-90 h-80 md:w-80 md:h-80  xl:w-99">
 <div className="mb-4"><p className="text-lg font-medium">Cart Total</p></div>
