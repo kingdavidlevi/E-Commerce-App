@@ -246,12 +246,59 @@ const allsecondDemo = [
 
 
 
+<div className=" md:rounded-tr-md md:rounded-tl-md h-12  items-center grid sm:w-100 place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
+
+<p className="text-white font-medium text-xl">Phones / Clothes Deals</p>
+
+</div>
+
+
+<div className="lg:w-340 px-4 md:pt-2 pt-3 rounded-br-md gap-3 flex h-68 overflow-x-auto shadow-lg xl:w-400 bg-white rounded-bl-md sm:w-100 md:w-270  md:h-82 w-full">
+
+{dataList.length > 0 ? (
+  firstData.slice(16, 26).map((currentObject, index) => (
+    <div key={currentObject.id} className=" flex-shrink-0 pl-2 h-62 md:hover:shadow-2xl bg-white md:hover:border-2 md:border-none md:hover:border-gray-300  border-gray-300 border-2 md:h-68 w-44 ">
+        
+        <p className="text-sm font-bold mb-1">{currentObject.name}</p>
+     <img className="md:w-40 mb-2 h-32 md:h-36 w-40" src={currentObject.pictureURL} alt={`Image ${index}`} />
+     <button className="bg-custom-color mb-2 hover:cursor-default rounded-sm text-white text-xs px-1 py-1">Official Store</button>
+     <p className="text-sm font-bold mb-1">{currentObject.Price}</p>
+     <img src={star} />
+     <p className="font-mono text-sm font-bold mt-1">Exclusive</p>
+
+     <button className="bg-orange-600 items-center mt-2 rounded-sm px-4 py-2 text-white text-sm font-bold">ADD TO CART</button>
+
+
+    </div>
+  ))
+) : (
+  
+
+  allsecondDemo.map((item, index) => (
+    <div className="lg:w-1/4  p-2 md:pl-1.5   " key={index}>{item}</div>
+  ))
+
+)}
+
+</div>
 
 
 
-<div className=" rounded-tr-md rounded-tl-md h-14 md:border-top-rounded items-center grid sm:w-100 place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
 
-<p className="text-white font-medium text-xl">Appliances Deals</p>
+
+
+
+
+
+
+
+
+
+
+
+<div className=" mt-4 md:rounded-tr-md md:rounded-tl-md h-12  items-center grid sm:w-100 place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
+
+<p className="text-white font-medium text-xl">Phones / Clothes Deals</p>
 
 </div>
 
@@ -284,6 +331,12 @@ const allsecondDemo = [
 )}
 
 </div>
+
+
+
+
+
+
 
 
 <section className="mt-24  ">
