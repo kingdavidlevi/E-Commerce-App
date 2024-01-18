@@ -33,12 +33,12 @@ function Signup (){
         // Set display name
         const user = userCredential.user
         console.log("User signed up successfully");
-        if(user){
+        if(user.uid){
         navigate('/Cart')
       }
       })
       .catch((error) => {
-        console.error("Sign-up error", error.message);
+        console.error(" Firebase Sign-up error", error);
       });
 
 

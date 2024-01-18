@@ -29,7 +29,7 @@ function Login (){
             console.log(user)
             
             console.log("User signed up successfully");
-            if(user){
+            if(user.uid){
             navigate('/Cart')
           }
           })
