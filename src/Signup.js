@@ -148,7 +148,7 @@ function Signup (){
             <div className=" lg:mr-20 md:mr-6 hidden md:block ">
             <img src={imgages} className="lg:w-200 lg:h-1200 md:ml-4  md:h-100 md:w-90 sm:h-100" />
 
-            {!loading ? (
+            {loading ? (
 
 
 
