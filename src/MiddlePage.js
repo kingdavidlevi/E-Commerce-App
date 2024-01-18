@@ -235,14 +235,14 @@ const allsecondDemo = [
       </div>
        
     ))
-  ) :  
+  ) :  (
   
-  <div className="flex overflow-x-auto ">
- {allsecondDemo.map((item, index) => (
+  
+ allDemo.map((item, index) => (
     <div className="lg:w-1/4 flex-shrink-0  p-2 md:pl-1.5   " key={index}>{item}</div>
-  ))}
+  ))
  
-  </div>
+  )
   
   
   
