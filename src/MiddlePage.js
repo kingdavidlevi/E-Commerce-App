@@ -235,17 +235,18 @@ const allsecondDemo = [
       </div>
        
     ))
-  ) : ( 
-    
-    
-    allDemo.map((item, index) => (
-      <div className="lg:w-1/4  p-2 md:pl-1.5   " key={index}>{item}</div>
-    ))
+  ) :  
   
-
+  <div className="flex overflow-x-auto ">
+ {allsecondDemo.map((item, index) => (
+    <div className="lg:w-1/4 flex-shrink-0  p-2 md:pl-1.5   " key={index}>{item}</div>
+  ))}
+ 
+  </div>
   
-
-  )}
+  
+  
+  }
 </div>
 
 
@@ -263,7 +264,7 @@ const allsecondDemo = [
 </div>
 
 
-<div className="lg:w-340 px-4 md:pt-2 pt-3 rounded-br-md gap-3 flex h-68 overflow-x-auto shadow-lg xl:w-400 bg-white rounded-bl-md sm:w-100 md:w-270  md:h-82 w-full">
+<div className="lg:w-340 px-4 md:pt-2 pt-3 rounded-br-md gap-3 flex h-68  overflow-x-auto shadow-lg xl:w-400 bg-white rounded-bl-md sm:w-100 md:w-270  md:h-82 w-full">
 
 {dataList.length > 0 ? (
   firstData.slice(16, 26).map((currentObject, index) => (
@@ -281,14 +282,18 @@ const allsecondDemo = [
 
     </div>
   ))
-) : (
-  
+) : 
 
-  allsecondDemo.map((item, index) => (
-    <div className="lg:w-1/4  p-2 md:pl-1.5   " key={index}>{item}</div>
-  ))
+<div className="flex overflow-x-auto ">
+ {allsecondDemo.map((item, index) => (
+    <div className="lg:w-1/4 flex-shrink-0  p-2 md:pl-1.5   " key={index}>{item}</div>
+  ))}
+ 
+  </div>
 
-)}
+
+
+}
 
 </div>
 
@@ -311,6 +316,53 @@ const allsecondDemo = [
 
 {dataList.length > 0 ? (
   firstData.slice(27, 37).map((currentObject, index) => (
+    <div key={currentObject.id} className=" flex-shrink-0 pl-2 h-62 md:hover:shadow-2xl overflow-y-auto bg-white md:hover:border-2 md:border-none md:hover:border-gray-300  border-gray-300 border-2 md:h-68 w-44 ">
+        
+        <p className="text-sm font-bold mb-1">{currentObject.name}</p>
+     <img className="md:w-40 mb-2 h-32 md:h-36 w-40" src={currentObject.pictureURL} alt={`Image ${index}`} />
+     <button className="bg-custom-color mb-2 hover:cursor-default rounded-sm text-white text-xs px-1 py-1">Official Store</button>
+     <p className="text-sm font-bold mb-1">{currentObject.Price}</p>
+     <img src={star} />
+     <p className="font-mono text-sm font-bold mt-1">Exclusive</p>
+
+     <button className="bg-orange-600 items-center mt-2 rounded-sm px-4 py-2 text-white text-sm font-bold">ADD TO CART</button>
+
+
+    </div>
+  ))
+) : 
+  
+<div className="flex overflow-x-auto ">
+{allsecondDemo.map((item, index) => (
+   <div className="lg:w-1/4 flex-shrink-0  p-2 md:pl-1.5   " key={index}>{item}</div>
+ ))}
+
+ </div>
+
+}
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div className="  mt-4 md:rounded-tr-md md:rounded-tl-md h-12  items-center grid sm:w-100 place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
+
+<p className="text-white font-medium text-xl">Shoes / Glasses Deals</p>
+
+</div>
+
+
+<div className="lg:w-340 px-4 md:pt-2 pt-3 rounded-br-md gap-3 flex h-68  overflow-x-auto shadow-lg xl:w-400 bg-white rounded-bl-md sm:w-100 md:w-270  md:h-82 w-full">
+
+{dataList.length > 0 ? (
+  firstData.slice(43, 58).map((currentObject, index) => (
     <div key={currentObject.id} className=" flex-shrink-0 pl-2 h-62 md:hover:shadow-2xl bg-white md:hover:border-2 md:border-none md:hover:border-gray-300  border-gray-300 border-2 md:h-68 w-44 ">
         
         <p className="text-sm font-bold mb-1">{currentObject.name}</p>
@@ -325,16 +377,64 @@ const allsecondDemo = [
 
     </div>
   ))
-) : (
-  
+) : 
 
-  allsecondDemo.map((item, index) => (
-    <div className="lg:w-1/4  p-2 md:pl-1.5   " key={index}>{item}</div>
-  ))
+<div className="flex overflow-x-auto ">
+ {allsecondDemo.map((item, index) => (
+    <div className="lg:w-1/4 flex-shrink-0  p-2 md:pl-1.5   " key={index}>{item}</div>
+  ))}
+ 
+  </div>
 
-)}
+
+
+}
 
 </div>
+
+
+
+<div className="  mt-4 md:rounded-tr-md md:rounded-tl-md h-12  items-center grid sm:w-100 place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
+
+<p className="text-white font-medium text-xl">Italian Shoes Deals</p>
+
+</div>
+
+
+<div className="lg:w-340 px-4 md:pt-2 pt-3 rounded-br-md gap-3 flex h-68  overflow-x-auto shadow-lg xl:w-400 bg-white rounded-bl-md sm:w-100 md:w-270  md:h-82 w-full">
+
+{dataList.length > 0 ? (
+  firstData.slice(27, 42).map((currentObject, index) => (
+    <div key={currentObject.id} className=" flex-shrink-0 pl-2 h-62 md:hover:shadow-2xl bg-white md:hover:border-2 md:border-none md:hover:border-gray-300  border-gray-300 border-2 md:h-68 w-44 ">
+        
+        <p className="text-sm font-bold mb-1">{currentObject.name}</p>
+     <img className="md:w-40 mb-2 h-32 md:h-36 w-40" src={currentObject.pictureURL} alt={`Image ${index}`} />
+     <button className="bg-custom-color mb-2 hover:cursor-default rounded-sm text-white text-xs px-1 py-1">Official Store</button>
+     <p className="text-sm font-bold mb-1">{currentObject.Price}</p>
+     <img src={star} />
+     <p className="font-mono text-sm font-bold mt-1">Exclusive</p>
+
+     <button className="bg-orange-600 items-center mt-2 rounded-sm px-4 py-2 text-white text-sm font-bold">ADD TO CART</button>
+
+
+    </div>
+  ))
+) : 
+
+<div className="flex overflow-x-auto ">
+ {allsecondDemo.map((item, index) => (
+    <div className="lg:w-1/4 flex-shrink-0  p-2 md:pl-1.5   " key={index}>{item}</div>
+  ))}
+ 
+  </div>
+
+
+
+}
+
+</div>
+
+
 
 
 
@@ -371,20 +471,20 @@ const allsecondDemo = [
 
     </div>
   ))
-) : (
+) : 
   
-
-  allsecondDemo.map((item, index) => (
-    <div className="lg:w-1/4  p-2 md:pl-1.5   " key={index}>{item}</div>
-  ))
-
-)}
+<div className="flex overflow-x-auto ">
+ {allsecondDemo.map((item, index) => (
+    <div className="lg:w-1/4 flex-shrink-0  p-2 md:pl-1.5   " key={index}>{item}</div>
+  ))}
+ 
+  </div>
+}
 
 </div>
 
 
-
-
+ 
 
 
 
@@ -401,13 +501,13 @@ const allsecondDemo = [
 
 
 
-<section className=" mt-20 lg:gap-8 md:gap-6 md:flex pb-20 md:pb-0 grid grid-cols-2 gap-3 place-items-center">
+<section className=" mt-20 lg:gap-8 md:gap-6 md:flex pb-20 md:pb-0 grid grid-cols-2 gap-10 place-items-center">
     <div >
     <img src={page1} className="md:w-36 md:h-32  h-26 w-32  mb-5 md:mb-0   bg-white " />
     </div>
 
     <div className="  ">
-    <img src={page2} className="md:w-38 md:h-33  h-26 w-32 mb-5 md:mb-0 " />
+    <img src={page3} className="  md:w-36 md:h-32 bg-white  mb-5 md:mb-0    h-26 w-32 " />
     </div>
 
     <div>
@@ -415,7 +515,7 @@ const allsecondDemo = [
     </div>
 
     <div>
-    <img src={page4} className="md:w-36 md:h-32 bg-white  h-26 w-32 "  />
+    <img src={page4} className="md:w-36 md:h-32 bg-white  mb-5 h-26 w-32 "  />
     </div>
 
 </section>

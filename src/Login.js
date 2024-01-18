@@ -104,9 +104,10 @@ function Login (){
             <img src={imgages} className=" lg:w-200 lg:h-1200 md:ml-4  md:h-100 md:w-90 sm:h-100" />
             </div>
 
-            <div className="md:mt-16 md:block items-center grid place-content-center shadow-xl md:shadow-none bg-white  w-90  md:h-full">
-                <h3 className=" lg:text-2xl text-center md:text-start lg:font-semibold mt-4 md:mt-0  md:text-2xl font-semibold md:font-semibold">Log in to Exclusive </h3>
-                <p className="md:mt-6 mt-14  text-sm">Enter your details below</p>
+            <div className="md:mt-16 md:block items-center grid place-content-center shadow-2xl md:shadow-none bg-white  w-90  md:h-full">
+            <img src={imgages} className="md:hidden h-56 w-full mt-4 "  />
+                <h3 className=" lg:text-2xl text-start ml- md:text-start lg:font-semibold mt-8 md:mt-0  md:text-2xl font-semibold md:font-semibold">Log in to Exclusive </h3>
+                <p className="md:mt-6 mt-4  text-sm">Enter your details below</p>
                 <form>
 
                     <input onChange={handleFormChanges} name="email" type="email" className='border-2 border-r-0 border-l-0 pb-1 w-80 border-t-0 border-gray-300 mt-10 pl-2 md:pl-0 lg:w-96 md:w-90 outline-none mb-6' placeholder="Email Address" required /><br/>

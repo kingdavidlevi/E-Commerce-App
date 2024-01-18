@@ -108,8 +108,9 @@ function Signup (){
             </div>
 
             <div className="md:mt-16 md:block grid place-content-center items-center  shadow-xl md:shadow-none bg-white  w-90  md:h-full">
-                <h3 className=" lg:text-2xl mt-4 md:mt-0 lg:font-semibold text-center md:text-start text-lg font-semibold md:text-2xl md:font-semibold">Create an account</h3>
-                <p className="md:mt-6 mt-14 text-sm">Enter your details below</p>
+            <img src={imgages} className="md:hidden h-56 w-full mt-4 "  />
+                <h3 className=" lg:text-2xl mt-4 md:mt-0 lg:font-semibold text-start md:text-start text-lg font-semibold md:text-2xl md:font-semibold">Create an account</h3>
+                <p className="md:mt-6 mt-4 text-sm">Enter your details below</p>
                 <form>
  
                     <input onChange={handleFormChanges} name="email" value={formValues.email} type="email" className='mt-10 border-2 border-r-0 border-l-0 pb-1  border-t-0 border-gray-300 lg:w-96 md:w-90 w-80 pl-2 md:pl-0 outline-none mb-6' placeholder="Email Address" required autoCapitalize="" /><br/>
