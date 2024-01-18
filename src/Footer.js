@@ -10,9 +10,9 @@ function Footer (){
        <div className=" inset-x-0 bottom-0 bg-black text-white pt-8 pb-10 block">
       
 
-      <div className="mt-4 grid mx-10 border-b-r border-white place-items-center">
+      <div className="mt-4 grid mx-12 border-b-r border-white place-items-center">
        <ul>
-        <li  className="text-xl  text-center font-bold text-white">
+        <li  className="text-xl md:text-2xl text-center font-bold text-white">
           Exclusive
         </li>
         <li  className="text-lg mt-6 text-center font-medium text-white"> 
