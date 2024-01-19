@@ -8,7 +8,7 @@ function OverAll() {
  const [updateCart,setUpdateCart] = useState(0)
  const [cartDiv,setCartDiv]  = useState(false)
  const location = useLocation(); 
-
+ const [handlelocation, sethandleLocation] = useState(true)
 
 useEffect(() =>{
     window.scrollTo(0,0);
@@ -21,7 +21,7 @@ useEffect(() =>{
 
    return(
     <div>
-        <Outlet context={{cartDiv,setCartDiv,updateCart,setUpdateCart}}/>
+        <Outlet context={{cartDiv,sethandleLocation,setCartDiv,handlelocation,sethandleLocation,setUpdateCart,updateCart}}/>
     </div>
 
    )

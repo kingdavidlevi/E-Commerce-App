@@ -17,7 +17,7 @@ function    ScrollToTop (){
 
     const app = initializeApp(firebaseConfig);
     const firestore = getFirestore(app)
-    const {formValues,setFormValues,cartDiv,setCartDiv,updateCart,setUpdateCart} = useOutletContext()
+    const {formValues,handlelocation,setFormValues,cartDiv,setCartDiv,updateCart,setUpdateCart} = useOutletContext()
 
 
 

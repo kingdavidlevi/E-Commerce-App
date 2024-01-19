@@ -14,7 +14,7 @@ function Second (){
     const [files,setFiles] = useState([])
     const [error,setError] = useState('')
     const [input,setInput] = useState('')
-    const {formValues,setFormValues,cartDiv,setCartDiv,nameValue,updateCart,setUpdateCart} = useOutletContext()
+    const {formValues,sethandleLocation,handlelocation,setFormValues,cartDiv,setCartDiv,nameValue,updateCart,setUpdateCart} = useOutletContext()
     
 
     /*useEffect(() => {
@@ -55,7 +55,7 @@ function Second (){
 
         return(
             <div>
-            <Outlet context={{input,setInput}} />
+            <Outlet context={{input,sethandleLocation,handlelocation,setInput}} />
             </div>
         )
 

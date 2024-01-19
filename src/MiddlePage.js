@@ -26,7 +26,7 @@ const [minutes,setMinutes] = useState('')
 const [seconds,setSeconds] = useState('')
 const [Hover1, setHover1] = useState(false)
 const [Hover2, setHover2] = useState(false)
-const {isFixed,mobileFixed,hamburger} = useOutletContext()
+const {isFixed,cartDiv,setCartDiv,mobileFixed,hamburger,setUpdateCart,updateCart} = useOutletContext()
 const {imageUrls,setImageUrls} =useState([])
 const [dataList, setDataList] = useState([]);
 const app = initializeApp(firebaseConfig);
@@ -153,9 +153,29 @@ const allsecondDemo = [
 
 
 
-   
+   const addCart = (unique) =>{
 
 
+
+ 
+
+    for (const data of firstData){
+      const dataId = data.id;
+    
+      console.log(dataId);
+     if (dataId == unique){
+      setUpdateCart(prevstate => prevstate + 1)
+      setCartDiv(true)
+      
+      console.log('active')
+     }
+
+    console.log(dataId)
+    console.log(unique)
+
+   }
+
+  }
 
     return(
 
@@ -257,7 +277,7 @@ const allsecondDemo = [
 
 
 
-<div className=" md:rounded-tr-md md:rounded-tl-md h-12  items-center grid sm:w-100 place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
+<div  className=" md:rounded-tr-md md:rounded-tl-md h-12  items-center grid sm:w-100 place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
 
 <p className="text-white font-medium text-xl">Fashion Deals</p>
 
@@ -277,7 +297,7 @@ const allsecondDemo = [
      <img src={star} />
      <p className="font-mono text-sm font-bold mt-1">Exclusive</p>
 
-     <button className="bg-orange-600 items-center mt-2 rounded-sm px-4 py-2 text-white text-sm font-bold">ADD TO CART</button>
+     <button  onClick={() => addCart (currentObject.id)} className="bg-orange-600 items-center mt-2 rounded-sm px-4 py-2 text-white text-sm font-bold">ADD TO CART</button>
 
 
     </div>
@@ -316,7 +336,7 @@ const allsecondDemo = [
 
 {dataList.length > 0 ? (
   firstData.slice(27, 37).map((currentObject, index) => (
-    <div key={currentObject.id} className=" transition-transform ease-in-out transform  hover:scale-105 flex-shrink-0 pl-2 h-62 md:hover:shadow-2xl overflow-y-auto bg-white md:hover:border-2 md:border-none md:hover:border-gray-300  border-gray-300 border-2 md:h-68 w-44 ">
+    <div  key={currentObject.id} className=" transition-transform ease-in-out transform  hover:scale-105 flex-shrink-0 pl-2 h-62 md:hover:shadow-2xl overflow-y-auto bg-white md:hover:border-2 md:border-none md:hover:border-gray-300  border-gray-300 border-2 md:h-68 w-44 ">
         
         <p className="text-sm font-bold mb-1">{currentObject.name}</p>
      <img className="md:w-40 mb-2 h-32 md:h-36 w-40" src={currentObject.pictureURL} alt={`Image ${index}`} />
@@ -325,7 +345,7 @@ const allsecondDemo = [
      <img src={star} />
      <p className="font-mono text-sm font-bold mt-1">Exclusive</p>
 
-     <button className="bg-orange-600 items-center mt-2 rounded-sm px-4 py-2 text-white text-sm font-bold">ADD TO CART</button>
+     <button  onClick={() => addCart (currentObject.id)} className="bg-orange-600 items-center mt-2 rounded-sm px-4 py-2 text-white text-sm font-bold">ADD TO CART</button>
 
 
     </div>
@@ -372,7 +392,7 @@ const allsecondDemo = [
      <img src={star} />
      <p className="font-mono text-sm font-bold mt-1">Exclusive</p>
 
-     <button className="bg-orange-600 items-center mt-2 rounded-sm px-4 py-2 text-white text-sm font-bold">ADD TO CART</button>
+     <button  onClick={() => addCart (currentObject.id)} className="bg-orange-600 items-center mt-2 rounded-sm px-4 py-2 text-white text-sm font-bold">ADD TO CART</button>
 
 
     </div>
@@ -415,7 +435,7 @@ const allsecondDemo = [
      <img src={star} />
      <p className="font-mono text-sm font-bold mt-1">Exclusive</p>
 
-     <button className="bg-orange-600 items-center mt-2 rounded-sm px-4 py-2 text-white text-sm font-bold">ADD TO CART</button>
+     <button  onClick={() => addCart (currentObject.id)} className="bg-orange-600 items-center mt-2 rounded-sm px-4 py-2 text-white text-sm font-bold">ADD TO CART</button>
 
 
     </div>
@@ -461,7 +481,7 @@ const allsecondDemo = [
      <img src={star} />
      <p className="font-mono text-sm font-bold mt-1">Exclusive</p>
 
-     <button className="bg-orange-600 items-center mt-2 rounded-sm px-4 py-2 text-white text-sm font-bold">ADD TO CART</button>
+     <button  onClick={() => addCart (currentObject.id)} className="bg-orange-600 items-center mt-2 rounded-sm px-4 py-2 text-white text-sm font-bold">ADD TO CART</button>
 
 
     </div>
@@ -513,7 +533,7 @@ const allsecondDemo = [
      <img src={star} />
      <p className="font-mono text-sm font-bold mt-1">Exclusive</p>
 
-     <button className="bg-orange-600 items-center mt-2 rounded-sm px-4 py-2 text-white text-sm font-bold">ADD TO CART</button>
+     <button onClick={() => addCart (currentObject.id)} className="bg-orange-600  items-center mt-2  rounded-sm px-4 py-2 text-white text-sm font-bold">ADD TO CART</button>
 
 
     </div>

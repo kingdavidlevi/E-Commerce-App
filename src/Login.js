@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import imgages from '../src/images/Side Image (1).png'
-import { NavLink,useNavigate } from "react-router-dom";
+import { NavLink,useNavigate, useOutletContext } from "react-router-dom";
 import { initializeApp } from "firebase/app";
  import { getFirestore, collection,doc, getDoc } from 'firebase/firestore';
  import {firebaseConfig} from './firebase'
@@ -18,7 +18,7 @@ function Login (){
     const [error,setError] = useState('')
     const [loading,setLoading] = useState(false)
     const [user,setUser] = useState([])
-
+    const {handlelocation} = useOutletContext()
     
    /* const handleSignIn = () => {
 
@@ -64,7 +64,7 @@ function Login (){
       const data = await response.json()
        console.log(data)
       setUser(data.data)
-      if (user) {  navigate ('/Cart') }
+      if (user) {  navigate('/Cart') }
    
 
     }
@@ -114,7 +114,7 @@ function Login (){
         <div className="  relative overflow-y-hidden h-screen md:overflow-y-visible">
  
 
-
+{handlelocation && (
 
   <div className="block">  
 
@@ -170,7 +170,7 @@ function Login (){
                     <input onChange={handleFormChanges} name="email" type="email" className='border-2 border-r-0 border-l-0 pb-1 w-80 border-t-0 border-gray-300 mt-10 pl-2 md:pl-0 lg:w-96 md:w-90 outline-none mb-6' placeholder="Email Address" required /><br/>
                     <input onChange={handleFormChanges} name="password" type={!visibility ? 'password' : 'text'} className='border-2  border-r-0 border-l-0 pb-1 w-80 border-t-0 border-gray-300 pl-2 md:pl-0 lg:w-96 md:w-90 outline-none mb-6' max={25} placeholder="Password" required/><br/>
                     {!visibility ? <div className="absolute md:bottom-32 bottom-36 mb-4" onClick={handleEye}  style={{'right' : '10%'}}> <FaEye className="text-lg"/> </div> : <div className="absolute md:bottom-32  bottom-36 mb-4" onClick={handleEye} style={{'right' : '10%'}}> <FaEyeSlash className="text-lg"/> </div>}
-                     <button onClick={handleSignIn} type="submit" className="rounded-lg pt-1 pb-1 md:w-90 bg-red-400 w-80 lg:w-90 text-white mt-4">Login in</button>
+                     <button onClick={handleSignIn} type="submit" className="rounded-lg pt-1 pb-1 md:w-90 bg-red-400 w-80 lg:w-96 text-white mt-4">Login in</button>
                      <p className="text-center mt-8 mb-4 md:mb-0 text-lg">Don't have an account? <span><NavLink to='/Second/Signup' className='underline'>Sign Up</NavLink></span></p>
                 </form>
             </div>
@@ -180,7 +180,7 @@ function Login (){
 
         </div> 
 
-
+) }
 
 
 

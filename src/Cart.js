@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useOutletContext } from "react-router-dom";
 import generator from './images/1 (6).jpg'
 import up from './images/Drop-Up-Small.png'
 import down from './images/Drop-Down-Small (1).png'
@@ -11,7 +11,7 @@ function Cart() {
 const [addCart, setAddCart] = useState(1)
 const [zero,setZero] = useState(true)
 const navigate = useNavigate()
-
+const {handlelocation,sethandleLocation} =useOutletContext()
 
 const Add = () =>{
 setAddCart(prevstate => prevstate + 1)
@@ -50,6 +50,8 @@ window.addEventListener('popstate', function (event) {
   if (document.location.pathname === '/Second/Login') {
      
     window.location.replace('/')
+    sethandleLocation(false)
+    
   }
 })
 
@@ -57,6 +59,7 @@ window.addEventListener('popstate', function (event) {
   if (document.location.pathname === '/Second/SignUp') {
      
     window.location.replace('/')
+    sethandleLocation(false)
   }
 })
 

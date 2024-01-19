@@ -13,7 +13,7 @@ import { initializeApp } from "firebase/app";
 function Signup (){
     const app = initializeApp(firebaseConfig);
     const firestore = getFirestore(app)
-    const {cartDiv,setCartDiv,updateCart,nameValue,setUpdateCart} = useOutletContext()
+    const {cartDiv,handlelocation,setCartDiv,updateCart,nameValue,setUpdateCart} = useOutletContext()
     const [formValues, setFormValues] = useState({ email: '', password: '', nameValue: '' }) 
    const [visibility,setVisibility] = useState(false)
    const navigate = useNavigate()
@@ -112,7 +112,7 @@ function Signup (){
     return(
         <div className=" relative overflow-y-hidden h-screen md:overflow-y-visible ">
  
-
+ {handlelocation && (
 
 <div className="block " >
 
@@ -178,7 +178,7 @@ function Signup (){
         </div>
 
 
-
+        )}
 
 
 

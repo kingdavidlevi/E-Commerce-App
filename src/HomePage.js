@@ -49,6 +49,9 @@ const clickHumburger = () => {
       const NavigateCart = () =>{
 
             navigate('/Second/Login')
+
+            setCartDiv(false)
+            setUpdateCart(0)
           }
 
 
@@ -97,10 +100,10 @@ const clickHumburger = () => {
        
        </div>
        
-     <div className="flex cursor-pointer hover:text-orange-400 lg:ml-2 xl:ml-8 md:ml-1  " onClick={NavigateCart}>
+     <div className="flex cursor-pointer  relative hover:text-orange-400 lg:ml-2 xl:ml-8 md:ml-1  " onClick={NavigateCart}>
      <img src={cart}  className="mt-4  h-7 w-7 " />
         <p className= "font-medium mt-4 lg:ml-2 md:ml-1 text-lg" >Cart</p>
-           
+       {cartDiv && ( <div className="absolute w-5 h-5 grid place-items-center rounded-full bottom-6 bg-red-500" style={{'right' : '75%'}}><p className="text-white text-xs mb-0.5">{updateCart}</p></div>  )}
         </div>
 
 
@@ -126,7 +129,7 @@ const clickHumburger = () => {
       { hamburger ?   <div className="flex"><span className="text-xl mt-2 mr-3.5" onClick={clickHumburger}><FaTimes/></span> <p className="text-2xl  text-black  font-bold font-mono"> Exclusive</p></div> :
         <div className="flex"><span className="text-lg mt-2 mr-4" onClick={clickHumburger}><FaBars/></span> <p className="text-2xl  text-black  font-bold font-mono"> Exclusive</p></div> }
 
-         <div className="flex" ><div onClick={navigateAccount} className="cursor-pointer"><img src={user} alt="user"  /></div> <div className="ml-4 cursor-pointer" onClick={NavigateCart}><img src={cart} /></div> </div>
+         <div className="flex relative" ><div onClick={navigateAccount} className="cursor-pointer"><img src={user} alt="user"  /></div>    <div className="ml-4 cursor-pointer" onClick={NavigateCart}><img src={cart} /></div> {cartDiv && ( <div className="absolute w-5 h-5 grid place-items-center rounded-full bottom-5 bg-red-500" style={{'right' : '20%'}}><p className="text-white text-xs mb-0.5">{updateCart}</p></div> )}  </div>
 
          </div>
 
