@@ -67,11 +67,13 @@ function Signup (){
       }
       try {
   
-        const response = await fetch('https://weblify.onrender.com/v1/auth/login', option);
+        const response = await fetch('https://weblify.onrender.com/v1/auth/register', option);
         const data = await response.json()
-         console.log(data)
+    
         setUser(data.data)
-        if (user) {  navigate ('/Cart') }
+         if(user){
+          navigate('/Cart')
+         }
      
   
       }
@@ -148,25 +150,25 @@ function Signup (){
             <div className=" lg:mr-20 md:mr-6 hidden md:block ">
             <img src={imgages} className="lg:w-200 lg:h-1200 md:ml-4  md:h-100 md:w-90 sm:h-100" />
 
+            
+            </div>
+
+            <div className="md:mt-16 md:block relative grid place-content-center items-center  shadow-xl md:shadow-none bg-white  w-90  md:h-full">
+            <img src={imgages} className="md:hidden h-56 w-full mt-4 "  />
+
             {loading ? (
 
 
-
 <div className="  z-10   " ><FaSpinner className="md:h-11 absolute h-11 w-11 md:w-11    top-96 grid place-items-center rotate-180 animate-spin " style={{'right' : '45%'}}/></div>
-
-
 ) : null}
-            </div>
 
-            <div className="md:mt-16 md:block grid place-content-center items-center  shadow-xl md:shadow-none bg-white  w-90  md:h-full">
-            <img src={imgages} className="md:hidden h-56 w-full mt-4 "  />
                 <h3 className=" lg:text-2xl mt-4 md:mt-0 lg:font-semibold text-start md:text-start text-lg font-semibold md:text-2xl md:font-semibold">Create an account</h3>
                 <p className="md:mt-6 mt-4 text-sm">Enter your details below</p>
                 <form>
  
-                    <input onChange={handleFormChanges} name="email" value={formValues.email} type="email" className='mt-10 border-2 border-r-0 border-l-0 pb-1  border-t-0 border-gray-300 lg:w-96 md:w-90 w-80 pl-2 md:pl-0 outline-none mb-6' placeholder="Email Address" required autoCapitalize="" /><br/>
-                    <input onChange={handleFormChanges} name="password" value={formValues.password}  type={visibility ? 'password' : 'text'} className='border-2   relative  border-r-0 border-l-0 pb-1 border-t-0 pl-2 md:pl-0 border-gray-300 lg:w-96 md:w-90 w-80 outline-none mb-6' max={25} placeholder="Password" required/><br/>
-                    {!visibility ? <div className="fixed right-40 bottom-56 mb-2" onClick={handleEye}> <FaEye/> </div> : <div className="fixed  right-40 bottom-56 mb-2" onClick={handleEye}> <FaEyeSlash/> </div>}
+                    <input onChange={handleFormChanges}   name="email" value={formValues.email} type="email" className='mt-10 border-2 border-r-0 border-l-0 pb-1  border-t-0 border-gray-300 lg:w-96 md:w-90 w-80 pl-2 md:pl-0 outline-none mb-6' placeholder="Email Address" required autoCapitalize="" /><br/>
+                    <input onChange={handleFormChanges}  name="password" value={formValues.password}  type={visibility ? 'password' : 'text'} className='border-2   relative  border-r-0 border-l-0 pb-1 border-t-0 pl-2 md:pl-0 border-gray-300 lg:w-96 md:w-90 w-80 outline-none mb-6' max={25} placeholder="Password" required/><br/>
+                    {!visibility ? <div className="absolute md:bottom-32 md:ml-10 bottom-36 mb-3" onClick={handleEye} style={{'right' : '10%'}}> <FaEye className="text-lg"/> </div> : <div className="absolute md:bottom-32 bottom-36 mb-3" onClick={handleEye} style={{'right' : '10%'}}> <FaEyeSlash className="text-lg"/> </div>}
                      <button type="submit" onClick={handleSignUp} className="rounded-lg pt-1 pb-1 md:w-90 bg-red-400 lg:w-96 text-white w-80 mt-4">Create Account</button>
                      <p className="text-center mt-8 mb-4 md:mb-0 text-lg">Already have an account? <span><NavLink to='/Second/Login' className='underline'>Log in</NavLink></span></p>
                 </form>

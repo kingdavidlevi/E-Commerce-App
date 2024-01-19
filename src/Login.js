@@ -153,6 +153,7 @@ function Login (){
 
             <div className="md:mt-16  relative md:block items-center grid place-content-center shadow-2xl md:shadow-none bg-white  w-90  md:h-full">
             <img src={imgages} className="md:hidden h-56 w-full mt-4 "  />
+
             {loading ? (
 
 
@@ -167,7 +168,7 @@ function Login (){
                 <form>
 
                     <input onChange={handleFormChanges} name="email" type="email" className='border-2 border-r-0 border-l-0 pb-1 w-80 border-t-0 border-gray-300 mt-10 pl-2 md:pl-0 lg:w-96 md:w-90 outline-none mb-6' placeholder="Email Address" required /><br/>
-                    <input onChange={handleFormChanges} name="password" type="password" className='border-2  border-r-0 border-l-0 pb-1 w-80 border-t-0 border-gray-300 pl-2 md:pl-0 lg:w-96 md:w-90 outline-none mb-6' max={25} placeholder="Password" required/><br/>
+                    <input onChange={handleFormChanges} name="password" type={!visibility ? 'password' : 'text'} className='border-2  border-r-0 border-l-0 pb-1 w-80 border-t-0 border-gray-300 pl-2 md:pl-0 lg:w-96 md:w-90 outline-none mb-6' max={25} placeholder="Password" required/><br/>
                     {!visibility ? <div className="absolute md:bottom-32 bottom-36 mb-4" onClick={handleEye}  style={{'right' : '10%'}}> <FaEye className="text-lg"/> </div> : <div className="absolute md:bottom-32  bottom-36 mb-4" onClick={handleEye} style={{'right' : '10%'}}> <FaEyeSlash className="text-lg"/> </div>}
                      <button onClick={handleSignIn} type="submit" className="rounded-lg pt-1 pb-1 md:w-90 bg-red-400 w-80 lg:w-90 text-white mt-4">Login in</button>
                      <p className="text-center mt-8 mb-4 md:mb-0 text-lg">Don't have an account? <span><NavLink to='/Second/Signup' className='underline'>Sign Up</NavLink></span></p>
