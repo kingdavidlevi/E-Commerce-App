@@ -101,8 +101,8 @@ return(
 
 <div><p>{zero && <span>0</span>}{addCart}</p></div>
 
-<div className="w-4 h-8">
-  <div onClick={Add}><img src={up} /> </div>
+<div className="md:w-4 w-5 h-10 md:h-8 ">
+  <div onClick={Add} className="md:mb-0 mb-1" ><img src={up} /> </div>
   <div onClick={Subtract}><img src={down} /> </div>
 
 

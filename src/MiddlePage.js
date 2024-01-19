@@ -156,9 +156,6 @@ const allsecondDemo = [
    const addCart = (unique) =>{
 
 
-
- 
-
     for (const data of firstData){
       const dataId = data.id;
     

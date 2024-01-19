@@ -27,7 +27,7 @@ function ResultFromSearch (){
     const [mounted, setMounted] = useState(true);
     const [userSavedData, setUserSavedData] = useState([]);
     const [error, setError] = useState(null);
-   
+    const {formValues,sethandleLocation,handlelocation,setFormValues,cartDiv,setCartDiv,nameValue,updateCart,setUpdateCart} = useOutletContext()
 
 
     const clickHumburger = () => {
@@ -275,6 +275,9 @@ function ResultFromSearch (){
 
       const NavigateCart = () =>{
         navigate('/Second/Login')
+
+        setCartDiv(false)
+        setUpdateCart(0)
      }
 
      const navigateAccount = () =>{
@@ -286,7 +289,7 @@ function ResultFromSearch (){
        navigate('/Second/Search')
      }
 
-
+     
 
    return(
     <div className={`${files.length > 0 ?  "bg-gray-300  h-full " : "bg-gray-300  h-screen "  }`}>
@@ -311,17 +314,17 @@ function ResultFromSearch (){
         <form>
         <div onClick={navigateSearch} className={`${isFixed ? " text-lg rounded-md  text-gray-400  bg-white border-r  border-black pl-12 lg:pt-2 lg:pb-2 lg:w-150 xl:w-260 md:w-98 md:pt-1 md:pb-1 outline-none pr-8    mt-1" : " xl:w-260 text-lg rounded-md  text-gray-400 bg-white border-r  border-black pl-12 lg:pt-2 lg:pb-2 lg:w-150 md:w-98 md:pt-1 md:pb-1 outline-none pr-8     mt-1" }`} ><p>Search Products, brands and categories</p></div>
         </form>
-        <button className="bg-orange-400 hover:bg-orange-600 lg:px-3 xl:px-4 md:px-1 h-10 xl:ml-1 mt-1 text-white  font-medium shadow-lg rounded-md">SEARCH</button>
+        <button   className="bg-orange-400 hover:bg-orange-600 lg:px-3 xl:px-4 md:px-1 h-10 xl:ml-1 mt-1 text-white  font-medium shadow-lg rounded-md">SEARCH</button>
         <img src={search} className={`${isFixed ? "absolute text-xl bottom-3 text-gray-900 ml-4   " : "absolute text-xl bottom-3 text-gray-900 ml-4   "}`} />
        
        </div>
        
-     <div className="flex cursor-pointer hover:text-orange-400 lg:ml-2 xl:ml-8 md:ml-1  " onClick={NavigateCart}>
+     <div className="flex relative cursor-pointer hover:text-orange-400 lg:ml-2 xl:ml-8 md:ml-1  " onClick={NavigateCart}>
      <img src={cart}  className="mt-4  h-7 w-7 " />
         <p className= "font-medium mt-4 lg:ml-2 md:ml-1 text-lg" >Cart</p>
-           
+      {cartDiv && ( <div className="absolute w-5 h-5 grid place-items-center rounded-full bottom-6 bg-red-500" style={{'right' : '75%'}}><p className="text-white text-xs mb-0.5">{updateCart}</p></div> )} 
         </div>
-
+                
 
         <div className="lg:flex cursor-pointer hover:text-orange-400 lg:ml-3 xl:ml-8 md:hidden   " onClick={navigateAccount}>
             
@@ -356,7 +359,7 @@ function ResultFromSearch (){
       { hamburger ?   <div className="flex"><span className="text-xl mt-2 mr-3.5" onClick={clickHumburger}><FaTimes/></span> <p className="text-2xl  text-black  font-bold font-mono"> Exclusive</p></div> :
         <div className="flex"><span className="text-lg mt-2 mr-4" onClick={clickHumburger}><FaBars/></span> <p className="text-2xl  text-black  font-bold font-mono"> Exclusive</p></div> }
 
-         <div className="flex" ><div onClick={navigateAccount} className="cursor-pointer"><img src={user} alt="user"  /></div> <div className="ml-4 cursor-pointer" onClick={NavigateCart}><img src={cart} /></div> </div>
+         <div className="flex relative" ><div onClick={navigateAccount} className="cursor-pointer"><img src={user} alt="user"  /></div> {cartDiv && ( <div className="absolute w-5 h-5 grid place-items-center rounded-full bottom-5 bg-red-500" style={{'right' : '20%'}}><p className="text-white text-xs mb-0.5">{updateCart}</p></div> )}   <div className="ml-4 cursor-pointer" onClick={NavigateCart}><img src={cart} /></div> </div>
        
          </div>
        

@@ -55,7 +55,7 @@ function Second (){
 
         return(
             <div>
-            <Outlet context={{input,sethandleLocation,handlelocation,setInput}} />
+            <Outlet context={{input,handlelocation,setInput,formValues,sethandleLocation,handlelocation,setFormValues,cartDiv,setCartDiv,nameValue,updateCart,setUpdateCart}} />
             </div>
         )
 

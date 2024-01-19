@@ -19,7 +19,7 @@ const navigate = useNavigate()
 const clickHumburger = () => {
   setHamburger(prevstate => !prevstate)
   setUpdateCart(1)
-  console.log(updateCart)
+  
  
 }
 
@@ -61,7 +61,7 @@ const clickHumburger = () => {
     
          
        
-
+        
 
 
       const navigateAccount = () =>{
@@ -95,7 +95,7 @@ const clickHumburger = () => {
         <form>
         <div onClick={navigateSearch} className={`${isFixed ? " text-lg rounded-md  text-gray-400  bg-white border-r  border-black pl-12 lg:pt-2 lg:pb-2 lg:w-150 xl:w-260 md:w-98 md:pt-1 md:pb-1 outline-none pr-8    mt-1" : " xl:w-260 text-lg rounded-md  text-gray-400 bg-white border-r  border-black pl-12 lg:pt-2 lg:pb-2 lg:w-150 md:w-98 md:pt-1 md:pb-1 outline-none pr-8     mt-1" }`} ><p>Search Products, brands and categories</p></div>
         </form>
-        <button className="bg-orange-400 hover:bg-orange-600 lg:px-3 xl:px-4 md:px-1 h-10 xl:ml-1 mt-1 text-white  font-medium shadow-lg rounded-md">SEARCH</button>
+        <button  className="bg-orange-400 hover:bg-orange-600 lg:px-3 xl:px-4 md:px-1 h-10 xl:ml-1 mt-1 text-white  font-medium shadow-lg rounded-md">SEARCH</button>
         <img src={search} className={`${isFixed ? "absolute text-xl bottom-3 text-gray-900 ml-4   " : "absolute text-xl bottom-3 text-gray-900 ml-4   "}`} />
        
        </div>
