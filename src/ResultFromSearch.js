@@ -140,7 +140,7 @@ function ResultFromSearch (){
             if (cachedData) {
               const cachedResult = JSON.parse(cachedData);
               const matchResult = cachedResult.filter((item) =>
-                item.unique.toLowerCase().includes(input.toLowerCase())
+                item.name.toLowerCase().includes(input.toLowerCase())
               );
     
               setFiles(matchResult);
@@ -154,7 +154,7 @@ function ResultFromSearch (){
                 localStorage.setItem('cachedData', JSON.stringify(result));
     
                 const matchResult = result.filter((item) =>
-                  item.unique.toLowerCase().includes(input.toLowerCase())
+                  item.name.toLowerCase().includes(input.toLowerCase())
                 );
     
                 setFiles(matchResult);
