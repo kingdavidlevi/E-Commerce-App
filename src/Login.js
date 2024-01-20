@@ -20,32 +20,33 @@ function Login (){
     const [user,setUser] = useState([])
     const {handlelocation} = useOutletContext()
     
-   /* const handleSignIn = () => {
-
+    const handleSignIn = (e) => {
+      e.preventDefault()
+      setLoading(true)
    
          signInWithEmailAndPassword(auth, formValues.email, formValues.password )
           .then((userCredential) => {
             // Set display name
             const user = userCredential.user
-            console.log(user)
+            
             
             console.log("User signed up successfully");
-            if(user.uid){
+            if(user){
             navigate('/Cart')
           }
           })
           .catch((error) => {
-            console.error("Sign-up error", error);
+            console.error("Sign-up error", error.message);
             console.log('after')
           });
     
     
     
-        }*/
+        }
 
 
      
-  const handleSignIn = async (e) => {
+  /*const handleSignIn = async (e) => {
     e.preventDefault()
     setLoading(true)
     setError("")
@@ -78,7 +79,7 @@ function Login (){
     setFormValues('')
 
   };
-
+*/
 
 
 

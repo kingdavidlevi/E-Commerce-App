@@ -22,15 +22,16 @@ function Signup (){
    const [error,setError] = useState('')
    const [loading,setLoading] = useState(false)
    const [user,setUser] = useState([])
-
+   const [isButtonDisabled, setButtonDisabled] = useState(false);
    
    /*updateProfile(userCredential.user, {
     displayName: formValues.nameValue
   });
 */
 
-    /*const handleSignUp = () => {
-
+    const handleSignUp = (e) => {
+      e.preventDefault()
+      setLoading(true)
    
     createUserWithEmailAndPassword(auth, formValues.email, formValues.password )
       .then((userCredential) => {
@@ -38,6 +39,7 @@ function Signup (){
         const user = userCredential.user
         console.log("User signed up successfully");
         if(user.uid){
+           
         navigate('/Cart')
       }
       })
@@ -47,12 +49,12 @@ function Signup (){
 
 
 
-    }*/
+    }
 
 
 
 
-    const handleSignUp = async (e) => {
+    /*const handleSignUp = async (e) => {
       e.preventDefault()
       setLoading(true)
       setError("")
@@ -86,7 +88,7 @@ function Signup (){
       setLoading(false)
       setFormValues('')
   
-    };
+    };*/
   
 
 
@@ -159,7 +161,7 @@ function Signup (){
             {loading ? (
 
 
-<div className="  z-10   " ><FaSpinner className="md:h-11 absolute h-11 w-11 md:w-11    top-96 grid place-items-center rotate-180 animate-spin " style={{'right' : '45%'}}/></div>
+<div className="  z-10   " ><FaSpinner className="md:h-11 absolute h-11 w-11 md:w-11 bottom-56    grid place-items-center rotate-180 animate-spin " style={{'right' : '45%'}}/></div>
 ) : null}
 
                 <h3 className=" lg:text-2xl mt-4 md:mt-0 lg:font-semibold text-start md:text-start text-lg font-semibold md:text-2xl md:font-semibold">Create an account</h3>
@@ -167,9 +169,9 @@ function Signup (){
                 <form>
  
                     <input onChange={handleFormChanges}   name="email" value={formValues.email} type="email" className='mt-10 border-2 border-r-0 border-l-0 pb-1  border-t-0 border-gray-300 lg:w-96 md:w-90 w-80 pl-2 md:pl-0 outline-none mb-6' placeholder="Email Address" required autoCapitalize="" /><br/>
-                    <input onChange={handleFormChanges}  name="password" value={formValues.password}  type={visibility ? 'password' : 'text'} className='border-2   relative  border-r-0 border-l-0 pb-1 border-t-0 pl-2 md:pl-0 border-gray-300 lg:w-96 md:w-90 w-80 outline-none mb-6' max={25} placeholder="Password" required/><br/>
+                    <input onChange={handleFormChanges}  name="password" value={formValues.password}  type={visibility ? 'password' : 'text'} className='border-2   relative  border-r-0 border-l-0 pb-1 border-t-0 pl-2 md:pl-0 border-gray-300 lg:w-96 md:w-90 w-80 outline-none mb-6' max={25} placeholder="Password must have 8 characters" required/><br/>
                     {!visibility ? <div className="absolute md:bottom-32 md:ml-10 bottom-36 mb-3" onClick={handleEye} style={{'right' : '10%'}}> <FaEye className="text-lg"/> </div> : <div className="absolute md:bottom-32 bottom-36 mb-3" onClick={handleEye} style={{'right' : '10%'}}> <FaEyeSlash className="text-lg"/> </div>}
-                     <button type="submit" onClick={handleSignUp} className="rounded-lg pt-1 pb-1 md:w-90 bg-red-400 lg:w-96 text-white w-80 mt-4">Create Account</button>
+                {formValues.email.length <= 0 || formValues.password.length <= 0 ? (     <button type="submit"     disabled={isButtonDisabled}  className="rounded-lg pt-1 pb-1  md:w-90 bg-red-400 lg:w-96 text-white w-80 mt-4">Create Account</button>) : <button type="submit" onClick={handleSignUp}  className="rounded-lg pt-1 pb-1  md:w-90 bg-red-400 lg:w-96 text-white w-80 mt-4">Create Account</button> }
                      <p className="text-center mt-8 mb-4 md:mb-0 text-lg">Already have an account? <span><NavLink to='/Second/Login' className='underline'>Log in</NavLink></span></p>
                 </form>
             </div>
