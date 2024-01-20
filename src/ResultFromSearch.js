@@ -378,7 +378,7 @@ function ResultFromSearch (){
 <div className="mb-4 pt-32   md:pt-28 md:pl-10 lg:mb-14 pl-4"><h3 className="text-sm font-mono text-gray-700">SHOP ONLINE IN NIGERIA</h3></div>
 
 {files.length > 0 ? (
-<div className= "grid w-full lg:flex  sm:grid-cols-3 lg:grid-cols-4 grid-cols-2   place-items-center" >
+<div className= "grid w-full   sm:grid-cols-3 lg:grid-cols-4 grid-cols-2   place-items-center" >
  
 
 
