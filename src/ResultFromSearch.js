@@ -420,7 +420,7 @@ function ResultFromSearch (){
     <div className="bg-gray-100  w-40 h-40 mb-2 rounded-full grid place-items-center "><img src={scope} /> </div>
     <h4 className="font-medium text-center mb-1 items-center text-black">There are no results for "<span>{input}</span>"</h4>
     <p className="text-center">-Check your spelling for typing errors <br/> -Try searching with short and simple keywords <br/> -Try searching more general terms -you can then <br/> filter the search results </p>
-    <button onClick={handleChange}   className=" font-medium pt-1 pb-1 px-3 md:px-8 bg-orange-600  ml-10 rounded text-white mt-3">GO TO HOMEPAGE</button>
+    <button onClick={handleChange}   className=" font-medium pt-1 pb-1 px-3 md:px-8 bg-orange-600   rounded text-white mt-3">GO TO HOMEPAGE</button>
   </div>
 
   
