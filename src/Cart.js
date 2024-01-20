@@ -4,7 +4,7 @@ import generator from './images/1 (6).jpg'
 import up from './images/Drop-Up-Small.png'
 import down from './images/Drop-Down-Small (1).png'
 import { useNavigate } from "react-router-dom";
-
+import { FaArrowLeft } from "react-icons/fa";
 
 
 function Cart() {
@@ -68,8 +68,12 @@ return(
    <div  className="pb-14 md:pb-0">
 
 
-    <div>
-      <p className=" ml-4 mt-4 md:mt-14 lg:ml-24 xl:ml-36 md:ml-14 md:mb-14 mb-8 font-normal text-gray-400 text-lg  " ><NavLink to='/'>Home</NavLink>   / <span className="font-medium text-black">Cart</span></p>  
+    
+  <header className="h-12 md:hidden bg-black"> <p className="text-white text-center text-sm  ">Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</p></header>
+
+    <div className="ml-6 md:ml-10 lg:ml-12 w-10   mt-4 mb-10">
+    <div onClick={Back} className="text-lg hover:cursor-pointer mt-1"><FaArrowLeft /></div> 
+ 
     </div>
 
     <div className="flex px-4 md:pl-8 md:pr-10 lg:ml-24  mb-6 justify-between items-center md:ml-14 lg:w-310 h-18 shadow-2xl  xl:w-370 bg-white md:w-265 xl:ml-36">

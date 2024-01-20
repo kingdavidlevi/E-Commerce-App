@@ -6,7 +6,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, collection,doc,setDoc, getDoc } from 'firebase/firestore';
 import {firebaseConfig} from './firebase'
 import { auth } from "./firebase";
- 
+ import scope from "./images/binoculars.389fc56a.svg"
  
 import cart from './images/Cart1.png'
 import user from './images/user.png'
@@ -289,10 +289,14 @@ function ResultFromSearch (){
        navigate('/Second/Search')
      }
 
-     
+     const handleChange = () => {
+      navigate('/')
+    }
+    
+
 
    return(
-    <div className={`${files.length > 0 ?  "bg-gray-300  h-full " : "bg-gray-300  h-screen "  }`}>
+    <div className={`${files.length > 0 ?  "bg-gray-200  h-full w-full " : "bg-gray-200 w-full h-screen "  }`}>
 
 
 
@@ -371,16 +375,14 @@ function ResultFromSearch (){
         </div>
 
 
-<div className="mb-4 pt-32   md:pt-32 md:pl-10 lg:mb-14 pl-4"><h3 className="text-sm font-mono text-gray-700">SHOP ONLINE IN NIGERIA</h3></div>
+<div className="mb-4 pt-32   md:pt-28 md:pl-10 lg:mb-14 pl-4"><h3 className="text-sm font-mono text-gray-700">SHOP ONLINE IN NIGERIA</h3></div>
 
-
-<div className= "grid xl:mx-20 lg:mx-16 sm:grid-cols-3 lg:grid-cols-4 grid-cols-2 mx-4   place-items-center" >
+{files.length > 0 ? (
+<div className= "grid w-full lg:flex  sm:grid-cols-3 lg:grid-cols-4 grid-cols-2   place-items-center" >
  
 
- {files.length > 0 ? (
-    files.map((item,index) => (
-    
-      
+
+ { files.map((item,index) => (
       <div key={item.id} className="mb-3  pl-1 md:mb-6 lg:h-82  h-78 sm:w-48 lg:w-56  w-40 bg-white md:transition-transform ease-in-out md:transform  md:hover:scale-105 ">
         
          <p className="text-sm font-bold mb-1">{item.name}</p>
@@ -393,32 +395,47 @@ function ResultFromSearch (){
 
      <button className="bg-orange-600 items-center mt-2 rounded-sm px-4 py-2 text-white text-sm font-bold">ADD TO CART</button>
 
+ 
+    </div>
+
+   )
 
 
       
-     </div>
-     
-    )
+   
+  
+  )}
 
-  )
+  s
+ </div>
+
+  
   ) : 
   
-  <div>
-
-  </div>
-  
-  
-  }
-
-
-
-  </div>
-
 
 
  
 
-    </div>
+  <div className="  h-100 pt-4 grid place-items-center " style={{'right' : '30%'}}>
+    <div className="bg-gray-100  w-40 h-40 mb-2 rounded-full grid place-items-center "><img src={scope} /> </div>
+    <h4 className="font-medium text-center mb-1 items-center text-black">There are no results for "<span>{input}</span>"</h4>
+    <p className="text-center">-Check your spelling for typing errors <br/> -Try searching with short and simple keywords <br/> -Try searching more general terms -you can then <br/> filter the search results </p>
+    <button onClick={handleChange}   className=" font-medium pt-1 pb-1 px-3 md:px-8 bg-orange-600  ml-10 rounded text-white mt-3">GO TO HOMEPAGE</button>
+  </div>
+
+  
+ 
+  }
+   
+
+
+  
+
+
+</div>
+ 
+ 
+    
     
 
    )
