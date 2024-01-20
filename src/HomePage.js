@@ -17,8 +17,7 @@ const navigate = useNavigate()
 
 
 const clickHumburger = () => {
-  setHamburger(prevstate => !prevstate)
-  setUpdateCart(1)
+ 
   
  
 }

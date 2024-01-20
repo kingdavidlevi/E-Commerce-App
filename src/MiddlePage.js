@@ -198,7 +198,7 @@ const allsecondDemo = [
      </div>
   
 
-
+{hamburger &&(
 
      <div className=" lg:hidden block  overflow-x-hidden w-screen ">
 
@@ -220,7 +220,7 @@ const allsecondDemo = [
 
 </div>
 
-
+)}
 
 
 
