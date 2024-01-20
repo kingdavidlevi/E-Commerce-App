@@ -294,7 +294,7 @@ const allsecondDemo = [
      <img src={star} />
      <p className="font-mono text-sm font-bold mt-1">Exclusive</p>
 
-     <button  onClick={() => addCart (currentObject.id)} className="bg-orange-600 items-center mt-2 rounded-sm px-4 py-2 text-white text-sm font-bold">ADD TO CART</button>
+     <button  onClick={() => addCart (currentObject.id)} className="bg-orange-500 hover:bg-orange-600 items-center mt-2 rounded-sm px-4 py-2 text-white text-sm font-bold">ADD TO CART</button>
 
 
     </div>
@@ -342,7 +342,7 @@ const allsecondDemo = [
      <img src={star} />
      <p className="font-mono text-sm font-bold mt-1">Exclusive</p>
 
-     <button  onClick={() => addCart (currentObject.id)} className="bg-orange-600 items-center mt-2 rounded-sm px-4 py-2 text-white text-sm font-bold">ADD TO CART</button>
+     <button  onClick={() => addCart (currentObject.id)} className=" bg-orange-500 hover:bg-orange-600 items-center mt-2 rounded-sm px-4 py-2 text-white text-sm font-bold">ADD TO CART</button>
 
 
     </div>
@@ -389,7 +389,7 @@ const allsecondDemo = [
      <img src={star} />
      <p className="font-mono text-sm font-bold mt-1">Exclusive</p>
 
-     <button  onClick={() => addCart (currentObject.id)} className="bg-orange-600 items-center mt-2 rounded-sm px-4 py-2 text-white text-sm font-bold">ADD TO CART</button>
+     <button  onClick={() => addCart (currentObject.id)} className=" bg-orange-500 hover:bg-orange-600 items-center mt-2 rounded-sm px-4 py-2 text-white text-sm font-bold">ADD TO CART</button>
 
 
     </div>
@@ -432,7 +432,7 @@ const allsecondDemo = [
      <img src={star} />
      <p className="font-mono text-sm font-bold mt-1">Exclusive</p>
 
-     <button  onClick={() => addCart (currentObject.id)} className="bg-orange-600 items-center mt-2 rounded-sm px-4 py-2 text-white text-sm font-bold">ADD TO CART</button>
+     <button  onClick={() => addCart (currentObject.id)} className=" bg-orange-500 hover:bg-orange-600 items-center mt-2 rounded-sm px-4 py-2 text-white text-sm font-bold">ADD TO CART</button>
 
 
     </div>
@@ -478,7 +478,7 @@ const allsecondDemo = [
      <img src={star} />
      <p className="font-mono text-sm font-bold mt-1">Exclusive</p>
 
-     <button  onClick={() => addCart (currentObject.id)} className="bg-orange-600 items-center mt-2 rounded-sm px-4 py-2 text-white text-sm font-bold">ADD TO CART</button>
+     <button  onClick={() => addCart (currentObject.id)} className="bg-orange-500 hover:bg-orange-600 items-center mt-2 rounded-sm px-4 py-2 text-white text-sm font-bold">ADD TO CART</button>
 
 
     </div>
@@ -530,7 +530,7 @@ const allsecondDemo = [
      <img src={star} />
      <p className="font-mono text-sm font-bold mt-1">Exclusive</p>
 
-     <button onClick={() => addCart (currentObject.id)} className="bg-orange-600  items-center mt-2  rounded-sm px-4 py-2 text-white text-sm font-bold">ADD TO CART</button>
+     <button onClick={() => addCart (currentObject.id)} className=" bg-orange-500 hover:bg-orange-600 items-center mt-2  rounded-sm px-4 py-2 text-white text-sm font-bold">ADD TO CART</button>
 
 
     </div>
