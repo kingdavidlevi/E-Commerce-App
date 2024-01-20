@@ -80,7 +80,8 @@ const SearchObjects = [
     name : "Generator",
     description : "Sumec 30000 Mah",
     Price: "$100",
-    unique: "phones"
+    unique: "phones",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -89,7 +90,8 @@ const SearchObjects = [
     name : "Infinix",
     description : "30i 8.56 8GB RAM/128GB ROM Andriod",
     Price: "$70",
-    unique: "phones"
+    unique: "phones",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -98,7 +100,8 @@ const SearchObjects = [
     name : "Tecno",
     description : "30i 7.56 5GB RAM/128GB ROM Andriod",
     Price: "$140",
-    unique: "phones"
+    unique: "phones",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -107,7 +110,8 @@ const SearchObjects = [
     name : "Samsung",
     description : `30i 6.56 10GB" RAM/128GB ROM Andriod`,
     Price: "$100",
-    unique: "phones"
+    unique: "phones",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -116,7 +120,8 @@ const SearchObjects = [
     name : "Redmi",
     description : `A04s 6.5 5GB RAM/64GB ROM`,
     Price: "$1200",
-    unique: "phones"
+    unique: "phones",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -124,7 +129,8 @@ const SearchObjects = [
     name : "Redmi",
     description : "A04s 6.5 5GB RAM/64GB ROM",
     Price: "$500",
-    unique: "phones"
+    unique: "phones",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -133,7 +139,8 @@ const SearchObjects = [
     name : "Tecno",
     description : "Spark 10",
     Price: "$100",
-    unique: "phones"
+    unique: "phones",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -143,7 +150,8 @@ const SearchObjects = [
     name : "Gucci Wears",
     description : "Top and short",
     Price: "$100",
-    unique: "Clothes"
+    unique: "Clothes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -154,7 +162,8 @@ const SearchObjects = [
     name : "Gucci Wears",
     description : "Top and short",
     Price: "$200",
-    unique: 'Clothes'
+    unique: 'Clothes',
+    count: 1
    },
   {
     id: uuidv4(),
@@ -164,7 +173,8 @@ const SearchObjects = [
     name : "Gucci Wears",
     description : "Top and short",
     Price: "$40",
-    unique: "Clothes"
+    unique: "Clothes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -175,7 +185,8 @@ const SearchObjects = [
     name : "Gucci Wears",
     description : "Top and short",
     Price: "$70",
-    unique: "Clothes"
+    unique: "Clothes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -185,7 +196,8 @@ const SearchObjects = [
     name : "Gucci Wears",
     description : "Grey top and a blue top",
     Price: "$750",
-    unique: "Clothes"
+    unique: "Clothes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -195,7 +207,8 @@ const SearchObjects = [
     name : "LOUIS",
     description : "JEANS",
     Price: "$30",
-    unique: "Clothes"
+    unique: "Clothes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -206,7 +219,8 @@ const SearchObjects = [
     name : "LOUIS",
     description : "Nice Shorts",
     Price: "$30",
-    unique: "Clothes"
+    unique: "Clothes",
+    count: 1
    },
 
   {
@@ -217,7 +231,8 @@ const SearchObjects = [
     name : "Bottega",
     description : "Black polo and Shorts",
     Price: "$30",
-    unique: "Clothes"
+    unique: "Clothes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -228,7 +243,8 @@ const SearchObjects = [
     name : "Bottega",
     description : "Navy blue and White polo",
     Price: "$70",
-    unique: "Clothes"
+    unique: "Clothes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -238,7 +254,8 @@ const SearchObjects = [
     name : "Bottega",
     description : "Big Boyfriend Jeans",
     Price: "$300",
-    unique: "Clothes"
+    unique: "Clothes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -249,7 +266,8 @@ const SearchObjects = [
     name : "Bottega",
     description : "High Five Quality Up and down wears",
     Price: "$250",
-    unique: "Clothes"
+    unique: "Clothes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -260,7 +278,8 @@ const SearchObjects = [
     name : "Gucci",
     description : "Joggers",
     Price: "$200",
-    unique: "Clothes"
+    unique: "Clothes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -272,7 +291,8 @@ const SearchObjects = [
     name : "Gucci",
     description : "Shorts",
     Price: "$200",
-    unique: "Clothes"
+    unique: "Clothes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -284,7 +304,8 @@ const SearchObjects = [
     name : "Generator",
     description : "Sumec firman 30000 Mah",
     Price: "$2000",
-    unique: "Generator"
+    unique: "Generator",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -296,7 +317,8 @@ const SearchObjects = [
     name : "Jordan Polo",
     description : "Jordan 8 Polo",
     Price: "$2000",
-    unique: "clothes"
+    unique: "clothes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -308,7 +330,8 @@ const SearchObjects = [
     name : "Jordan Polo",
     description : "Joggers",
     Price: "$200",
-    unique: "clothes"
+    unique: "clothes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -321,7 +344,8 @@ const SearchObjects = [
     name : "Collar Shirt",
     description : "Collar Shirt of different colors and sizes",
     Price: "$200",
-    unique: "clothes"
+    unique: "clothes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -335,7 +359,8 @@ const SearchObjects = [
     name : "Collar Shirt",
     description : "Collar Shirt of different colors and sizes",
     Price: "$200",
-    unique: "clothes"
+    unique: "clothes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -346,7 +371,8 @@ const SearchObjects = [
     name : "Sexy White Top",
     description : "Round neck Polo with Short",
     Price: "$150",
-    unique: "clothes"
+    unique: "clothes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -357,7 +383,8 @@ const SearchObjects = [
     name : "Short",
     description : "Puma Short",
     Price: "$150",
-    unique: "clothes"
+    unique: "clothes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -369,7 +396,8 @@ const SearchObjects = [
     name : "Sneakers",
     description : "Puma Shoe",
     Price: "$150",
-    unique: "shoes"
+    unique: "shoes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -379,7 +407,8 @@ const SearchObjects = [
     name : "Sneakers",
     description : " White Puma Shoe",
     Price: "$10",
-    unique: "shoes"
+    unique: "shoes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -390,7 +419,8 @@ const SearchObjects = [
     name : "Sneakers",
     description : "Sports Shoe",
     Price: "$10",
-    unique: "shoes"
+    unique: "shoes",
+    count: 1
    },
 
   {
@@ -403,7 +433,8 @@ const SearchObjects = [
     name : "Makasine",
     description : "Customized leather shoe",
     Price: "$100",
-    unique: "shoes"
+    unique: "shoes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -416,7 +447,8 @@ const SearchObjects = [
     name : "Canvas",
     description : "Customized Canvas",
     Price: "$100",
-    unique: "shoes"
+    unique: "shoes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -430,7 +462,8 @@ const SearchObjects = [
     name : "Black Shoe",
     description : "Customized Black Shoe",
     Price: "$100",
-    unique: "shoes"
+    unique: "shoes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -442,7 +475,8 @@ const SearchObjects = [
     name : "Brown Shoe",
     description : "Customized Brown Shoe",
     Price: "$100",
-    unique: "shoes"
+    unique: "shoes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -454,7 +488,8 @@ const SearchObjects = [
     name : "Brown Shoe",
     description : "Customized Brown Dotted Shoe",
     Price: "$100",
-    unique: "shoes"
+    unique: "shoes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -465,7 +500,8 @@ const SearchObjects = [
     name : " Dark Brown Shoe",
     description : "Customized Dark Brown  Shoe",
     Price: "$900",
-    unique: "shoes"
+    unique: "shoes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -477,7 +513,8 @@ const SearchObjects = [
     name : " Dark Brown Shoe",
     description : "Customized Dark Brown  Shoe",
     Price: "$130",
-    unique: "shoes"
+    unique: "shoes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -489,7 +526,8 @@ const SearchObjects = [
     name : " Dark Brown Shoe",
     description : "Customized Dark Brown  Shoe",
     Price: "$140",
-    unique: "shoes"
+    unique: "shoes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -501,7 +539,8 @@ const SearchObjects = [
     name : " Black Shoe",
     description : "Customized Black Shoe",
     Price: "$140",
-    unique: "shoes"
+    unique: "shoes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -513,7 +552,8 @@ const SearchObjects = [
     name : " Mirror Shoe",
     description : "Customized Black Shoe",
     Price: "$1400",
-    unique: "shoes"
+    unique: "shoes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -524,7 +564,8 @@ const SearchObjects = [
     name : "turkey",
     description : "Made in turkey",
     Price: "$140",
-    unique: "shoes"
+    unique: "shoes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -536,7 +577,8 @@ const SearchObjects = [
     name : "Generator",
     description : "Portable Generator",
     Price: "$140",
-    unique: "Generator"
+    unique: "Generator",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -548,7 +590,8 @@ const SearchObjects = [
     name : "Italian Shoe",
     description : "Made in italy",
     Price: "$1300",
-    unique: "Shoes"
+    unique: "Shoes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -560,7 +603,8 @@ const SearchObjects = [
     name : "Italian Checked Shoe",
     description : "Made in italy",
     Price: "$1300",
-    unique: "Shoes"
+    unique: "Shoes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -571,7 +615,8 @@ const SearchObjects = [
     name : "Italian Brown Shoe",
     description : "Made in italy",
     Price: "$1800",
-    unique: "Shoes"
+    unique: "Shoes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -582,7 +627,8 @@ const SearchObjects = [
     name : "Italian Brown Shoe",
     description : "Made in italy",
     Price: "$1800",
-    unique: "Shoes"
+    unique: "Shoes",
+    count: 1
    },
   {
     id: uuidv4(),
@@ -594,7 +640,8 @@ const SearchObjects = [
     name : "Italian Black Shoe",
     description : "Made in italy",
     Price: "$1800",
-    unique: "Shoes"
+    unique: "Shoes",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -607,7 +654,8 @@ const SearchObjects = [
     name : "Italian Black Shoe",
     description : "Made in italy",
     Price: "$1800",
-    unique: "Shoes"
+    unique: "Shoes",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -618,7 +666,8 @@ const SearchObjects = [
     name : "italian Black Shoe",
     description : "Made in italy",
     Price: "$1800",
-    unique: "Shoes"
+    unique: "Shoes",
+    count: 1
    },
 
    {
@@ -631,7 +680,8 @@ const SearchObjects = [
     name : "italian Mirror Shoe",
     description : "Made in italy",
     Price: "$1800",
-    unique: "Shoes"
+    unique: "Shoes",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -643,7 +693,8 @@ const SearchObjects = [
     name : "Glasses",
     description : "Made in italy",
     Price: "$1800",
-    unique: "Glasses"
+    unique: "Glasses",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -656,7 +707,8 @@ const SearchObjects = [
     name : "Anti Blue Ray",
     description : "Anti Blue Rays Radiation",
     Price: "$1800",
-    unique: "Glasses"
+    unique: "Glasses",
+    count: 1
    },
 
    {
@@ -669,7 +721,8 @@ const SearchObjects = [
     name : "SENWEI",
     description : "3000Mah SEIWEI Generator ",
     Price: "$1000",
-    unique: "Generator"
+    unique: "Generator",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -681,7 +734,8 @@ const SearchObjects = [
     name : "SENWEI",
     description : "3000Mah SEIWEI Generator ",
     Price: "$1000",
-    unique: "Generator"
+    unique: "Generator",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -693,7 +747,8 @@ const SearchObjects = [
     name : "Glasses",
     description : "Anti Blue Rays Radiation",
     Price: "$100",
-    unique: "Glasses"
+    unique: "Glasses",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -704,7 +759,8 @@ const SearchObjects = [
     name : "Glasses",
     description : "Anti Blue Rays Radiation",
     Price: "$100",
-    unique: "Glasses"
+    unique: "Glasses",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -716,7 +772,8 @@ const SearchObjects = [
     name : "Glasses",
     description : "Anti Blue Rays Radiation",
     Price: "$100",
-    unique: "Glasses"
+    unique: "Glasses",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -729,7 +786,8 @@ const SearchObjects = [
     name : "Glasses",
     description : "Anti Blue Rays Radiation",
     Price: "$100",
-    unique: "Glasses"
+    unique: "Glasses",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -741,7 +799,8 @@ const SearchObjects = [
     name : "Glasses",
     description : "Anti Blue Rays Radiation",
     Price: "$100",
-    unique: "Glasses"
+    unique: "Glasses",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -754,7 +813,8 @@ const SearchObjects = [
     name : "Glasses",
     description : "Anti Blue Rays Radiation",
     Price: "$70",
-    unique: "Glasses"
+    unique: "Glasses",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -767,7 +827,8 @@ const SearchObjects = [
     name : "Glasses",
     description : "Anti Blue Rays Radiation",
     Price: "$70",
-    unique: "Glasses"
+    unique: "Glasses",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -779,7 +840,8 @@ const SearchObjects = [
     name : "Designers ",
     description : "Unique Shiny Gold glasses",
     Price: "$70",
-    unique: "Glasses"
+    unique: "Glasses",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -791,7 +853,8 @@ const SearchObjects = [
     name : "ELEPAQ Generator ",
     description : "Unique Shiny Gold glasses",
     Price: "$70",
-    unique: "Generator"
+    unique: "Generator",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -803,7 +866,8 @@ const SearchObjects = [
     name : "Designers ",
     description : "Unique Shiny Gold glasses",
     Price: "$70",
-    unique: "Glasses"
+    unique: "Glasses",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -816,7 +880,8 @@ const SearchObjects = [
     name : "Black Glasses ",
     description : "Unique Shiny Black glasses",
     Price: "$70",
-    unique: "Glasses"
+    unique: "Glasses",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -829,7 +894,8 @@ const SearchObjects = [
     name :" Gold  Glasses ",
     description : "Unique Shiny Gold glasses",
     Price: "$90",
-    unique: "Glasses"
+    unique: "Glasses",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -842,7 +908,8 @@ const SearchObjects = [
     name :" Single line Glasses ",
     description : "Unique Shiny Black glasses",
     Price: "$90",
-    unique: "Glasses"
+    unique: "Glasses",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -856,7 +923,8 @@ const SearchObjects = [
     name :" VICTUS ",
     description : "Folio 9v8 model 2.0mghaz",
     Price: "$90",
-    unique: "Laptop"
+    unique: "Laptop",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -868,7 +936,8 @@ const SearchObjects = [
     name :" Hp ",
     description : "Folio 9v8 model 2.0mghaz",
     Price: "$90",
-    unique: "Laptop"
+    unique: "Laptop",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -880,7 +949,8 @@ const SearchObjects = [
     name :" Hp ",
     description : "Folio 9v8 model 2.0mghaz",
     Price: "$100",
-    unique: "Laptop"
+    unique: "Laptop",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -892,7 +962,8 @@ const SearchObjects = [
     name :" Hp ",
     description : "Folio 9v8 model 2.0mghaz Screen Touch 360 Rotation",
     Price: "$100",
-    unique: "Laptop"
+    unique: "Laptop",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -904,7 +975,8 @@ const SearchObjects = [
     name :" Hp ",
     description : "Folio 9v8 model 2.0mghaz ",
     Price: "$100",
-    unique: "Laptop"
+    unique: "Laptop",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -916,7 +988,8 @@ const SearchObjects = [
     name :" Cassete Player ",
     description : "Bluetti Music Transmission ",
     Price: "$100",
-    unique: "Radio"
+    unique: "Radio",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -928,7 +1001,8 @@ const SearchObjects = [
     name :"Hp",
     description : "Folio 9v8 model 2.0mghaz ",
     Price: "$120",
-    unique: "Laptop"
+    unique: "Laptop",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -940,7 +1014,8 @@ const SearchObjects = [
     name :"Hp",
     description : "Folio 9v8 model 2.0mghaz ",
     Price: "$120",
-    unique: "Laptop"
+    unique: "Laptop",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -952,7 +1027,8 @@ const SearchObjects = [
     name :"Hp",
     description : "Folio 9v8 model 2.0mghaz Screen Touch Bendable 360 ",
     Price: "$1200",
-    unique: "Laptop"
+    unique: "Laptop",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -964,7 +1040,8 @@ const SearchObjects = [
     name :"Hp",
     description : "Folio 9v8 model 4.0mghaz Screen  ",
     Price: "$1200",
-    unique: "Laptop"
+    unique: "Laptop",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -975,7 +1052,8 @@ const SearchObjects = [
     name :"Hp",
     description : "Folio 9v8 model 4.0mghaz Screen  ",
     Price: "$1200",
-    unique: "Laptop"
+    unique: "Laptop",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -986,7 +1064,8 @@ const SearchObjects = [
     name :"Chess",
     description : "Board Chess game ",
     Price: "$1200",
-    unique: "Games"
+    unique: "Games",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -997,7 +1076,8 @@ const SearchObjects = [
     name :"Count Game",
     description : "Games For Babies ",
     Price: "$10",
-    unique: "Games"
+    unique: "Games",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -1008,7 +1088,8 @@ const SearchObjects = [
     name :"PS4",
     description : "PlayStation ",
     Price: "$120",
-    unique: "Games"
+    unique: "Games",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -1019,7 +1100,8 @@ const SearchObjects = [
     name :"PS4",
     description : "Grand theft ",
     Price: "$120",
-    unique: "Games"
+    unique: "Games",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -1030,7 +1112,8 @@ const SearchObjects = [
     name :"Thermacool",
     description : "3.75KVA Watts 30000Mah ",
     Price: "$120",
-    unique: "Generator"
+    unique: "Generator",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -1041,7 +1124,8 @@ const SearchObjects = [
     name :"XBOX",
     description : "Watch dogs game",
     Price: "$120",
-    unique: "Games"
+    unique: "Games",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -1051,7 +1135,8 @@ const SearchObjects = [
     name :"PS5",
     description : "Spider-man",
     Price: "$120",
-    unique: "Games"
+    unique: "Games",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -1061,7 +1146,8 @@ const SearchObjects = [
     name :"PS4",
     description : "Uncharted",
     Price: "$120",
-    unique: "Games"
+    unique: "Games",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -1071,7 +1157,8 @@ const SearchObjects = [
     name :"PS4",
     description : "Uncharted",
     Price: "$120",
-    unique: "Games"
+    unique: "Games",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -1081,7 +1168,8 @@ const SearchObjects = [
     name :"PS4",
     description : "Uncharted",
     Price: "$120",
-    unique: "Games"
+    unique: "Games",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -1091,7 +1179,8 @@ const SearchObjects = [
     name :"XBOXONE",
     description : "The Witcher Wild Hunt",
     Price: "$1200",
-    unique: "Games"
+    unique: "Games",
+    count: 1
    },
    {
     id: uuidv4(),
@@ -1101,7 +1190,8 @@ const SearchObjects = [
     name :"Itel",
     description : "3000 mah ",
     Price: "$120",
-    unique: "Phones"
+    unique: "Phones",
+    count: 1
    },
 
 
@@ -1129,8 +1219,8 @@ const SearchObjects = [
 
 // Call the function to add the array to Firestore
 addArrayToFirestore();
-*/
 
+*/
 
 
 

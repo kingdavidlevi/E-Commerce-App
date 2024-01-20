@@ -145,7 +145,7 @@ function ResultFromSearch (){
     
               setFiles(matchResult);
             } else {
-              const myDocumentRef = doc(firestore, 'mysecondcollection', 'CpLX4u9MIavFb5Mq4QsS');
+              const myDocumentRef = doc(firestore, 'mysecondcollection', 'LOf5FHDZhGSuixJ7Ihmm');
               const docSnapshot = await getDoc(myDocumentRef);
     
               if (docSnapshot.exists()) {
@@ -406,7 +406,7 @@ function ResultFromSearch (){
   
   )}
 
-  s
+  
  </div>
 
   

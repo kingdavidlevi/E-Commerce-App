@@ -1,42 +1,184 @@
-import React, { useState } from "react";
+import React, { useState,useEffect,useRef } from "react";
 import { NavLink, useOutletContext } from "react-router-dom";
 import generator from './images/1 (6).jpg'
 import up from './images/Drop-Up-Small.png'
 import down from './images/Drop-Down-Small (1).png'
 import { useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection,doc,setDoc, getDoc } from 'firebase/firestore';
+import {firebaseConfig} from './firebase'
+
 
 
 function Cart() {
 const [addCart, setAddCart] = useState(1)
-const [zero,setZero] = useState(true)
+const [zero,setZero] = useState(0)
 const navigate = useNavigate()
 const {handlelocation,sethandleLocation} =useOutletContext()
+const app = initializeApp(firebaseConfig);
+const firestore = getFirestore(app)
+const [files,setFiles] = useState([])
+const [error,setError] = useState('')
+const [subtotal,setSubtotal] = useState([])
 
-const Add = () =>{
-setAddCart(prevstate => prevstate + 1)
+const reference = useRef()
 
-if(addCart >= 9){
-setZero(false)
+
+/*const Add = (id, reference) =>{
+  
+
+if( reference.current){
+
+
+
+  setAddCart((prevCounts) => ({
+    ...prevCounts,
+    [id]: (prevCounts[id] || 0) + 1,
+  }));
+ 
+
+ 
+
+
+  const isCountGreaterThanEqual9 = (addCart[id] || 0) + 1 >= 9;
+
+      // Update the zero state for the specific ID
+      setZero((prevZeros) => ({
+        ...prevZeros,
+        [id]: !isCountGreaterThanEqual9,
+      }));
+
+
 }
 
 
 
-}
-
-
-const Subtract = () =>{
-setAddCart(prevstate => prevstate - 1)
-
-if(addCart === 1){
-  setAddCart(1)
-}
-
-if(addCart <= 10){
-  setZero(true)
-}
 
 }
+
+*/
+
+
+
+
+const Add = (id) => {
+  setFiles((prevFiles) => {
+    // Create a new array with updated counts
+    const updatedFiles = prevFiles.map((data) => {
+      if (data.id === id) {
+        // Increment the count for the specific id
+        const updatedCount = (data.count || 0) + 1;
+
+        // Check if the count is greater than or equal to 9
+ 
+
+        // Update the state for the specific id
+        setAddCart((prevState) => ({
+          ...prevState,
+          [id]: updatedCount,
+        }));
+
+        // Update the state for the specific id for zero check
+        const isCountGreaterThanOrEqual9 = (data.count || 0) >= 9;
+
+
+        
+
+        // Update the count property for the specific id
+        return {
+          ...data,
+          count : updatedCount,
+      };
+      }
+
+      return data;
+    });
+
+    return updatedFiles;
+  });
+};
+
+const Subtract = (id) => {
+  setFiles((prevFiles) => {
+    // Create a new array with updated counts
+    const updatedFiles = prevFiles.map((data) => {
+      if (data.id === id) {
+        // Increment the count for the specific id
+        const updatedCount = (data.count || 0) > 1 ? (data.count || 0) - 1 : 1;
+
+        // Check if the count is greater than or equal to 9
+ 
+
+        // Update the state for the specific id
+        setAddCart((prevState) => ({
+          ...prevState,
+          [id]: updatedCount,
+        }));
+
+        // Update the state for the specific id for zero check
+        const isCountGreaterThanOrEqual9 = (data.count || 0) >= 9;
+
+
+        
+
+        // Update the count property for the specific id
+        return {
+          ...data,
+          count : updatedCount,
+      };
+      }
+
+      return data;
+    });
+
+    return updatedFiles;
+  });
+};
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      // Use Firestore collection
+      const myDocumentRef = doc(firestore, 'mysecondcollection', 'LOf5FHDZhGSuixJ7Ihmm');
+    
+      // Fetch the specific document
+      const docSnapshot = await getDoc(myDocumentRef);
+    
+      
+      if (docSnapshot.exists()) {
+          const data = docSnapshot.data()
+         setFiles(data.SearchObjects)
+          
+          
+       /* setDataList(arrayOfObjects.map((item) => item.mapValue.fields));*/
+
+      
+      } else {
+        console.log('');
+      }
+    } catch (error) {
+      setError('Error fetching data:', error);
+    }
+  };
+
+  fetchData(); // Invoke the function to fetch data when the component mounts
+}, []);
+
+
+
 
 
 
@@ -69,13 +211,24 @@ return(
 
 
     
-  <header className="h-12 md:hidden bg-black"> <p className="text-white text-center text-sm  ">Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</p></header>
+  <header className="h-12 grid place-items-center md:hidden bg-black"> <p className="text-white text-center text-sm  ">Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</p></header>
 
     <div className="ml-6 md:ml-10 lg:ml-12 w-10   mt-4 mb-10">
     <div onClick={Back} className="text-lg hover:cursor-pointer mt-1"><FaArrowLeft /></div> 
  
     </div>
 
+
+
+
+
+      {files.length > 0 ? (
+ 
+      <div>
+     
+     
+
+     
     <div className="flex px-4 md:pl-8 md:pr-10 lg:ml-24  mb-6 justify-between items-center md:ml-14 lg:w-310 h-18 shadow-2xl  xl:w-370 bg-white md:w-265 xl:ml-36">
 
       <div><p className="text-lg font-medium " >Products</p></div> 
@@ -86,28 +239,32 @@ return(
     </div>
 
 
-<div className="flex md:pl-4 lg:ml-24 md:pr-10  mb-6 justify-between items-center md:ml-14   lg:w-310 md:h-26 h-28 shadow-xl xl:w-370 xl:ml-36 bg-white w-full pl-1 pr-4 md:w-265">
+    { files.map((item,index) => (
+
+      
+
+<div key={item.id}  className="flex md:pl-4 lg:ml-24 md:pr-10  mb-6 justify-between items-center md:ml-14   lg:w-310 md:h-26 h-28 shadow-xl xl:w-370 xl:ml-36 bg-white w-full pl-1 pr-4 md:w-265">
 
 <div className="md:flex  block ">
-  <img src={generator} className="h-18 w-18" />
-  <p className="font-medium md:mt-6 ml-1 hidden md:block">Sumec Generator</p>  
+  <img src={item.pictureURL} className="h-18 w-18" />
+  <p className="font-medium md:mt-6 ml-1 hidden md:block">{item.name}</p>  
    
 </div>
 
 
 <div className="md:mr-28  ml-4">
-<p className="font-medium">$500</p>
+<p className="font-medium">{item.Price}</p>
 </div>
 
 
 
 <div className="border-gray-300 mr-8 md:mr-36 justify-around items-center flex border-2 h-11 w-18 rounded-md  ">
 
-<div><p>{zero && <span>0</span>}{addCart}</p></div>
+<div><p>{item.count}</p></div>
 
 <div className="md:w-4 w-5 h-10 md:h-8 ">
-  <div onClick={Add} className="md:mb-0 mb-1" ><img src={up} /> </div>
-  <div onClick={Subtract}><img src={down} /> </div>
+  <div onClick={ () => Add (item.id )} className="md:mb-0 mb-1" ><img src={up} /> </div>
+  <div onClick={() => Subtract (item.id ,reference)}><img src={down} /> </div>
 
 
 </div>
@@ -116,21 +273,29 @@ return(
 
 
 <div>
-<p className="font-medium">$500</p>
+<p className="font-medium">{subtotal}</p>
 </div>
 
 
 </div>
 
+
+
+)
+
+)}
 
 
 
 <div className="flex  lg:ml-24  md:ml-14  justify-around md:justify-between items-center    lg:w-310 h-14   xl:w-370 xl:ml-36  md:w-265">
-<div onClick={Back} c className="md:h-14 h-10 w-40 md:w-53 cursor-pointer border-2 text-center grid place-content-center  border-gray-300 rounded-md "><p className="font-medium">Return To Shop</p></div>
+<div onClick={Back}  className="md:h-14 h-10 w-40 md:w-53 cursor-pointer border-2 text-center grid place-content-center  border-gray-300 rounded-md "><p className="font-medium">Return To Shop</p></div>
 <div className="md:h-14 h-10 w-40 md:w-53 border-2  cursor-pointer text-center grid place-content-center  border-gray-300 rounded-md"><p className="font-medium">Update Cart</p></div>
 
+
 </div>
- 
+
+
+
 
 
 
@@ -154,7 +319,7 @@ return(
 <p className="font-medium">Subtotal:</p>
 <p className="font-medium">$1250</p>
 
-</div>
+</div>      
 <hr className="border border-gray-300 lg:w-86 xl:w-101"/>
 
 <div className="flex justify-between h-6 mt-4 lg:w-86 xl:w-101 mb-4">
@@ -183,11 +348,30 @@ return(
 
 </div>
 
-
+ 
 </div>
 
 
+
+
+
 </div>
+
+ 
+        
+    
+
+ </div>
+
+ 
+
+      ):
+      
+      <div></div>
+      
+      
+      
+      }
 
 
 

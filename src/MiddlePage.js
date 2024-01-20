@@ -127,7 +127,7 @@ const allsecondDemo = [
     const fetchData = async () => {
       try {
         // Use Firestore collection
-        const myDocumentRef = doc(firestore, 'mysecondcollection', 'CpLX4u9MIavFb5Mq4QsS');
+        const myDocumentRef = doc(firestore, 'mysecondcollection', 'LOf5FHDZhGSuixJ7Ihmm');
       
         // Fetch the specific document
         const docSnapshot = await getDoc(myDocumentRef);
@@ -167,8 +167,7 @@ const allsecondDemo = [
       console.log('active')
      }
 
-    console.log(dataId)
-    console.log(unique)
+    
 
    }
 
