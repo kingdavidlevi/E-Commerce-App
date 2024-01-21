@@ -19,6 +19,7 @@ function Login (){
     const [loading,setLoading] = useState(false)
     const [user,setUser] = useState([])
     const {handlelocation} = useOutletContext()
+    const [isButtonDisabled, setButtonDisabled] = useState(false)
     
     const handleSignIn = (e) => {
       e.preventDefault()
@@ -86,7 +87,7 @@ function Login (){
 
 
 
-
+console.log(formValues.email, formValues.password)
 
 
 
@@ -170,10 +171,10 @@ function Login (){
         
                 <form>
                   <p className="text-red-500 absolute text-sm font-medium">{error}</p>
-                    <input onChange={handleFormChanges} name="email" type="email" className='border-2 border-r-0 border-l-0 pb-1 w-80 border-t-0 border-gray-300 mt-10 pl-2 md:pl-0 lg:w-96 md:w-90 outline-none mb-6' placeholder="Email Address" required /><br/>
-                    <input onChange={handleFormChanges} name="password" type={!visibility ? 'password' : 'text'} className='border-2  border-r-0 border-l-0 pb-1 w-80 border-t-0 border-gray-300 pl-2 md:pl-0 lg:w-96 md:w-90 outline-none mb-6' max={25} placeholder="Password" required/><br/>
+                    <input onChange={handleFormChanges} value={formValues.email} name="email" type="email" className='border-2 border-r-0 border-l-0 pb-1 w-80 border-t-0 border-gray-300 mt-10 pl-2 md:pl-0 lg:w-96 md:w-90 outline-none mb-6' placeholder="Email Address" required /><br/>
+                    <input onChange={handleFormChanges} value={formValues.password} name="password" type={!visibility ? 'password' : 'text'} className='border-2  border-r-0 border-l-0 pb-1 w-80 border-t-0 border-gray-300 pl-2 md:pl-0 lg:w-96 md:w-90 outline-none mb-6' max={25} placeholder="Password" required/><br/>
                     {!visibility ? <div className="absolute md:bottom-32 bottom-36 mb-4" onClick={handleEye}  style={{'right' : '10%'}}> <FaEye className="text-lg"/> </div> : <div className="absolute md:bottom-32  bottom-36 mb-4" onClick={handleEye} style={{'right' : '10%'}}> <FaEyeSlash className="text-lg"/> </div>}
-                     <button onClick={handleSignIn} type="submit" className="rounded-lg pt-1 pb-1 md:w-90 bg-red-400 w-80 lg:w-96 text-white mt-4">Login in</button>
+                    { formValues.email.length <= 0 || formValues.password.length <= 0 ? (  <button disabled={false}   type="submit" className="rounded-lg pt-1 pb-1 md:w-90 bg-red-400 w-80 lg:w-96 text-white mt-4">Login in</button> ) :   <button   onClick={handleSignIn} type="submit" className="rounded-lg pt-1 pb-1 md:w-90 bg-red-400 w-80 lg:w-96 text-white mt-4">Login in</button> }
                      <p className="text-center mt-8 mb-4 md:mb-0 text-lg">Don't have an account? <span><NavLink to='/Second/Signup' className='underline'>Sign Up</NavLink></span></p>
                 </form>
             </div>
