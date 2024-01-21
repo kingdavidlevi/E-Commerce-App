@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useOutletContext } from "react-router-dom";
-import { FaPhone,FaGamepad,FaLaptop, FaCheck, } from "react-icons/fa";
+import { FaPhone,FaGamepad,FaLaptop, FaCheck,FaTimes } from "react-icons/fa";
 import Advert from './images/BINATONE_BLACK_FRIDAY_BRAND_DAY_slider_FS (1).jpg'
 import ImageSlider from "./ImagesSlider";
 import vectorSide from './images/Vector (5).png'
@@ -17,7 +17,7 @@ import {firebaseConfig} from './firebase'
 import { db } from "./firebase";
 import demo from './images/istockphoto-1291418648-2048x2048 (2).jpg'
 import star from './images/Four Star.png'
-
+import images from '../src/images/Side Image (1).png'
 
  function MiddlePage () {
 const [timeDifference,setTimeDiffernce] = useState(0)
@@ -27,7 +27,7 @@ const [minutes,setMinutes] = useState('')
 const [seconds,setSeconds] = useState('')
 const [Hover1, setHover1] = useState(false)
 const [Hover2, setHover2] = useState(false)
-const {isFixed,cartDiv,setCartDiv,setIdentify,identify,mobileFixed,hamburger,setUpdateCart,updateCart} = useOutletContext()
+const {isFixed,cartDiv,setCartDiv,setHamburger,setIdentify,identify,mobileFixed,hamburger,setUpdateCart,updateCart} = useOutletContext()
 const {imageUrls,setImageUrls} =useState([])
 const [dataList, setDataList] = useState([]);
 const app = initializeApp(firebaseConfig);
@@ -227,18 +227,19 @@ function addProductsToCart(identify, mycollection) {
         // Add products to the user's cart
         addProductsToCart(userId, mysecondcollection);
       });*/
-     
-      console.log('active')
+     console.log('active')
     } 
-
-
-    
-
    }
 
   }
 
 
+  const clickHumburger = () => {
+ 
+    setHamburger(prevstate => !prevstate)
+   
+  }
+  
 
 
     return(
@@ -268,22 +269,17 @@ function addProductsToCart(identify, mycollection) {
 
 {hamburger &&(
 
-     <div className=" lg:hidden block  overflow-x-hidden w-screen ">
+     <div className=" lg:hidden block    overflow-x-hidden  " >
 
-<div className={`${ hamburger ? "border-r-r top-32 sm:top-28 mt-2 rounded-md h-98  ml-0 shadow-lg fixed z-20 bg-white  w-48 block pl-6 sm:w-60   border-gray-300  pr-2 " : "sm:w-60   pr-2   transition-transform delay-500 duration-500 sm:top-28  sm:mt-2 ease-in-out   border-r-r top-32 rounded-md h-98 right-96 mr-20 shadow-lg fixed z-20 bg-white w-48 block pl-6    border-gray-300 lg:hidden  " }`}>
-<div className="flex  hover:text-orange-400  justify-between  mt-4  "   >  <NavLink to='/Appliances' className='text-sm font-medium block w-full'>Appliances </NavLink> <img src={vectorSide} className="h-3 w-2 mt-1  " />   </div>
-<div className="flex hover:text-orange-400 justify-between mt-5 cursor-pointer">  <NavLink to='/Phones' className='text-sm font-medium  block w-full'>Phones & Tablets</NavLink>  <img src={vectorSide} className="h-3 w-2 mt-1" />   </div>
-<div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Fashion' className='text-sm font-medium block w-full'>Fashion</NavLink>   </div>
+<div  className={`${ hamburger ? " top-0 pt-4 pl-4  h-full border-r-4 ml-0 shadow-lg fixed z-20 bg-white   block     border-gray-300   " : "sm:w-60      transition-transform delay-500 duration-500 sm:top-0   ease-in-out   border-r-r top-0 rounded-md h-98   shadow-lg fixed z-20 bg-white     border-gray-300 lg:hidden  " }`} style={{'width' : '90%'}}>
+
+<div className="flex"><span className="text-xl mt-2 mr-3.5" onClick={clickHumburger}><FaTimes/></span> <p className="text-2xl  text-black  font-bold font-mono"> Exclusive</p></div>
+ <div onClick={clickHumburger} className="grid mt-10 pb-6 bg-white border-b-r border-gray-100 h-560 place-items-center w-full "><img src={images} className="w-36 h-36 rounded-full" /> </div>
+<div  className="flex hover:text-orange-400 justify-between mt-5 cursor-pointer">  <NavLink to='/Contact' className='text-sm font-medium  block w-full'>Contact</NavLink>      </div>
+<div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Second/Login' className='text-sm font-medium block w-full'>Cart</NavLink>   </div>
 <div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Gaming</NavLink> </div>
 <div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Generator</NavLink> </div>
-<div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Shoes</NavLink> </div>
-<div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Glassess</NavLink> </div>
-<div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Laptops</NavLink>  </div>
  
-<div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Electronics</NavLink> </div>
- <div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Health & Beauty</NavLink> </div>
- 
- <div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>other categories</NavLink> </div>
 </div>
 
 </div>
