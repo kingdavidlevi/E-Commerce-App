@@ -9,7 +9,7 @@ function OverAll() {
  const [cartDiv,setCartDiv]  = useState(false)
  const location = useLocation(); 
  const [handlelocation, sethandleLocation] = useState(true)
-
+ const [identify,setIdentify] = useState([])
 useEffect(() =>{
     window.scrollTo(0,0);
   
@@ -21,7 +21,7 @@ useEffect(() =>{
 
    return(
     <div>
-        <Outlet context={{cartDiv,sethandleLocation,setCartDiv,handlelocation,sethandleLocation,setUpdateCart,updateCart}}/>
+        <Outlet context={{cartDiv,setIdentify,identify,sethandleLocation,setCartDiv,handlelocation,sethandleLocation,setUpdateCart,updateCart}}/>
     </div>
 
    )

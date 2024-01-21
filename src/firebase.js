@@ -3,7 +3,8 @@ import { getAnalytics } from "firebase/analytics";
 import { getFirestore, collection,addDoc,doc,getDoc, updateDoc} from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 import {v4 as uuidv4} from 'uuid'
-import { getAuth } from 'firebase/auth';  
+import { getAuth } from 'firebase/auth';
+import firebase from 'firebase/app';  
 
 const firebaseConfig = {
   apiKey: "AIzaSyBjduQ3e2mMdN7Q1oPjY0KN6WdYa3yRpaE",
@@ -1293,4 +1294,4 @@ addDoc(myCollectionRef, { arrayOfObjects })
   console.error('Error adding document: ', error);
 });
 */
-export { app, analytics,auth, firestore, storage,firebaseConfig };
+export { app, analytics,auth,db, firestore, storage,firebaseConfig };

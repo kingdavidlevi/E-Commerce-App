@@ -36,8 +36,10 @@ function Login (){
           }
           })
           .catch((error) => {
-            console.error("Sign-up error", error.message);
-            console.log('after')
+            console.log(error)
+            setError( error.message);
+            setLoading(false)
+            
           });
     
     
@@ -165,9 +167,9 @@ function Login (){
 ) : null}
                 <h3 className=" lg:text-2xl text-start ml- md:text-start lg:font-semibold mt-8 md:mt-0  md:text-2xl font-semibold md:font-semibold">Log in to Exclusive </h3>
                 <p className="md:mt-6 mt-4  text-sm">Enter your details below</p>
-       
+        
                 <form>
-
+                  <p className="text-red-500 absolute text-sm font-medium">{error}</p>
                     <input onChange={handleFormChanges} name="email" type="email" className='border-2 border-r-0 border-l-0 pb-1 w-80 border-t-0 border-gray-300 mt-10 pl-2 md:pl-0 lg:w-96 md:w-90 outline-none mb-6' placeholder="Email Address" required /><br/>
                     <input onChange={handleFormChanges} name="password" type={!visibility ? 'password' : 'text'} className='border-2  border-r-0 border-l-0 pb-1 w-80 border-t-0 border-gray-300 pl-2 md:pl-0 lg:w-96 md:w-90 outline-none mb-6' max={25} placeholder="Password" required/><br/>
                     {!visibility ? <div className="absolute md:bottom-32 bottom-36 mb-4" onClick={handleEye}  style={{'right' : '10%'}}> <FaEye className="text-lg"/> </div> : <div className="absolute md:bottom-32  bottom-36 mb-4" onClick={handleEye} style={{'right' : '10%'}}> <FaEyeSlash className="text-lg"/> </div>}

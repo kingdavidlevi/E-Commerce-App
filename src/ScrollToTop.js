@@ -17,7 +17,7 @@ function    ScrollToTop (){
 
     const app = initializeApp(firebaseConfig);
     const firestore = getFirestore(app)
-    const {formValues,handlelocation,setFormValues,cartDiv,setCartDiv,updateCart,setUpdateCart} = useOutletContext()
+    const {formValues,handlelocation,setFormValues,cartDiv,setCartDiv,setIdentify,identify,updateCart,setUpdateCart} = useOutletContext()
 
 
 
@@ -58,7 +58,7 @@ function    ScrollToTop (){
 return (
     <div>
     <Header />
-    <Outlet context={{isFixed,setIsFixed,input,mobileFixed,hamburger,setHamburger,formValues,setFormValues,cartDiv,setCartDiv,updateCart,setUpdateCart}}  />
+    <Outlet context={{isFixed,setIsFixed,input,mobileFixed,hamburger,setHamburger,formValues,setFormValues,cartDiv,setIdentify,identify,setCartDiv,updateCart,setUpdateCart}}  />
     <Footer />
 
     </div>

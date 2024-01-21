@@ -14,6 +14,7 @@ import getImageUrls from "./getImageUrls";
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection,doc, getDoc } from 'firebase/firestore';
 import {firebaseConfig} from './firebase'
+import { db } from "./firebase";
 import demo from './images/istockphoto-1291418648-2048x2048 (2).jpg'
 import star from './images/Four Star.png'
 
@@ -26,7 +27,7 @@ const [minutes,setMinutes] = useState('')
 const [seconds,setSeconds] = useState('')
 const [Hover1, setHover1] = useState(false)
 const [Hover2, setHover2] = useState(false)
-const {isFixed,cartDiv,setCartDiv,mobileFixed,hamburger,setUpdateCart,updateCart} = useOutletContext()
+const {isFixed,cartDiv,setCartDiv,setIdentify,identify,mobileFixed,hamburger,setUpdateCart,updateCart} = useOutletContext()
 const {imageUrls,setImageUrls} =useState([])
 const [dataList, setDataList] = useState([]);
 const app = initializeApp(firebaseConfig);
@@ -85,6 +86,10 @@ const allsecondDemo = [
   <img index={14} src={demo}  className="lg:w-full rounded-lg lg:h-52 md:w-40 md:h-44 h-36 w-34 " />,
   
 ]
+
+
+
+
 
 
 
@@ -153,6 +158,57 @@ const allsecondDemo = [
 
 
 
+
+ /* function getAllProducts() {
+    return db.collection('mysecondcollection').get()
+      .then((querySnapshot) => {
+        const products = [];
+        querySnapshot.forEach((doc) => {
+          // Include the document ID in the data for reference
+          const productData = {
+            id: doc.id,
+            ...doc.data()
+          };
+          products.push(productData);
+        });
+        return products;
+      })
+      .catch((error) => {
+        console.error('Error getting products:', error);
+        return [];
+      });
+  }
+getAllProducts()
+*/
+/*
+function addProductsToCart(identify, mycollection) {
+  const userCartRef = db.mycollection('carts').doc(identify);
+
+  // Use Firestore transaction to ensure consistency
+  return db.runTransaction((transaction) => {
+    return transaction.get(userCartRef).then((doc) => {
+      if (!doc.exists) {
+        // If the user's cart document doesn't exist, create a new one
+        transaction.set(userCartRef, { items: mycollection });
+      } else {
+        // If the user's cart document exists, update the items array
+        const updatedItems = [...doc.data().items, ...mycollection];
+        transaction.update(userCartRef, { items: updatedItems });
+      }
+    });
+  })
+  .then(() => {
+    console.log('Products added to the cart successfully');
+  })
+  .catch((error) => {
+    console.error('Error adding products to the cart:', error);
+  });
+}
+
+
+*/
+
+
    const addCart = (unique) =>{
 
 
@@ -160,18 +216,30 @@ const allsecondDemo = [
       const dataId = data.id;
     
       console.log(dataId);
-     if (dataId == unique){
+     if (dataId  == unique){
       setUpdateCart(prevstate => prevstate + 1)
       setCartDiv(true)
       
+     /* const userId = identify; // Replace with the actual user ID
+
+      // Get all products from the "products" collection
+      getAllProducts().then((mysecondcollection) => {
+        // Add products to the user's cart
+        addProductsToCart(userId, mysecondcollection);
+      });*/
+     
       console.log('active')
-     }
+    } 
+
 
     
 
    }
 
   }
+
+
+
 
     return(
 
