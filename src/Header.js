@@ -5,7 +5,7 @@ import vector from './images/Vector.png'
 function Header (){
 
     return(
-        <div>
+        <div className="   ">
 
             <div className=" md:block hidden ">
             <header className="  bg-black lg:h-14 sm:h-12 h-12   lg:flex md:flex   md:items-center md:justify-center text-center  w-full ">

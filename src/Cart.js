@@ -67,34 +67,17 @@ const Add = (id) => {
     // Create a new array with updated counts
     const updatedFiles = prevFiles.map((data) => {
       if (data.id === id) {
-        // Increment the count for the specific id
-        const updatedCount = (data.count || 0) + 1;
+        
+        const updatedCount = (data.count || 0) + 1 ;
+        
+
  
 
 
-
-        let updatedValue;
-
-        // Check if the count is greater than or equal to 9
-        if (updatedCount >= 1) {
-          updatedValue = (data.value || 0) + updatedCount * 2;
           setcheckSubtotal(true)
-        } else {
-          updatedValue = (data.value || 0) + updatedCount;
-        }
-      
-        // Check if the count is greater than or equal to 9
- 
-          setSubtotal(updatedValue)
-        // Update the state for the specific id
-        setAddCart((prevState) => ({
-          ...prevState,
-          [id]: updatedCount,
-        }));
-
          
-        // Update the state for the specific id for zero check
-        const isCountGreaterThanOrEqual9 = (data.count || 0) >= 9;
+        
+    
             
 
         
@@ -103,8 +86,13 @@ const Add = (id) => {
         return {
           ...data,
           count : updatedCount,
-          value:updatedValue
+           
+          
       };
+
+
+      
+
       }
 
       return data;
@@ -113,6 +101,9 @@ const Add = (id) => {
     return updatedFiles;
   });
 };
+
+
+
 
 const Subtract = (id) => {
   setFiles((prevFiles) => {
@@ -288,7 +279,7 @@ return(
 
 
 <div>
-  {checkSubtotal ? ( <p className="font-medium">{subtotal}</p>) :<p className="font-medium">{item.Price}</p>}
+  {checkSubtotal ? ( <p className="font-medium">{item.Price}</p>) :<p className="font-medium">{item.Price}</p>}
 
 </div>
 

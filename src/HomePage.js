@@ -74,7 +74,7 @@ const clickHumburger = () => {
 
 
     return (
-        <div  >
+        <div className= " h-full overflow-hidden  " >
 
 
      <div className=" hidden  lg:block">
@@ -140,7 +140,7 @@ const clickHumburger = () => {
 
         </div>
    
-   <div className="bg-gray-300">
+   <div className= "bg-gray-300  " >
    <MiddlePage/>
    </div>
 

@@ -247,7 +247,15 @@ function addProductsToCart(identify, mycollection) {
 
     return(
 
-        <div className={`${ isFixed ? "lg:pt-30 md:pb-10   lg:pb-10 " : "lg:pt-8 md:pb-10  lg:pb-10 " }`}>
+      
+
+
+    
+
+
+
+
+        <div className={`${ isFixed  ? "lg:pt-30 md:pb-10 overflow-hidden  lg:pb-10 " : "lg:pt-8 md:pb-10  lg:pb-10 " }`}>
 
 
         <div className="lg:flex block  lg:justify-center  ">
@@ -276,7 +284,7 @@ function addProductsToCart(identify, mycollection) {
 <div  className={`${ hamburger ? " top-0 pt-4  h-screen border-r-4 ml-0 shadow-lg fixed z-20 bg-white   block     border-gray-300   " : "sm:w-60      transition-transform delay-500 duration-500 sm:top-0   ease-in-out   border-r-r top-0 rounded-md h-98   shadow-lg fixed z-20 bg-white     border-gray-300 lg:hidden  " }`} style={{'width' : '90%'}}>
 
 <div className="flex"><span className="text-xl mt-2  pl-4 mr-3.5" onClick={clickHumburger}><FaTimes/></span> <p className="text-2xl  text-black  font-bold font-mono"> Exclusive</p></div>
- <div onClick={clickHumburger} className="grid  pl-4 mt-10 pb-14 border-b border-gray-100 h-560 place-items-center w-full "><img src={images} className="w-36 h-36 rounded-full" /><p className="mt-6 font-medium font-lg">The best shopping app</p>  </div>
+ <div   className="grid  pl-4 mt-10 pb-14 border-b border-gray-100 h-560 place-items-center w-full "><img src={images} className="w-36 h-36 rounded-full" /><p className="mt-6 font-medium font-lg">The best shopping app</p>  </div>
 <div  className="flex  hover:text-orange-400  pl-4 justify-between mt-8 border-b border-gray-100 gap-2 pb-4 cursor-pointer"> <img src={user} />   <NavLink to='/Account' className='text-sm mt-2 font-medium  block w-full'>Contact</NavLink>      </div>
 <div className="flex hover:text-orange-400  pl-4 justify-between gap-2 border-b border-gray-100 pb-4 mt-8"> <img src={cart} /> <NavLink to='/Second/Login' className='text-sm font-medium block mt-2 w-full'>Cart</NavLink>   </div>
 <div className="flex hover:text-orange-400 text-lg pl-4 justify-between gap-2 border-b border-gray-100 pb-4 mt-8"> <img src={search} /> <NavLink to='/Second/Search' className='text-sm font-medium block mt-2 w-full'>Search</NavLink>   </div>
@@ -710,6 +718,19 @@ function addProductsToCart(identify, mycollection) {
 
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+ 
         
     )
 }
