@@ -21,7 +21,7 @@ const firestore = getFirestore(app)
 const [files,setFiles] = useState([])
 const [error,setError] = useState('')
 const [subtotal,setSubtotal] = useState([])
-
+const [checkSubtotal,setcheckSubtotal] = useState(false)
 const reference = useRef()
 
 
@@ -69,19 +69,33 @@ const Add = (id) => {
       if (data.id === id) {
         // Increment the count for the specific id
         const updatedCount = (data.count || 0) + 1;
-
-        // Check if the count is greater than or equal to 9
  
 
+
+
+        let updatedValue;
+
+        // Check if the count is greater than or equal to 9
+        if (updatedCount >= 1) {
+          updatedValue = (data.value || 0) + updatedCount * 2;
+          setcheckSubtotal(true)
+        } else {
+          updatedValue = (data.value || 0) + updatedCount;
+        }
+      
+        // Check if the count is greater than or equal to 9
+ 
+          setSubtotal(updatedValue)
         // Update the state for the specific id
         setAddCart((prevState) => ({
           ...prevState,
           [id]: updatedCount,
         }));
 
+         
         // Update the state for the specific id for zero check
         const isCountGreaterThanOrEqual9 = (data.count || 0) >= 9;
-
+            
 
         
 
@@ -89,6 +103,7 @@ const Add = (id) => {
         return {
           ...data,
           count : updatedCount,
+          value:updatedValue
       };
       }
 
@@ -273,7 +288,8 @@ return(
 
 
 <div>
-<p className="font-medium">{subtotal}</p>
+  {checkSubtotal ? ( <p className="font-medium">{subtotal}</p>) :<p className="font-medium">{item.Price}</p>}
+
 </div>
 
 
@@ -317,7 +333,7 @@ return(
 
 <div className="flex justify-between h-6  lg:w-86 xl:w-101 mb-4">
 <p className="font-medium">Subtotal:</p>
-<p className="font-medium">$1250</p>
+<p className="font-medium">${subtotal}</p>
 
 </div>      
 <hr className="border border-gray-300 lg:w-86 xl:w-101"/>

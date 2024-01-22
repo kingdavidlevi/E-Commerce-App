@@ -144,7 +144,7 @@ const allsecondDemo = [
         if (docSnapshot.exists()) {
             const data = docSnapshot.data()
            setFirstData(data.SearchObjects)
-           
+           console.log(data.SearchObjects)
          /* setDataList(arrayOfObjects.map((item) => item.mapValue.fields));*/
 
         
