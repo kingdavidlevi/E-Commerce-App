@@ -74,7 +74,7 @@ const clickHumburger = () => {
 
 
     return (
-        <div className= " h-full overflow-hidden  " >
+        <div className={`${ hamburger && " h-screen w-full fixed overflow-hidden  " }`}>
 
 
      <div className=" hidden  lg:block">

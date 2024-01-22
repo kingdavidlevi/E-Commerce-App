@@ -279,7 +279,7 @@ function addProductsToCart(identify, mycollection) {
 
 {hamburger &&(
 
-     <div className=" lg:hidden block    overflow-x-hidden  " >
+     <div className=" lg:hidden block    overflow-x-hidden " >
 
 <div  className={`${ hamburger ? " top-0 pt-4  h-screen border-r-4 ml-0 shadow-lg fixed z-20 bg-white   block     border-gray-300   " : "sm:w-60      transition-transform delay-500 duration-500 sm:top-0   ease-in-out   border-r-r top-0 rounded-md h-98   shadow-lg fixed z-20 bg-white     border-gray-300 lg:hidden  " }`} style={{'width' : '90%'}}>
 
