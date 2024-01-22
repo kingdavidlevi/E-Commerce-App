@@ -239,7 +239,7 @@ return(
     </div>
 
 
-    { files.map((item,index) => (
+    { files.slice(0, 15).map((item,index) => (
 
       
 

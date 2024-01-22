@@ -277,7 +277,7 @@ function addProductsToCart(identify, mycollection) {
 
 <div className="flex"><span className="text-xl mt-2  pl-4 mr-3.5" onClick={clickHumburger}><FaTimes/></span> <p className="text-2xl  text-black  font-bold font-mono"> Exclusive</p></div>
  <div onClick={clickHumburger} className="grid  pl-4 mt-10 pb-14 border-b border-gray-100 h-560 place-items-center w-full "><img src={images} className="w-36 h-36 rounded-full" /><p className="mt-6 font-medium font-lg">The best shopping app</p>  </div>
-<div  className="flex  hover:text-orange-400  pl-4 justify-between mt-8 border-b border-gray-100 gap-2 pb-4 cursor-pointer"> <img src={user} />   <NavLink to='/Contact' className='text-sm mt-2 font-medium  block w-full'>Contact</NavLink>      </div>
+<div  className="flex  hover:text-orange-400  pl-4 justify-between mt-8 border-b border-gray-100 gap-2 pb-4 cursor-pointer"> <img src={user} />   <NavLink to='/Account' className='text-sm mt-2 font-medium  block w-full'>Contact</NavLink>      </div>
 <div className="flex hover:text-orange-400  pl-4 justify-between gap-2 border-b border-gray-100 pb-4 mt-8"> <img src={cart} /> <NavLink to='/Second/Login' className='text-sm font-medium block mt-2 w-full'>Cart</NavLink>   </div>
 <div className="flex hover:text-orange-400 text-lg pl-4 justify-between gap-2 border-b border-gray-100 pb-4 mt-8"> <img src={search} /> <NavLink to='/Second/Search' className='text-sm font-medium block mt-2 w-full'>Search</NavLink>   </div>
  
