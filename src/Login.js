@@ -115,7 +115,7 @@ console.log(formValues.email, formValues.password)
 
 
     return(
-        <div className="  relative overflow-y-hidden h-screen md:overflow-y-visible">
+        <div className=" w-full fixed  overflow-y-hidden h-screen md:overflow-y-visible">
  
 
 {handlelocation && (

@@ -115,7 +115,7 @@ function Signup (){
 
 
     return(
-        <div className=" relative overflow-y-hidden h-screen md:overflow-y-visible ">
+        <div className=" fixed  w-full overflow-y-hidden h-screen md:overflow-y-visible ">
  
  {handlelocation && (
 
