@@ -252,12 +252,12 @@ function addProductsToCart(identify, mycollection) {
  <div className="flex hover:text-orange-400 justify-between mt-4  "   >  < ScrollToDivLink  targetId="div1"  className='text-sm font-medium block w-full'>Appliances </ScrollToDivLink>   <img src={vectorSide} className="h-3 w-2 mt-1  " /> </div>
  <div className="flex hover:text-orange-400 justify-between mt-5 cursor-pointer">  <ScrollToDivLink targetId="div1" className='text-sm font-medium  block w-full'>Phones & Tablets</ScrollToDivLink>  <img src={vectorSide} className="h-3 w-2 mt-1" /> </div>
  <div className="flex hover:text-orange-400 justify-between mt-5"> <ScrollToDivLink targetId="div2"  className='text-sm font-medium block w-full'>Fashion</ScrollToDivLink>   </div>
- <div className="flex hover:text-orange-400 justify-between mt-5"> <ScrollToDivLink to='/Games' className='text-sm font-medium block w-full'>Gaming</ScrollToDivLink> </div>
- <div className="flex hover:text-orange-400 justify-between mt-5"> <ScrollToDivLink className='text-sm font-medium block w-full'>Generator</ScrollToDivLink> </div>
- <div className="flex hover:text-orange-400 justify-between mt-5"> <ScrollToDivLink className='text-sm font-medium block w-full'>Shoes</ScrollToDivLink> </div>
- <div className="flex hover:text-orange-400 justify-between mt-5"> <ScrollToDivLink className='text-sm font-medium block w-full'>Glassess</ScrollToDivLink> </div>
- <div className="flex hover:text-orange-400 justify-between mt-5"> <ScrollToDivLink className='text-sm font-medium block w-full'>Laptops</ScrollToDivLink>  </div>
- <div className="flex hover:text-orange-400 justify-between mt-5"> <ScrollToDivLink className='text-sm font-medium block w-full'>Electronics</ScrollToDivLink> </div>
+ <div className="flex hover:text-orange-400 justify-between mt-5"> <ScrollToDivLink targetId="div3"  className='text-sm font-medium block w-full'>Gaming</ScrollToDivLink> </div>
+ <div className="flex hover:text-orange-400 justify-between mt-5"> <ScrollToDivLink targetId="div1" className='text-sm font-medium block w-full'>Generator</ScrollToDivLink> </div>
+ <div className="flex hover:text-orange-400 justify-between mt-5"> <ScrollToDivLink  targetId="div4" className='text-sm font-medium block w-full'>Shoes</ScrollToDivLink> </div>
+ <div className="flex hover:text-orange-400 justify-between mt-5"> <ScrollToDivLink targetId="div5" className='text-sm font-medium block w-full'>Glassess</ScrollToDivLink> </div>
+ <div className="flex hover:text-orange-400 justify-between mt-5"> <ScrollToDivLink targetId="div3" className='text-sm font-medium block w-full'>Laptops</ScrollToDivLink>  </div>
+ <div className="flex hover:text-orange-400 justify-between mt-5"> <ScrollToDivLink targetId="div3" className='text-sm font-medium block w-full'>Electronics</ScrollToDivLink> </div>
  <div className="flex hover:text-orange-400 justify-between mt-5"> <ScrollToDivLink className='text-sm font-medium block w-full'>Health & Beauty</ScrollToDivLink> </div>
  
  
@@ -383,14 +383,14 @@ function addProductsToCart(identify, mycollection) {
 
 
 
-<div className=" mt-4 md:rounded-tr-md md:rounded-tl-md h-12  items-center grid sm:w-100 place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
+<div id="div4" className=" mt-4 md:rounded-tr-md md:rounded-tl-md h-12  items-center grid sm:w-100 place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
 
 <p className="text-white font-medium text-xl">Shoe Deals</p>
 
 </div>
 
 
-<div className="lg:w-340 px-4 md:pt-3 pt-3 rounded-br-md gap-3 flex h-68 overflow-x-auto shadow-lg xl:w-400 bg-white rounded-bl-md sm:w-100 md:w-270  md:h-82 w-full">
+<div id="div4" className="lg:w-340 px-4 md:pt-3 pt-3 rounded-br-md gap-3 flex h-68 overflow-x-auto shadow-lg xl:w-400 bg-white rounded-bl-md sm:w-100 md:w-270  md:h-82 w-full">
 
 {dataList.length > 0 ? (
   firstData.slice(27, 37).map((currentObject, index) => (
@@ -430,14 +430,14 @@ function addProductsToCart(identify, mycollection) {
 
 
 
-<div className="  mt-4 md:rounded-tr-md md:rounded-tl-md h-12  items-center grid sm:w-100 place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
+<div id="div5" className="  mt-4 md:rounded-tr-md md:rounded-tl-md h-12  items-center grid sm:w-100 place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
 
 <p className="text-white font-medium text-xl">Shoes / Glasses Deals</p>
 
 </div>
 
 
-<div className="lg:w-340 px-4 md:pt-3 pt-3 rounded-br-md gap-3 flex h-68  overflow-x-auto shadow-lg xl:w-400 bg-white rounded-bl-md sm:w-100 md:w-270  md:h-82 w-full">
+<div id="div5" className="lg:w-340 px-4 md:pt-3 pt-3 rounded-br-md gap-3 flex h-68  overflow-x-auto shadow-lg xl:w-400 bg-white rounded-bl-md sm:w-100 md:w-270  md:h-82 w-full">
 
 {dataList.length > 0 ? (
   firstData.slice(43, 58).map((currentObject, index) => (
@@ -518,14 +518,14 @@ function addProductsToCart(identify, mycollection) {
 
 
 
-<div className=" mt-4 md:rounded-tr-md md:rounded-tl-md h-12  items-center grid sm:w-100 place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
+<div id="div3" className=" mt-4 md:rounded-tr-md md:rounded-tl-md h-12  items-center grid sm:w-100 place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
 
 <p className="text-white font-medium text-xl">Games / Laptop Collection</p>
 
 </div>
 
 
-<div className="lg:w-340 px-4 md:pt-3 pt-3 rounded-br-md gap-3 flex h-68  overflow-x-auto shadow-lg xl:w-400 bg-white rounded-bl-md sm:w-100 md:w-270  md:h-82 w-full">
+<div id="div3" className="lg:w-340 px-4 md:pt-3 pt-3 rounded-br-md gap-3 flex h-68  overflow-x-auto shadow-lg xl:w-400 bg-white rounded-bl-md sm:w-100 md:w-270  md:h-82 w-full">
 
 {dataList.length > 0 ? (
   firstData.slice(75, 90).map((currentObject, index) => (
