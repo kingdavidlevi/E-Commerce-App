@@ -18,8 +18,9 @@ import { db } from "./firebase";
 import demo from './images/istockphoto-1291418648-2048x2048 (2).jpg'
 import star from './images/Four Star.png'
 import images from '../src/images/Side Image (1).png'
+import ScrollToDivLink from "./ScrollToDivLink";
 
- function MiddlePage () {
+ function MiddlePage ({targetId}) {
 const [timeDifference,setTimeDiffernce] = useState(0)
 const [currentDate, setCurrentDate] = useState(new Date())
 const [hours,setHours] = useState('')
@@ -88,9 +89,7 @@ const allsecondDemo = [
 ]
 
 
-
-
-
+ 
 
 
 
@@ -250,18 +249,17 @@ function addProductsToCart(identify, mycollection) {
         <div className="lg:flex block  lg:justify-center  ">
 
      <div className="border-r-r  rounded-md h-98 shadow-lg bg-white pl-4 pr-6 lg:w-56 md:w-48 mr-2 border-gray-300 lg:block hidden ">
- <div className="flex hover:text-orange-400 justify-between mt-4  "   >  <NavLink to='/Appliances' className='text-sm font-medium block w-full'>Appliances </NavLink>   <img src={vectorSide} className="h-3 w-2 mt-1  " /> </div>
- <div className="flex hover:text-orange-400 justify-between mt-5 cursor-pointer">  <NavLink to='/Phones' className='text-sm font-medium  block w-full'>Phones & Tablets</NavLink>  <img src={vectorSide} className="h-3 w-2 mt-1" /> </div>
- <div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Fashion' className='text-sm font-medium block w-full'>Fashion</NavLink>   </div>
- <div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Gaming</NavLink> </div>
- <div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Generator</NavLink> </div>
- <div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Shoes</NavLink> </div>
- <div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Glassess</NavLink> </div>
- <div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Laptops</NavLink>  </div>
- <div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Electronics</NavLink> </div>
- <div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Health & Beauty</NavLink> </div>
+ <div className="flex hover:text-orange-400 justify-between mt-4  "   >  < ScrollToDivLink  targetId="div1"  className='text-sm font-medium block w-full'>Appliances </ScrollToDivLink>   <img src={vectorSide} className="h-3 w-2 mt-1  " /> </div>
+ <div className="flex hover:text-orange-400 justify-between mt-5 cursor-pointer">  <ScrollToDivLink targetId="div1" className='text-sm font-medium  block w-full'>Phones & Tablets</ScrollToDivLink>  <img src={vectorSide} className="h-3 w-2 mt-1" /> </div>
+ <div className="flex hover:text-orange-400 justify-between mt-5"> <ScrollToDivLink targetId="div2"  className='text-sm font-medium block w-full'>Fashion</ScrollToDivLink>   </div>
+ <div className="flex hover:text-orange-400 justify-between mt-5"> <ScrollToDivLink to='/Games' className='text-sm font-medium block w-full'>Gaming</ScrollToDivLink> </div>
+ <div className="flex hover:text-orange-400 justify-between mt-5"> <ScrollToDivLink className='text-sm font-medium block w-full'>Generator</ScrollToDivLink> </div>
+ <div className="flex hover:text-orange-400 justify-between mt-5"> <ScrollToDivLink className='text-sm font-medium block w-full'>Shoes</ScrollToDivLink> </div>
+ <div className="flex hover:text-orange-400 justify-between mt-5"> <ScrollToDivLink className='text-sm font-medium block w-full'>Glassess</ScrollToDivLink> </div>
+ <div className="flex hover:text-orange-400 justify-between mt-5"> <ScrollToDivLink className='text-sm font-medium block w-full'>Laptops</ScrollToDivLink>  </div>
+ <div className="flex hover:text-orange-400 justify-between mt-5"> <ScrollToDivLink className='text-sm font-medium block w-full'>Electronics</ScrollToDivLink> </div>
+ <div className="flex hover:text-orange-400 justify-between mt-5"> <ScrollToDivLink className='text-sm font-medium block w-full'>Health & Beauty</ScrollToDivLink> </div>
  
- <div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>other categories</NavLink> </div>
  
 
      </div>
@@ -337,14 +335,14 @@ function addProductsToCart(identify, mycollection) {
 
 
 
-<div  className=" md:rounded-tr-md md:rounded-tl-md h-12  items-center grid sm:w-100 place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
+<div id="div2"  className=" md:rounded-tr-md md:rounded-tl-md h-12  items-center grid sm:w-100 place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
 
 <p className="text-white font-medium text-xl">Fashion Deals</p>
 
 </div>
 
 
-<div className="lg:w-340 px-4 md:pt-3 pt-3 rounded-br-md gap-3 flex h-68  overflow-x-auto shadow-lg xl:w-400 bg-white rounded-bl-md sm:w-100 md:w-270  md:h-82 w-full">
+<div id="div2" className="lg:w-340 px-4 md:pt-3 pt-3 rounded-br-md gap-3 flex h-68  overflow-x-auto shadow-lg xl:w-400 bg-white rounded-bl-md sm:w-100 md:w-270  md:h-82 w-full">
 
 {dataList.length > 0 ? (
   firstData.slice(16, 26).map((currentObject, index) => (
@@ -475,7 +473,8 @@ function addProductsToCart(identify, mycollection) {
 
 
 
-<div className=" md:rounded-tr-md md:rounded-tl-md h-12  items-center grid sm:w-100 place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
+
+<div className=" mt-4 md:rounded-tr-md md:rounded-tl-md h-12  items-center grid sm:w-100 place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
 
 <p className="text-white font-medium text-xl">Glasses / Laptops /  Deals</p>
 
@@ -514,6 +513,57 @@ function addProductsToCart(identify, mycollection) {
 }
 
 </div>
+
+
+
+
+
+<div className=" mt-4 md:rounded-tr-md md:rounded-tl-md h-12  items-center grid sm:w-100 place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
+
+<p className="text-white font-medium text-xl">Games / Laptop Collection</p>
+
+</div>
+
+
+<div className="lg:w-340 px-4 md:pt-3 pt-3 rounded-br-md gap-3 flex h-68  overflow-x-auto shadow-lg xl:w-400 bg-white rounded-bl-md sm:w-100 md:w-270  md:h-82 w-full">
+
+{dataList.length > 0 ? (
+  firstData.slice(75, 90).map((currentObject, index) => (
+    <div key={currentObject.id} className=" transition-transform ease-in-out transform  hover:scale-105 flex-shrink-0 pl-2 h-62 md:hover:shadow-2xl bg-white md:hover:border-2 md:border-none md:hover:border-gray-300  border-gray-300 border-2 md:h-68 w-44 ">
+        
+        <p className="text-sm font-bold mb-1">{currentObject.name}</p>
+     <img className="md:w-40 mb-2 h-32 md:h-36 w-40" src={currentObject.pictureURL} alt={`Image ${index}`} />
+     <button className="bg-custom-color mb-2 hover:cursor-default rounded-sm text-white text-xs px-1 py-1">Official Store</button>
+     <p className="text-sm font-bold mb-1">{currentObject.Price}</p>
+     <img src={star} />
+     <p className="font-mono text-sm font-bold mt-1">Exclusive</p>
+
+     <button  onClick={() => addCart (currentObject.id)} className=" bg-orange-500 hover:bg-orange-600 items-center mt-2 rounded-sm px-4 py-2 text-white text-sm font-bold">ADD TO CART</button>
+
+
+    </div>
+  ))
+) : 
+
+<div className="flex overflow-x-auto ">
+ {allsecondDemo.map((item, index) => (
+    <div className="lg:w-1/4 flex-shrink-0  p-2 md:pl-1.5   " key={index}>{item}</div>
+  ))}
+ 
+  </div>
+
+
+
+}
+
+</div>
+
+
+
+
+
+
+
 
 
 
@@ -573,14 +623,14 @@ function addProductsToCart(identify, mycollection) {
 
 
 
-<div className=" mt-4 md:rounded-tr-md md:rounded-tl-md h-12  items-center grid sm:w-100 place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
+<div  id="div1" className=" mt-4 md:rounded-tr-md md:rounded-tl-md h-12  items-center grid sm:w-100 place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
 
 <p className="text-white font-medium text-xl">Phones / Clothes Deals</p>
 
 </div>
 
 
-<div className="lg:w-340 px-4 md:pt-3 pt-3 rounded-br-md gap-3 flex h-68 overflow-x-auto shadow-lg xl:w-400 bg-white rounded-bl-md sm:w-100 md:w-270  md:h-82 w-full">
+<div  id="div1" className="lg:w-340 px-4 md:pt-3 pt-3 rounded-br-md gap-3 flex h-68 overflow-x-auto shadow-lg xl:w-400 bg-white rounded-bl-md sm:w-100 md:w-270  md:h-82 w-full">
 
 {dataList.length > 0 ? (
   firstData.slice(0, 15).map((currentObject, index) => (
