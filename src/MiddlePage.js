@@ -19,6 +19,10 @@ import demo from './images/istockphoto-1291418648-2048x2048 (2).jpg'
 import star from './images/Four Star.png'
 import images from '../src/images/Side Image (1).png'
 import ScrollToDivLink from "./ScrollToDivLink";
+import cart from './images/Cart1.png'
+import user from './images/user.png'
+import search from './images/Component 2.png'
+
 
  function MiddlePage ({targetId}) {
 const [timeDifference,setTimeDiffernce] = useState(0)
@@ -249,7 +253,7 @@ function addProductsToCart(identify, mycollection) {
         <div className="lg:flex block  lg:justify-center  ">
 
      <div className="border-r-r  rounded-md h-98 shadow-lg bg-white pl-4 pr-6 lg:w-56 md:w-48 mr-2 border-gray-300 lg:block hidden ">
- <div className="flex hover:text-orange-400 justify-between mt-4  "   >  < ScrollToDivLink  targetId="div1"  className='text-sm font-medium block w-full'>Appliances </ScrollToDivLink>   <img src={vectorSide} className="h-3 w-2 mt-1  " /> </div>
+ <div className="flex hover:text-orange-400 justify-between mt-4  "   > < ScrollToDivLink  targetId="div1"  className='text-sm font-medium block w-full'>Appliances </ScrollToDivLink>   <img src={vectorSide} className="h-3 w-2 mt-1  " /> </div>
  <div className="flex hover:text-orange-400 justify-between mt-5 cursor-pointer">  <ScrollToDivLink targetId="div1" className='text-sm font-medium  block w-full'>Phones & Tablets</ScrollToDivLink>  <img src={vectorSide} className="h-3 w-2 mt-1" /> </div>
  <div className="flex hover:text-orange-400 justify-between mt-5"> <ScrollToDivLink targetId="div2"  className='text-sm font-medium block w-full'>Fashion</ScrollToDivLink>   </div>
  <div className="flex hover:text-orange-400 justify-between mt-5"> <ScrollToDivLink targetId="div3"  className='text-sm font-medium block w-full'>Gaming</ScrollToDivLink> </div>
@@ -269,14 +273,15 @@ function addProductsToCart(identify, mycollection) {
 
      <div className=" lg:hidden block    overflow-x-hidden  " >
 
-<div  className={`${ hamburger ? " top-0 pt-4 pl-4  h-full border-r-4 ml-0 shadow-lg fixed z-20 bg-white   block     border-gray-300   " : "sm:w-60      transition-transform delay-500 duration-500 sm:top-0   ease-in-out   border-r-r top-0 rounded-md h-98   shadow-lg fixed z-20 bg-white     border-gray-300 lg:hidden  " }`} style={{'width' : '90%'}}>
+<div  className={`${ hamburger ? " top-0 pt-4  h-screen border-r-4 ml-0 shadow-lg fixed z-20 bg-white   block     border-gray-300   " : "sm:w-60      transition-transform delay-500 duration-500 sm:top-0   ease-in-out   border-r-r top-0 rounded-md h-98   shadow-lg fixed z-20 bg-white     border-gray-300 lg:hidden  " }`} style={{'width' : '90%'}}>
 
-<div className="flex"><span className="text-xl mt-2 mr-3.5" onClick={clickHumburger}><FaTimes/></span> <p className="text-2xl  text-black  font-bold font-mono"> Exclusive</p></div>
- <div onClick={clickHumburger} className="grid mt-10 pb-6 bg-white border-b-r border-gray-100 h-560 place-items-center w-full "><img src={images} className="w-36 h-36 rounded-full" /> </div>
-<div  className="flex hover:text-orange-400 justify-between mt-5 cursor-pointer">  <NavLink to='/Contact' className='text-sm font-medium  block w-full'>Contact</NavLink>      </div>
-<div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Second/Login' className='text-sm font-medium block w-full'>Cart</NavLink>   </div>
-<div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Gaming</NavLink> </div>
-<div className="flex hover:text-orange-400 justify-between mt-5"> <NavLink to='/Games' className='text-sm font-medium block w-full'>Generator</NavLink> </div>
+<div className="flex"><span className="text-xl mt-2  pl-4 mr-3.5" onClick={clickHumburger}><FaTimes/></span> <p className="text-2xl  text-black  font-bold font-mono"> Exclusive</p></div>
+ <div onClick={clickHumburger} className="grid  pl-4 mt-10 pb-14 border-b border-gray-100 h-560 place-items-center w-full "><img src={images} className="w-36 h-36 rounded-full" /><p className="mt-6 font-medium font-lg">The best shopping app</p>  </div>
+<div  className="flex  hover:text-orange-400  pl-4 justify-between mt-8 border-b border-gray-100 gap-2 pb-4 cursor-pointer"> <img src={user} />   <NavLink to='/Contact' className='text-sm mt-2 font-medium  block w-full'>Contact</NavLink>      </div>
+<div className="flex hover:text-orange-400  pl-4 justify-between gap-2 border-b border-gray-100 pb-4 mt-8"> <img src={cart} /> <NavLink to='/Second/Login' className='text-sm font-medium block mt-2 w-full'>Cart</NavLink>   </div>
+<div className="flex hover:text-orange-400 text-lg pl-4 justify-between gap-2 border-b border-gray-100 pb-4 mt-8"> <img src={search} /> <NavLink to='/Second/Search' className='text-sm font-medium block mt-2 w-full'>Search</NavLink>   </div>
+ 
+ 
  
 </div>
 
