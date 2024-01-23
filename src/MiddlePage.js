@@ -350,7 +350,7 @@ function addProductsToCart(identify, mycollection) {
 
 <div id="div2"  className=" md:rounded-tr-md md:rounded-tl-md h-12  items-center grid sm:w-100 place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
 
-<p className="text-white font-medium text-xl">Fashion Deals</p>
+<p className="text-white font-medium text-sm md:text-xl">Fashion Deals</p>
 
 </div>
 
@@ -398,7 +398,7 @@ function addProductsToCart(identify, mycollection) {
 
 <div id="div4" className=" mt-4 md:rounded-tr-md md:rounded-tl-md h-12  items-center grid sm:w-100 place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
 
-<p className="text-white font-medium text-xl">Shoe Deals</p>
+<p className="text-white font-medium text-sm md:text-xl">Shoe Deals</p>
 
 </div>
 
@@ -445,7 +445,7 @@ function addProductsToCart(identify, mycollection) {
 
 <div id="div5" className="  mt-4 md:rounded-tr-md md:rounded-tl-md h-12  items-center grid sm:w-100 place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
 
-<p className="text-white font-medium text-xl">Shoes / Glasses Deals</p>
+<p className="text-white font-medium text-sm md:text-xl">Shoes / Glasses Deals</p>
 
 </div>
 
@@ -489,7 +489,7 @@ function addProductsToCart(identify, mycollection) {
 
 <div className=" mt-4 md:rounded-tr-md md:rounded-tl-md h-12  items-center grid sm:w-100 place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
 
-<p className="text-white font-medium text-xl">Glasses / Laptops /  Deals</p>
+<p className="text-white font-medium text-sm md:text-xl">Glasses / Laptops /  Deals</p>
 
 </div>
 
@@ -533,7 +533,7 @@ function addProductsToCart(identify, mycollection) {
 
 <div id="div3" className=" mt-4 md:rounded-tr-md md:rounded-tl-md h-12  items-center grid sm:w-100 place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
 
-<p className="text-white font-medium text-xl">Games / Laptop Collection</p>
+<p className="text-white font-medium text-sm md:text-xl">Games / Laptop Collection</p>
 
 </div>
 
@@ -586,7 +586,7 @@ function addProductsToCart(identify, mycollection) {
 
 <div className="  mt-4 md:rounded-tr-md md:rounded-tl-md h-12  items-center grid sm:w-100 place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
 
-<p className="text-white font-medium text-xl">Italian Shoes Deals</p>
+<p className="text-white font-medium text-sm md:text-xl">Italian Shoes Deals</p>
 
 </div>
 
@@ -638,7 +638,7 @@ function addProductsToCart(identify, mycollection) {
 
 <div  id="div1" className=" mt-4 md:rounded-tr-md md:rounded-tl-md h-12  items-center grid sm:w-100 place-items-center lg:w-340 md:w-270 w-full bg-orange-400 xl:w-400 ">
 
-<p className="text-white font-medium text-xl">Phones / Clothes Deals</p>
+<p className="text-white font-medium text-sm md:text-xl">Phones / Clothes Deals</p>
 
 </div>
 
