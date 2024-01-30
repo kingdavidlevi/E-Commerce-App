@@ -261,8 +261,8 @@ function addProductsToCart(identify, mycollection) {
         <div className="lg:flex block  lg:justify-center  ">
 
      <div className="border-r-r  rounded-md h-98 shadow-lg bg-white pl-4 pr-6 lg:w-56 md:w-48 mr-2 border-gray-300 lg:block hidden ">
- <div className="flex hover:text-orange-400 justify-between mt-4  "   > < ScrollToDivLink  targetId="div1"  className='text-sm font-medium block w-full'>Appliances </ScrollToDivLink>   <img src={vectorSide} className="h-3 w-2 mt-1  " /> </div>
- <div className="flex hover:text-orange-400 justify-between mt-5 cursor-pointer">  <ScrollToDivLink targetId="div1" className='text-sm font-medium  block w-full'>Phones & Tablets</ScrollToDivLink>  <img src={vectorSide} className="h-3 w-2 mt-1" /> </div>
+ <div className="flex hover:text-orange-400 justify-between mt-4  "   > < ScrollToDivLink  targetId="div1"  className='text-sm font-medium block w-full'>Appliances </ScrollToDivLink>    </div>
+ <div className="flex hover:text-orange-400 justify-between mt-5 cursor-pointer">  <ScrollToDivLink targetId="div1" className='text-sm font-medium  block w-full'>Phones & Tablets</ScrollToDivLink>   </div>
  <div className="flex hover:text-orange-400 justify-between mt-5"> <ScrollToDivLink targetId="div2"  className='text-sm font-medium block w-full'>Fashion</ScrollToDivLink>   </div>
  <div className="flex hover:text-orange-400 justify-between mt-5"> <ScrollToDivLink targetId="div3"  className='text-sm font-medium block w-full'>Gaming</ScrollToDivLink> </div>
  <div className="flex hover:text-orange-400 justify-between mt-5"> <ScrollToDivLink targetId="div1" className='text-sm font-medium block w-full'>Generator</ScrollToDivLink> </div>
@@ -682,7 +682,7 @@ function addProductsToCart(identify, mycollection) {
 <section className="mt-24  ">
     <h2 className="lg:text-4xl ml-2 md:ml-0 lg:font-bold md:text-3xl text-2xl font-medium  md:font-bold"> About Us</h2>
 
-<div className="lg:flex lg:mt-32 md:mt-24 grid place-items-center md:justify-center  mt-12">
+<div className="lg:flex lg:mt-32 md:mt-24 grid place-items-center   xl:w-400  md:justify-between  mt-12">
     <p className="text-lg ml-2 md:ml-0 lg:mr-12 xl:mr-16 lg:mt-24 md:mb-0 mb-10 "><span className="lg:text-3xl md:text-2xl   font-medium">Our Story</span> <br/><br/>Launched in 2015,Exclusive is south Asia's premier online shopping<br/> marketplace with an active presence in Bangladesh. Supported <br/>by wide range of tailored marketing, data and service solutions.<br/>Exclusive has 10,500 sellers and 300 brands and serves 3 <br/> millons customers across the region.<br/><br/>Exclusive has more than 1 Million products to offer,growind at a <br/>very fast pace.Exclusive offers a diverse assotment in categories<br/> ranging from consumer.</p>
     <img src={sideImages} className="md:w-100  md:h-100 w-90 h-80 lg:mt-0 lg:w-97 lg:h-97  md:mt-10 xl:h-100 xl:w-100"/>
 </div>
@@ -691,7 +691,7 @@ function addProductsToCart(identify, mycollection) {
 
 
 
-<section className=" lg:gap-8 md:gap-6 mt-20  md:flex pb-20 md:pb-0 grid grid-cols-2 gap-10 place-items-center">
+<section className=" lg:gap-8 md:gap-6 mt-20 sm:w-100 md:w-270  xl:w-400   md:h-82 sm:justify-between md:flex pb-20 md:pb-0 grid grid-cols-2 gap-10 ">
     <div >
     <img src={page1} className="md:w-36 md:h-32  h-26 w-32  mb-5 md:mb-0   bg-white " />
     </div>
