@@ -255,7 +255,7 @@ function addProductsToCart(identify, mycollection) {
 
 
 
-        <div className={`${ isFixed  ? "lg:pt-30 md:pb-10 overflow-hidden  lg:pb-10 " : "lg:pt-8 md:pb-10  lg:pb-10 " }`}>
+        <div className={`${ isFixed  ? "lg:pt-30 md:pb-0 overflow-hidden  lg:pb-0 " : "lg:pt-8 md:pb-0  lg:pb-0 " }`}>
 
 
         <div className="lg:flex block  lg:justify-center  ">
@@ -691,7 +691,7 @@ function addProductsToCart(identify, mycollection) {
 
 
 
-<section className=" lg:gap-8 md:gap-6 mt-20 sm:w-100 md:w-270  xl:w-400   md:h-82 sm:justify-between md:flex pb-20 md:pb-0 grid grid-cols-2 gap-10 ">
+<section className="lg:gap-8 md:gap-6  mt-20 sm:w-100 md:w-270  place-items-center  md:h-82 md:justify-between md:flex  md:pb-0 grid grid-cols-2 gap-10 ">
     <div >
     <img src={page1} className="md:w-36 md:h-32  h-26 w-32  mb-5 md:mb-0   bg-white " />
     </div>
